@@ -1,0 +1,17 @@
+.btn {
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 4px 30px;
+    line-height: 1.42857;
+    border-radius: 8px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    text-align: center;
+    font-family: "SF UI Display", sans-serif;
+}

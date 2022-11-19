@@ -5,10 +5,10 @@ dist
 node_modules
 /.pnp
 .pnp.js
-
+.npmrc
+storybook-static
 # testing
 /coverage
-
 # production
 /build
 
