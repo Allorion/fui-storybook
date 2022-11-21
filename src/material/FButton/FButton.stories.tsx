@@ -1,23 +1,24 @@
 import React from 'react';
 import "./FButton-story.css";
 
-import {ComponentStory, ComponentMeta, Story} from '@storybook/react';
+import {ComponentMeta, Story} from '@storybook/react';
 
 import FButton, {IFButton} from "./FButton";
 
 export default {
     title: 'FMaterial UI-Kit/FButton',
     comment: FButton,
-    // argTypes: {
-    //     children: {
-    //         defaultValue: 'Button'
-    //     }
-    // }
 } as ComponentMeta<typeof FButton>;
 
 const Template: Story<IFButton> = (args) => <FButton {...args}>Button</FButton>;
 
-export const Default: Story<IFButton> = () => <FButton>Button</FButton>
+export const Default = Template.bind({});
+
+Default.args = {
+    id: 'stack-id',
+    className: 'stack-className',
+    st: {marginTop: '20px'}
+};
 
 export const onClick: Story<IFButton> = () => (
     <FButton onClick={() => alert('Hello World!')}>Button</FButton>
@@ -59,33 +60,12 @@ export const Disabled: Story<IFButton> = () => (
     </div>
 )
 
-export const Style: Story<IFButton> = () => (
-    <FButton st={
-        {
-            backgroundColor: 'black',
-            color: 'white',
-            width: '100px'
-        }
-    }>
-        Style
-    </FButton>
-)
-
-export const Class: Story<IFButton> = () => (
-    <FButton className={'class-button'}>
-        Class
-    </FButton>
-)
 export const FullWidth: Story<IFButton> = () => (
     <FButton fullWidth={true}>
         fullWidth
     </FButton>
 )
-export const Id: Story<IFButton> = () => (
-    <FButton id={'button-id'}>
-        Id
-    </FButton>
-)
+
 
 
 

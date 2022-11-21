@@ -1,10 +1,10 @@
 {
-  "homepage": "http://Allorion.github.io./fui",
+  "homepage": "https://allorion.github.io/fui/",
   "name": "@Allorion/fui",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Allorion"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -25,8 +25,7 @@
     "rollup": "rollup -c",
     "build": "npm publish",
     "storybook": "start-storybook -p 6006",
-    "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "build-storybook && gh-pages -d storybook-static"
   },
   "eslintConfig": {
     "extends": [
