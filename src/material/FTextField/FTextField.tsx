@@ -60,7 +60,7 @@ const FTextField: FC<IFTextField> = (
 
     return (
         <React.Fragment>
-            <div className={`form-group ${className}`} style={st} id={id}>
+            <div className={`form-group ${className !== undefined ? className : ''}`} style={st} id={id}>
                 {label &&
                     <label className="control-label with-offset" style={{
                         whiteSpace: 'nowrap',

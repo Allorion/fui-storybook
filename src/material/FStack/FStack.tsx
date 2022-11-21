@@ -41,7 +41,7 @@ const FStack: FC<IFStack> = ({
     return (
         <React.Fragment>
             <div
-                className={`${className !== undefined && className} test`}
+                className={className}
                 style={style}
                 id={id}
             >

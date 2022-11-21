@@ -27,11 +27,11 @@ export const onClick: Story<IFButton> = () => (
 export const Variant: Story<IFButton> = () => (
     <div className={'stack'}>
         <FButton variant={'contained'}>contained</FButton>
-        <FButton variant={'outlined'}>outlined</FButton>
+        <FButton variant={'default'}>outlined</FButton>
     </div>
 )
 
-export const Color: Story<IFButton> = () => (
+export const ColorContained: Story<IFButton> = () => (
     <div className={'stack'}>
         <FButton color={'primary'}>primary</FButton>
         <FButton color={'secondary'}>secondary</FButton>
@@ -42,6 +42,20 @@ export const Color: Story<IFButton> = () => (
         <FButton color={'light'}>light</FButton>
         <FButton color={'dark'}>dark</FButton>
         <FButton color={'link'}>link</FButton>
+    </div>
+)
+
+export const ColorDefault: Story<IFButton> = () => (
+    <div className={'stack'}>
+        <FButton variant={'default'} color={'primary'}>primary</FButton>
+        <FButton variant={'default'} color={'secondary'}>secondary</FButton>
+        <FButton variant={'default'} color={'success'}>success</FButton>
+        <FButton variant={'default'} color={'danger'}>danger</FButton>
+        <FButton variant={'default'} color={'warning'}>warning</FButton>
+        <FButton variant={'default'} color={'info'}>info</FButton>
+        <FButton variant={'default'} color={'light'}>light</FButton>
+        <FButton variant={'default'} color={'dark'}>dark</FButton>
+        <FButton variant={'default'} color={'link'}>link</FButton>
     </div>
 )
 

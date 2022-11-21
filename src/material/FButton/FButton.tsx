@@ -1,10 +1,10 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css'
 import './FButton.css'
+import "bootstrap/dist/css/bootstrap.css"
 
 export interface IFButton {
     children?: React.ReactNode
-    variant?: 'contained' | 'outlined'
+    variant?: 'contained' | 'default'
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
     size?: 'btn-lg' | 'btn-sm' | 'btn-xs'
     disabled?: boolean
@@ -18,16 +18,16 @@ export interface IFButton {
 const FButton = (
     {
         children,
-        variant='contained',
-        color='primary',
-        size='btn-sm',
+        variant = 'contained',
+        color = 'primary',
+        size = 'btn-sm',
         disabled,
         onClick,
         st,
         className,
         fullWidth,
         id,
-    } : IFButton
+    }: IFButton
 ) => {
 
     if (fullWidth) {
@@ -45,9 +45,7 @@ const FButton = (
             <button
                 disabled={disabled}
                 type="button"
-                className={`btn ${
-                    variant !== undefined ? color !== undefined ? `${variant === 'contained' ? 'btn' : 'btn-outline'}-${color}` : `${variant === 'contained' ? 'btn' : 'btn-outline'}-${color}` : ''
-                } ${size} ${className}`}
+                className={`btn ${variant === 'contained' ? 'btn' : 'btn-default'}-${color} ${size} ${className !== undefined ? className : ''}`}
                 onClick={onClick}
                 style={st}
                 id={id}
