@@ -6,7 +6,7 @@ export interface IFStack {
     alignItems?: "flex-start" | "center" | "flex-end" | "stretch" | "baseline",
     justifyContent?: "flex-start" | "center" | "flex-end" | "space-between" | "space-around" | "space-evenly",
     spacing?: number,
-    children?: React.ReactNode,
+    children?: React.ReactChild | React.ReactNode,
     className?: string,
     st?: React.CSSProperties,
     id?: string
@@ -47,10 +47,11 @@ const FStack: FC<IFStack> = ({
             >
                 {React.Children.map(children, (child, i) => {
                     if (direction === 'row') {
-                        if (i === React.Children.count(children)) return child
+                        if (i < 1) return child
                         return (
                             <div style={{
-                                margin: `0 0 0 ${+spacing * 8}px`
+                                margin: `0 0 0 ${+spacing * 8}px`,
+                                width: 'auto'
                             }}>
                                 {child}
                             </div>
@@ -59,7 +60,8 @@ const FStack: FC<IFStack> = ({
                         if (i < 1) return child
                         return (
                             <div style={{
-                                margin: `0 ${+spacing * 8}px 0 0`
+                                margin: `0 ${+spacing * 8}px 0 0`,
+                                width: 'auto'
                             }}>
                                 {child}
                             </div>
@@ -68,7 +70,8 @@ const FStack: FC<IFStack> = ({
                         if (i < 1) return child
                         return (
                             <div style={{
-                                margin: `${+spacing * 8}px 0 0 0`
+                                margin: `${+spacing * 8}px 0 0 0`,
+                                width: 'auto'
                             }}>
                                 {child}
                             </div>
@@ -77,7 +80,8 @@ const FStack: FC<IFStack> = ({
                         if (i === React.Children.count(children)) return child
                         return (
                             <div style={{
-                                margin: `0 0 ${+spacing * 8}px`
+                                margin: `0 0 ${+spacing * 8}px`,
+                                width: 'auto'
                             }}>
                                 {child}
                             </div>

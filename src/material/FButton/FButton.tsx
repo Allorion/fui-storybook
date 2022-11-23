@@ -1,9 +1,9 @@
 import React from "react";
 import './FButton.css'
-import "bootstrap/dist/css/bootstrap.css"
+// import "bootstrap/dist/css/bootstrap.css"
 
 export interface IFButton {
-    children?: React.ReactNode
+    children?: React.ReactChild | React.ReactNode,
     variant?: 'contained' | 'default'
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
     size?: 'btn-lg' | 'btn-sm' | 'btn-xs'

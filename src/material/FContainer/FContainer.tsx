@@ -3,7 +3,7 @@ import "./FContainer.css"
 
 export interface IFContainer {
     maxWidth?: 'container-xs' | 'container-sm' | 'container-md' | 'container-lg' | 'container-xl' | 'container-xxl' | 'container-fluid'
-    children?: React.ReactNode,
+    children?: React.ReactChild | React.ReactNode,
     className?: string,
     st?: React.CSSProperties,
     id?: string

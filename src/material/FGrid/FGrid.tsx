@@ -1,8 +1,8 @@
 import React, {FC} from "react";
-import "./css/bootstrap.css"
+// import "./css/bootstrap.css"
 
 export interface IFGrid {
-    children?: React.ReactNode,
+    children?: React.ReactChild | React.ReactNode,
     className?: string,
     st?: React.CSSProperties,
     id?: string
