@@ -1,6 +1,6 @@
 {
   "name": "fui-material",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -22,7 +22,7 @@
   "scripts": {
     "test": "jest",
     "rollup": "rollup -c",
-    "build": "npm publish",
+    "build-publish": "rollup -c && npm publish",
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "build-storybook && gh-pages -d storybook-static"
   },

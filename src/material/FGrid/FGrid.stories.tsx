@@ -7,6 +7,8 @@ import {IFGrid} from "./FGrid";
 import "./FGrid-story.css"
 import FGrid from "./FGrid";
 
+import "bootstrap/dist/css/bootstrap.css"
+
 export default {
     title: 'FMaterial UI-Kit/FGrid',
     comment: FGrid,

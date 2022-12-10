@@ -1,6 +1,5 @@
 import React from "react";
 import './FButton.css'
-// import "bootstrap/dist/css/bootstrap.css"
 
 export interface IFButton {
     children?: React.ReactChild | React.ReactNode,

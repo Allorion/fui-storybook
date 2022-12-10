@@ -6,6 +6,8 @@ import FStack, {IFStack} from "./FStack";
 
 import "./FStack-story.css"
 
+import "bootstrap/dist/css/bootstrap.css"
+
 export default {
     title: 'FMaterial UI-Kit/FStack',
     comment: FStack,

@@ -4,7 +4,8 @@ import {ComponentMeta, Story} from '@storybook/react';
 
 import {FTextField} from "../index";
 import {IFTextField} from "./FTextField";
-import FButton, {IFButton} from "../FButton/FButton";
+
+import "bootstrap/dist/css/bootstrap.css"
 
 export default {
     title: 'FMaterial UI-Kit/FTextField',

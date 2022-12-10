@@ -7,6 +7,8 @@ import {IFContainer} from "./FContainer";
 import "./FContainer-story.css"
 import FContainer from "./FContainer";
 
+import "bootstrap/dist/css/bootstrap.css"
+
 export default {
     title: 'FMaterial UI-Kit/FContainer',
     comment: FContainer,
