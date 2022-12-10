@@ -24,6 +24,7 @@ const FStack: FC<IFStack> = ({
                              }) => {
 
     let style: React.CSSProperties = {
+        gap: `${+spacing * 8}px`,
         display: 'flex',
         flexDirection: direction,
         // @ts-ignore
@@ -45,49 +46,7 @@ const FStack: FC<IFStack> = ({
                 style={style}
                 id={id}
             >
-                {React.Children.map(children, (child, i) => {
-                    if (direction === 'row') {
-                        if (i < 1) return child
-                        return (
-                            <div style={{
-                                margin: `0 0 0 ${+spacing * 8}px`,
-                                width: 'auto'
-                            }}>
-                                {child}
-                            </div>
-                        )
-                    } else if (direction === 'row-reverse') {
-                        if (i < 1) return child
-                        return (
-                            <div style={{
-                                margin: `0 ${+spacing * 8}px 0 0`,
-                                width: 'auto'
-                            }}>
-                                {child}
-                            </div>
-                        )
-                    } else if (direction === 'column') {
-                        if (i < 1) return child
-                        return (
-                            <div style={{
-                                margin: `${+spacing * 8}px 0 0 0`,
-                                width: 'auto'
-                            }}>
-                                {child}
-                            </div>
-                        )
-                    } else if (direction === 'column-reverse') {
-                        if (i === React.Children.count(children)) return child
-                        return (
-                            <div style={{
-                                margin: `0 0 ${+spacing * 8}px`,
-                                width: 'auto'
-                            }}>
-                                {child}
-                            </div>
-                        )
-                    }
-                })}
+                {children}
             </div>
         </React.Fragment>
     )
