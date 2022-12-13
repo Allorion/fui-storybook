@@ -22,6 +22,12 @@ const FDialog: FC<IFDialog> = ({
                                    st
                                }) => {
 
+    if (openAndClose) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+
     return (
         <React.Fragment>
             <div
@@ -32,13 +38,11 @@ const FDialog: FC<IFDialog> = ({
                 id={id}
             >
                 <div className="f-dialog-table">
-                    <div className="f-dialog-cell">
-                        <div
-                            className="f-dialog-content modal-content"
-                            style={st}
-                        >
-                            {children}
-                        </div>
+                    <div
+                        className="f-dialog-content modal-content"
+                        style={st}
+                    >
+                        {children}
                     </div>
                 </div>
             </div>

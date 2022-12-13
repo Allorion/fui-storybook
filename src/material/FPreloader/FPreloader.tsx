@@ -20,6 +20,11 @@ const FPreloader: FC<IFPreloader> = ({
                                          open
                                      }) => {
 
+    if (open) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 
     let style: React.CSSProperties = {
         backgroundColor: backgroundColor,
