@@ -1,0 +1,175 @@
+.radio, .radio label, .has-success .radio, .has-success .radio label, .has-warning .radio, .has-warning .radio label, .has-error .radio, .has-error .radio label, .radio-inline, .radio-inline label, .has-success .radio-inline, .has-success .radio-inline label, .has-warning .radio-inline, .has-warning .radio-inline label, .has-error .radio-inline, .has-error .radio-inline label, .checkbox, .checkbox label, .has-success .checkbox, .has-success .checkbox label, .has-warning .checkbox, .has-warning .checkbox label, .has-error .checkbox, .has-error .checkbox label, .checkbox-inline, .checkbox-inline label, .has-success .checkbox-inline, .has-success .checkbox-inline label, .has-warning .checkbox-inline, .has-warning .checkbox-inline label, .has-error .checkbox-inline, .has-error .checkbox-inline label {
+    color: #656565;
+}
+.radio, .radio label, .radio-inline, .radio-inline label, .checkbox, .checkbox label, .checkbox-inline, .checkbox-inline label {
+    font-family: "SF UI Display", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.radio, .radio-inline, .checkbox, .checkbox-inline {
+    padding: 0;
+}
+.radio, .checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.radio label, .radio-inline label, .checkbox label, .checkbox-inline label {
+    display: table;
+    cursor: pointer;
+    margin: 0;
+    padding-left: 0;
+    min-height: 18px;
+    min-width: 16px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.radio, .radio label, .has-success .radio, .has-success .radio label, .has-warning .radio, .has-warning .radio label, .has-error .radio, .has-error .radio label, .radio-inline, .radio-inline label, .has-success .radio-inline, .has-success .radio-inline label, .has-warning .radio-inline, .has-warning .radio-inline label, .has-error .radio-inline, .has-error .radio-inline label, .checkbox, .checkbox label, .has-success .checkbox, .has-success .checkbox label, .has-warning .checkbox, .has-warning .checkbox label, .has-error .checkbox, .has-error .checkbox label, .checkbox-inline, .checkbox-inline label, .has-success .checkbox-inline, .has-success .checkbox-inline label, .has-warning .checkbox-inline, .has-warning .checkbox-inline label, .has-error .checkbox-inline, .has-error .checkbox-inline label {
+    color: #656565;
+}
+.radio, .radio label, .radio-inline, .radio-inline label, .checkbox, .checkbox label, .checkbox-inline, .checkbox-inline label {
+    font-family: "SF UI Display", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.radio label, .radio-inline label, .checkbox label, .checkbox-inline label {
+    padding-left: 0 !important;
+    line-height: 1.12;
+}
+.radio label, .checkbox label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+label, .control-label {
+    color: #656565;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.radio label > span, .radio-inline label > span, .checkbox label > span, .checkbox-inline label > span {
+    display: table-cell;
+    vertical-align: middle;
+    font: inherit;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    padding: 0;
+    padding-left: 26px;
+}
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 4px \9;
+}
+.radio input, .radio-inline input, .checkbox input, .checkbox-inline input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    position: absolute;
+    appearance: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+}
+input[type="radio"], input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+[type="checkbox"], [type="radio"] {
+    width: 16px;
+    height: 16px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.radio label > span, .radio-inline label > span, .checkbox label > span, .checkbox-inline label > span {
+    display: table-cell;
+    vertical-align: middle;
+    font: inherit;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    padding: 0;
+    padding-left: 26px;
+}
+
+.checkbox label > input:checked ~ span:before, .checkbox label > input:checked ~ span:active:before, .checkbox label > input:checked ~ span:hover:before, .checkbox-inline label > input:checked ~ span:before, .checkbox-inline label > input:checked ~ span:active:before, .checkbox-inline label > input:checked ~ span:hover:before {
+    background: #2F80ED;
+}
+.radio label > input:checked ~ span:before, .radio-inline label > input:checked ~ span:before, .checkbox label > input:checked ~ span:before, .checkbox-inline label > input:checked ~ span:before {
+    background: #2F80ED;
+    border-color: #2F80ED;
+}
+.checkbox label > span:before, .checkbox-inline label > span:before {
+    border-radius: 3px;
+}
+.radio label > span:before, .radio-inline label > span:before, .checkbox label > span:before, .checkbox-inline label > span:before {
+    background: #fff;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+}
+.radio label > span:before, .radio-inline label > span:before, .checkbox label > span:before, .checkbox-inline label > span:before {
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    transition: .3s ease-in-out;
+    transition-property: border-color, background-color, border-width;
+}
+.radio label > span:before, .radio label > span:after, .radio-inline label > span:before, .radio-inline label > span:after, .checkbox label > span:before, .checkbox label > span:after, .checkbox-inline label > span:before, .checkbox-inline label > span:after {
+    content: "";
+    position: absolute;
+}
+
+
+
+.radio label > input:checked ~ span:after, .radio-inline label > input:checked ~ span:after, .checkbox label > input:checked ~ span:after, .checkbox-inline label > input:checked ~ span:after {
+    display: block;
+}
+.checkbox label > span:after, .checkbox-inline label > span:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.radio label > span:after, .radio-inline label > span:after, .checkbox label > span:after, .checkbox-inline label > span:after {
+    z-index: 2;
+    display: none;
+}
+.radio label > span:before, .radio label > span:after, .radio-inline label > span:before, .radio-inline label > span:after, .checkbox label > span:before, .checkbox label > span:after, .checkbox-inline label > span:before, .checkbox-inline label > span:after {
+    content: "";
+    position: absolute;
+}

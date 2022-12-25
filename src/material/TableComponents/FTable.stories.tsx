@@ -4,13 +4,14 @@ import {ComponentMeta, Story} from '@storybook/react';
 
 import "bootstrap/dist/css/bootstrap.css"
 import "./FTable/FTable.css"
-import {FTable, FTableBody, FTableDataCell, FTableHead, FTableHeaderCell, FTableRow} from "../index";
+import {FTable, FTableBody, FTableDataCell, FTableFooter, FTableHead, FTableHeaderCell, FTableRow} from "../index";
 import {IFTable} from "./FTable/FTable";
 import {IFTableHead} from "./FTableHead/FTableHead";
 import {IFTableHeaderCell} from "./FTableHeaderCell/FTableHeaderCell";
 import {IFTableDataCell} from "./FTableDataCell/FTableDataCell";
 import {IFTableBody} from "./FTableBody/FTableBody";
 import {IFTableRow} from "./FTableRow/FTableRow";
+import FPagination from "../FPagination/FPagination";
 
 
 export default {
@@ -48,6 +49,15 @@ const Table: Story<IFTable> = (args) => (
                 <FTableDataCell>78786575676</FTableDataCell>
             </FTableRow>
         </FTableBody>
+        <FTableFooter>
+            <FPagination
+                currentPage={2}
+                totalCount={100}
+                pageSize={10}
+                onPageChange={() => console.log(1)}
+                siblingCount={1}
+            />
+        </FTableFooter>
     </FTable>
 )
 
