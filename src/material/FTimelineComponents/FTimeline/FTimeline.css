@@ -1,4 +1,108 @@
 .f_timeline {
     display: flex;
+    flex-direction: column;
+}
+
+.f_timeline .f_timeline_body:nth-child(2n+1) {
+    display: flex;
     flex-direction: row;
+}
+
+.f_timeline .f_timeline_body {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.f_timeline .fv_timeline_num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.f_timeline .f_timeline_body:nth-child(2n+1) .fv_timeline_num .fv_num_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.f_timeline .fv_timeline_num .fv_num_block {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.f_timeline .f_timeline_body:nth-child(2n+1) .fv_timeline_num .fv_num_block .fv_left_block {
+    height: 2px;
+    width: 30px;
+    flex-direction: row-reverse;
+    display: flex;
+}
+
+.f_timeline .fv_timeline_num .fv_num_block .fv_left_block {
+    height: 2px;
+    width: 30px;
+    flex-direction: row;
+    display: flex;
+}
+
+.f_timeline .fv_timeline_num .fv_num_block .fv_left_block .fv_left_line {
+    height: 2px;
+    background-color: #2164BE;
+    animation: fillLeft 3s normal forwards;
+}
+
+.f_timeline .fv_timeline_num .fv_num_block .fv_circle {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 64px !important;
+    height: 64px !important;
+    background-color: #2164BE;
+    border-radius: 50%;
+}
+
+.f_timeline .f_timeline_body:nth-child(2n+1) .fv_timeline_num .fv_bottom_block {
+    display: flex;
+    flex-direction: column;
+    width: 2px;
+    height: 100%;
+    margin-left: 60px;
+}
+
+.f_timeline .fv_timeline_num .fv_bottom_block {
+    display: flex;
+    flex-direction: column;
+    width: 2px;
+    height: 100%;
+    margin-right: 30px;
+}
+
+.f_timeline .fv_timeline_num .fv_bottom_block .fv_bottom_line {
+    display: block;
+    width: 2px;
+    background-color: #2164BE;
+    animation: fillBottom 3s normal forwards;
+}
+
+.f_timeline .f_timeline_body:last-child .fv_timeline_num .fv_bottom_block .fv_bottom_line {
+    display: none;
+}
+
+@keyframes fillLeft {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 30px;
+    }
+}
+
+@keyframes fillBottom {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
 }

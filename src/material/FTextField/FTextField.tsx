@@ -1,5 +1,6 @@
 import React, {FC} from "react";
-import {FStack} from "../index";
+import {FProgress, FStack} from "../index";
+import "./FTextField.css"
 
 export interface IFTextField {
     label?: string
@@ -14,9 +15,13 @@ export interface IFTextField {
     readOnly?: boolean | undefined
     defaultValue?: string | number | readonly string[] | undefined
     errText?: string[]
+    helpText?: string
     onInput?: React.FormEventHandler<HTMLInputElement> | undefined
     id?: string
     className?: string
+    load?: boolean,
+    min?: number
+    max?: number
 }
 
 const FTextField: FC<IFTextField> = (
@@ -32,11 +37,15 @@ const FTextField: FC<IFTextField> = (
         readOnly,
         defaultValue,
         errText,
+        helpText,
         onInput,
 
         st,
         id,
-        className
+        className,
+        load = false,
+        min,
+        max,
     }
 ) => {
 
@@ -60,7 +69,9 @@ const FTextField: FC<IFTextField> = (
 
     return (
         <React.Fragment>
-            <div className={`form-group ${className !== undefined ? className : ''}`} style={st} id={id}>
+            <div
+                className={`
+                form-group ${className !== undefined ? className : ''}`} style={st} id={id}>
                 {label &&
                     <label className="control-label with-offset" style={{
                         whiteSpace: 'nowrap',
@@ -70,24 +81,38 @@ const FTextField: FC<IFTextField> = (
                         {label}
                     </label>
                 }
-                <input
-                    style={{
-                        borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
-                    }}
-                    disabled={disabled}
-                    defaultValue={defaultValue}
-                    required
-                    onInput={onInput}
-                    readOnly={readOnly}
-                    value={value}
-                    //@ts-ignore
-                    onChange={onChange}
-                    type={type === undefined ? 'text' : type}
-                    className="form-control"
-                    onBlur={onBlur}
-                    onFocus={onFocus}
-                />
-                {errText !== undefined && errText.length > 0 &&
+                <div className={`${load ? 'ui left icon input loading' : ''}`}>
+                    <input
+                        style={{
+                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
+                        }}
+                        min={min}
+                        max={max}
+                        disabled={disabled}
+                        defaultValue={defaultValue}
+                        required
+                        onInput={onInput}
+                        readOnly={readOnly || load}
+                        value={value}
+                        //@ts-ignore
+                        onChange={onChange}
+                        type={type === undefined ? 'text' : type}
+                        className="form-control"
+                        onBlur={onBlur}
+                        onFocus={onFocus}
+                    />
+                    {helpText !== undefined &&
+                        <span
+                            style={{
+                                whiteSpace: 'initial',
+                                color: '#a6a3a3',
+                                    fontSize: '12px'
+                            }}
+                        >
+                                    {helpText}
+                                </span>
+                    }
+                    {errText !== undefined && errText.length > 0 &&
                         <FStack direction={'column'} st={{paddingLeft: '11px'}}>
                             {
                                 errText?.map((opt, index) => {
@@ -99,13 +124,17 @@ const FTextField: FC<IFTextField> = (
                                                 color: 'red'
                                             }}
                                         >
-                                {opt}
-                            </span>
+                                            {opt}
+                                        </span>
                                     )
                                 })
                             }
                         </FStack>
-                }
+                    }
+                    {load &&
+                        <i className="search icon"></i>
+                    }
+                </div>
             </div>
         </React.Fragment>
     )

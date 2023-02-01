@@ -25,3 +25,5 @@ export {default as FPreloader} from "./FPreloader";
 export {default as FCheckbox} from "./FCheckbox";
 
 export {default as FPagination} from "./FPagination";
+
+export {default as FTimeline} from "./FTimelineComponents/FTimeline";

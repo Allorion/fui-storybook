@@ -52,7 +52,7 @@ const FButton = (
             st.width = '100%'
         }
     }
-    console.log(files)
+
     return (
         <React.Fragment>
             <button

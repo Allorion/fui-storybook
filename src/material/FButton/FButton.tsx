@@ -11,7 +11,8 @@ export interface IFButton {
     st?: React.CSSProperties,
     className?: string
     fullWidth?: boolean
-    id?: string
+    id?: string,
+    type?: "button" | "submit" | "reset" | undefined
 }
 
 const FButton = (
@@ -26,6 +27,7 @@ const FButton = (
         className,
         fullWidth,
         id,
+        type='button'
     }: IFButton
 ) => {
 
@@ -43,7 +45,7 @@ const FButton = (
         <React.Fragment>
             <button
                 disabled={disabled}
-                type="button"
+                type={type}
                 className={`btn ${variant === 'contained' ? 'btn' : 'btn-default'}-${color} ${size} ${className !== undefined ? className : ''}`}
                 onClick={onClick}
                 style={st}
