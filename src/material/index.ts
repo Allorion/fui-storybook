@@ -27,4 +27,19 @@ export {default as FCheckbox} from "./FCheckbox";
 export {default as FPagination} from "./FPagination";
 
 export {default as FTimeline} from "./FTimelineComponents/FTimeline";
-export {default as FTimelineBody} from "./FTimelineComponents/FTimelineBody";
+export {default as FTimelineCard} from "./FTimelineComponents/FTimelineCard";
+
+export {default as FIcoClose} from "./FIcoClose"
+
+export {default as FIcoArrow} from "./FIcoArrow"
+
+export {default as FOpenImgFull} from "./FOpenImgFull"
+
+export {default as FAccordion} from "./FAccordion"
+
+export {default as FInputFileForm} from "./FInputFileForm"
+
+export {default as FFile} from "./FFile"
+
+
+

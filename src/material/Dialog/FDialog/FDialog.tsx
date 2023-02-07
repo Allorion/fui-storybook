@@ -2,7 +2,7 @@
 // Родительский компонет диалогового окна
 // *********************************************************************************************************************
 
-import React, {FC} from "react";
+import React, {FC, useEffect} from "react";
 import "../style/style.css"
 
 export interface IFDialog {
@@ -22,11 +22,13 @@ const FDialog: FC<IFDialog> = ({
                                    st
                                }) => {
 
-    if (openAndClose) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    useEffect(() => {
+        if (openAndClose) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [openAndClose])
 
     return (
         <React.Fragment>

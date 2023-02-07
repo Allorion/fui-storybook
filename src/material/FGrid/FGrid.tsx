@@ -7,6 +7,7 @@ export interface IFGrid {
     st?: React.CSSProperties,
     id?: string
     obj?: 'container' | 'item'
+    xs?: number,
     sm?: number,
     md?: number,
     lg?: number,
@@ -21,6 +22,7 @@ const FGrid: FC<IFGrid> = ({
                                st,
                                id,
                                obj,
+                               xs,
                                sm,
                                md,
                                lg,
@@ -55,7 +57,7 @@ const FGrid: FC<IFGrid> = ({
             }
             {obj === 'item' &&
                 <div
-                    className={`${className !== undefined ? className : ''} ${sm !== undefined ? `col-sm-${sm}` : ''} ${md !== undefined ? `col-md-${md}` : ''} ${lg !== undefined ? `col-lg-${lg}` : ''} ${xl !== undefined ? `col-lg-${lg}` : ''} ${xxl !== undefined ? `col-xxl-${xxl}` : ''} ${colAuto !== undefined ? colAuto : ''}`}
+                    className={`${className !== undefined ? className : ''} ${xs !== undefined ? `col-${xs}` : ''} ${sm !== undefined ? `col-sm-${sm}` : ''} ${md !== undefined ? `col-md-${md}` : ''} ${lg !== undefined ? `col-lg-${lg}` : ''} ${xl !== undefined ? `col-lg-${lg}` : ''} ${xxl !== undefined ? `col-xxl-${xxl}` : ''} ${colAuto !== undefined ? colAuto : ''}`}
                     style={style}
                     id={id}
                 >

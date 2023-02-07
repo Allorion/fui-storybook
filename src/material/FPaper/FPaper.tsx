@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useEffect} from "react";
 import "./FPaper.css"
 import {FontSizeBody} from "./FPaper.stories";
 
@@ -10,6 +10,11 @@ export interface IFPaper {
     fontSizeBody?: string
     id?: string
     className?: string,
+    onAnimationEnd?: () => void,
+    animated?: {
+        name: string,
+        value: string
+    }
 }
 
 const FPaper: FC<IFPaper> = (
@@ -20,13 +25,27 @@ const FPaper: FC<IFPaper> = (
         fontSizeLabel,
         id,
         className,
-        fontSizeBody
+        fontSizeBody,
+        onAnimationEnd,
+        animated
     }
 ) => {
 
+    useEffect(() => {
+        if (animated !== undefined) {
+            const element = document.getElementsByClassName(`animated-${animated.name}`)[0];
+            element?.setAttribute(animated.name, animated.value);
+        }
+    }, [animated?.value])
+
     return (
         <React.Fragment>
-            <div className={`panel panel-default ${className}`} style={st} id={id}>
+            <div
+                className={`panel panel-default ${className} ${animated !== undefined ? `animated-${animated.name}` : ''}`}
+                style={st}
+                id={id}
+                onAnimationEnd={onAnimationEnd}
+            >
                 {label &&
                     <div className="panel-heading">
                         <h3 style={{fontSize:fontSizeLabel}} className="panel-title">{label}</h3>

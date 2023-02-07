@@ -3,11 +3,10 @@ import React from 'react';
 import {ComponentMeta, Story} from '@storybook/react';
 
 import FTimeline, {IFTimeline} from "./FTimeline/FTimeline";
+import FTimelineCard from "./FTimelineCard/FTimelineCard";
 
 import "bootstrap/dist/css/bootstrap.css"
-import FTimelineBody from "./FTimelineBody/FTimelineBody";
-//@ts-ignore
-import ic from './statick/file_paper_document_type_folder_data_page_icon_232717.svg'
+
 
 export default {
     title: 'FMaterial UI-Kit/FTimeline',
@@ -16,30 +15,28 @@ export default {
 
 const Template: Story<IFTimeline> = (args) => (
     <FTimeline {...args}>
-        <FTimelineBody
-            title={'Водохозяйственный участок'}
-            icon={(
-                <img width={'27px'} src={ic}/>
-            )}
-        >
-            Это часть речного бассейна, имеющая характеристики, позволяющие установить лимиты забора (изъятия) водных
-            ресурсов из водного объекта и другие параметры использования водного объекта (водопользования)
-        </FTimelineBody>
-        <FTimelineBody title={'Водохозяйственный участок'}>
-            Это часть речного бассейна, имеющая характеристики, позволяющие установить лимиты забора (изъятия) водных
-            ресурсов из водного объекта и другие параметры использования водного объекта (водопользования)
-        </FTimelineBody>
-        <FTimelineBody title={'Водохозяйственный участок'}>
-            Это часть речного бассейна, имеющая характеристики, позволяющие установить лимиты забора (изъятия) водных
-            ресурсов из водного объекта и другие параметры использования водного объекта (водопользования)
-        </FTimelineBody>
+        <FTimelineCard title={'Заголовок'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </FTimelineCard>
+        <FTimelineCard title={'Заголовок 2'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </FTimelineCard>
+        <FTimelineCard title={'Заголовок 3'}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </FTimelineCard>
     </FTimeline>
 )
 
 export const Default = Template.bind({});
 
 Default.args = {
-    id: 'stack-id',
-    className: 'stack-className',
+    id: 'timeline-id',
+    className: 'timeline-className',
     st: {marginTop: '20px'}
 };

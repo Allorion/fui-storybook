@@ -9,12 +9,7 @@ import "bootstrap/dist/css/bootstrap.css"
 
 export default {
     title: 'FMaterial UI-Kit/FTextField',
-    comment: FTextField,
-    argTypes: {
-        st: {
-            defaultValue: {width: '500px'}
-        }
-    }
+    comment: FTextField
 } as ComponentMeta<typeof FTextField>;
 
 const Template: Story<IFTextField> = (args) => (
@@ -48,6 +43,12 @@ export const DefaultValue = Template.bind({});
 
 DefaultValue.args = {
     defaultValue: 'Что-то изменилось 2.0'
+};
+
+export const Load = Template.bind({});
+
+Load.args = {
+    load: true
 };
 
 export const Interactive = Template.bind({});

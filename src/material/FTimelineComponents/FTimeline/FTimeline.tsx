@@ -17,7 +17,7 @@ const FTimeline: FC<IFTimeline> = ({
 
     return (
         <React.Fragment>
-            <div className={`f_timeline ${className !== undefined ? className : ''}`} style={st} id={id}>
+            <div className={`fv-timeline ${className !== undefined ? className : ''}`} style={st} id={id}>
                 {children}
             </div>
         </React.Fragment>
