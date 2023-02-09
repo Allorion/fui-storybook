@@ -1,6 +1,6 @@
 {
   "name": "fui-material",
-  "version": "0.1.72",
+  "version": "0.1.75",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

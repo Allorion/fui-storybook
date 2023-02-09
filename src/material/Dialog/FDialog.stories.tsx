@@ -24,8 +24,82 @@ const Dialog: Story<IFDialog> = (args) => {
                 title={'Это диалоговое окно'}
                 handleClose={() => {}}
             />
-            <FDialogBody>
-                Тут можно разместить все что хочешь<br/>
+            <FDialogBody scroll={true}>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p><p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                praesentium recusandae repudiandae vel.
+            </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p><p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                praesentium recusandae repudiandae vel.
+            </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius fugit
+                    incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi perferendis
+                    praesentium recusandae repudiandae vel.
+                </p>
+
+
             </FDialogBody>
             <FDialogFooter>
                 <FStack direction={'row'} spacing={2}>

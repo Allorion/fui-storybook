@@ -25,11 +25,12 @@
 }
 
 .f-dialog-content {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     /* максимально возможная ширина */
-    max-width: 50em;
-    max-height: 50em;
-
+    max-width: 100vh;
+    max-height: 95vh;
+    margin: 5em 1em 5em 1em;
 }
 
 /* Заголовок с кнопкой закрытия */
@@ -177,12 +178,6 @@
         left: 0%;
         width: 100%;
     }
-}
-
-
-.modal-content {
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .f-dialog::after {

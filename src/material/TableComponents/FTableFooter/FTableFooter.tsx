@@ -17,23 +17,9 @@ const FTableFooter: FC<IFTableFooter> = ({
                                              onClick
                                          }) => {
 
-    let style = {}
-
-    if (st !== undefined) {
-        style = Object.assign({
-            marginTop: '16px',
-            display: 'flex',
-        }, st)
-    } else {
-        style = {
-            marginTop: '16px',
-            display: 'flex',
-        }
-    }
-
     return (
         <React.Fragment>
-            <tfoot style={style} id={id} className={className} onClick={onClick}>
+            <tfoot style={st} id={id} className={className} onClick={onClick}>
                 {children}
             </tfoot>
         </React.Fragment>
