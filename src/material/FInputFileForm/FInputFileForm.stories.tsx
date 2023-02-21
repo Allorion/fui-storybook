@@ -23,11 +23,14 @@ Default.args = {
     id: 'input-file-form-id',
     className: 'input-file-form-className',
     st: {marginTop: '20px'},
-    dataMaxSize: 100,
+    dataMaxSize: {
+        size: 7,
+        dimension: 'МБ'
+    },
     name: 'input-file-form-name',
     accept: '.zip',
     multiple: false,
     disabled: false,
-    onChange: (e) => console.log(e!.target!.files![0]),
+    onChange: (e) => console.log(e),
     deleteFile: false
 };

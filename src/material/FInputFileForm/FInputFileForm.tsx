@@ -5,11 +5,14 @@ export interface IFInputFileForm {
     id?: string,
     className?: string,
     st?: React.CSSProperties,
-    dataMaxSize?: number,
+    dataMaxSize?: {
+        dimension: 'МБ' | 'КБ',
+        size: number
+    },
     name?: string,
     accept?: string,
     multiple?: boolean,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    onChange: (e: FileList) => void,
     disabled?: boolean,
     deleteFile?: boolean,
 }
@@ -82,9 +85,31 @@ const FInputFileForm: FC<IFInputFileForm> = ({
                     className={`custom-file-input ${className !== undefined ? className : ''}`}
                     name={name}
                     id={id}
-                    data-max-size={dataMaxSize}
+                    data-max-size={dataMaxSize?.size}
                     multiple={multiple}
-                    onChange={(e) => onChange(e)}
+                    onChange={(e) => {
+
+                        if (e.target.files && e.target.files[0]) {
+
+                            let maximumSize: number | undefined = undefined
+
+                            if (dataMaxSize?.dimension === 'МБ') {
+                                maximumSize = dataMaxSize.size * 1024 * 1024 // Перевод из мегабайт в байты
+                            } else if (dataMaxSize?.dimension === 'КБ') (
+                                maximumSize = dataMaxSize.size * 1024 // Перевод из килобайт в байты
+                            )
+                            if (maximumSize !== undefined) {
+                                const dt = new DataTransfer()
+                                Object.values(e.target.files).forEach((file) => {
+                                    //@ts-ignore
+                                    if (file.size <= maximumSize) dt.items.add(file)
+                                })
+                                onChange(dt.files)
+                            } else {
+                                onChange(e.target.files)
+                            }
+                        }
+                    }}
                     disabled={disabled}
                     //@ts-ignore
                     ref={inputRef}
@@ -108,7 +133,7 @@ const FInputFileForm: FC<IFInputFileForm> = ({
                     <br/>
                     <span style={disabledColor.span}>
                         <b style={disabledColor.b}>Выберите</b> или переместите файл для загрузки<br/> <small>Максимальный
-                    размер {dataMaxSize} Мб</small>
+                    размер {dataMaxSize?.size} {dataMaxSize?.dimension}</small>
                     </span>
                 </label>
             </div>
