@@ -32,6 +32,10 @@
     border: 1px solid #2F80ED;
 }
 
+.f-radio label input[type=radio]:focus {
+    outline: none !important;
+}
+
 /* Наружний круг Когда заблокирован */
 .f-radio label input[type=radio]:disabled {
     cursor: not-allowed;

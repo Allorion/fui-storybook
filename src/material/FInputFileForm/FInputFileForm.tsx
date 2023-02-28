@@ -15,6 +15,7 @@ export interface IFInputFileForm {
     onChange: (e: FileList) => void,
     disabled?: boolean,
     deleteFile?: boolean,
+    title?: string
 }
 
 const FInputFileForm: FC<IFInputFileForm> = ({
@@ -27,7 +28,8 @@ const FInputFileForm: FC<IFInputFileForm> = ({
                                                  multiple = false,
                                                  onChange,
                                                  disabled = false,
-                                                 deleteFile
+                                                 deleteFile,
+                                                 title
                                              }) => {
 
     let disabledColor: {
@@ -85,6 +87,7 @@ const FInputFileForm: FC<IFInputFileForm> = ({
                     className={`custom-file-input ${className !== undefined ? className : ''}`}
                     name={name}
                     id={id}
+                    title={title}
                     data-max-size={dataMaxSize?.size}
                     multiple={multiple}
                     onChange={(e) => {

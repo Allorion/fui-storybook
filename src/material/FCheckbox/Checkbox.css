@@ -48,6 +48,10 @@
     color: #fff;
 }
 
+.f-checkbox label input[type=checkbox]:focus {
+    outline: none !important;
+}
+
 .f-checkbox label input[type=checkbox]:disabled {
     cursor: not-allowed;
 }
