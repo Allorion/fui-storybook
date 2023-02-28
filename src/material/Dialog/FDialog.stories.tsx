@@ -9,7 +9,7 @@ import FDialogHeader from "./FDialogHeader";
 import FDialogBody from "./FDialogBody";
 import FDialogFooter from "./FDialogFooter";
 import {FButton, FStack} from "../index";
-import "./style/FDialog.stories.css"
+// import "./style/FDialog.stories.css"
 
 export default {
     title: 'FMaterial UI-Kit/FDialog',

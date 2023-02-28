@@ -1,5 +1,5 @@
 import React from 'react';
-import "./FButton-story.css";
+// import "./FButton-story.css";
 import "bootstrap/dist/css/bootstrap.css"
 
 import {ComponentMeta, Story} from '@storybook/react';

@@ -1,0 +1,54 @@
+.f-radio label {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    color: #656565;
+    font-family: "SF UI Display", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+}
+
+/* Наружний круг */
+.f-radio label input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    margin: 0;
+    font: inherit;
+    color: #C4C4C4;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+/* Наружний круг Когда активен */
+.f-radio label input[type=radio]:checked {
+    border: 1px solid #2F80ED;
+}
+
+/* Наружний круг Когда заблокирован */
+.f-radio label input[type=radio]:disabled {
+    cursor: not-allowed;
+}
+
+/* Внутренний круг */
+.f-radio label input[type=radio]::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #2F80ED;
+}
+
+/* Внутренний круг Когда активен */
+.f-radio label input[type=radio]:checked::before {
+    transform: scale(1);
+}

@@ -4,7 +4,7 @@ import {ComponentMeta, Story} from '@storybook/react';
 
 import FStack, {IFStack} from "./FStack";
 
-import "./FStack-story.css"
+// import "./FStack-story.css"
 
 import "bootstrap/dist/css/bootstrap.css"
 

@@ -4,7 +4,7 @@ import {ComponentMeta, Story} from '@storybook/react';
 
 import {IFContainer} from "./FContainer";
 
-import "./FContainer-story.css"
+// import "./FContainer-story.css"
 import FContainer from "./FContainer";
 
 import "bootstrap/dist/css/bootstrap.css"

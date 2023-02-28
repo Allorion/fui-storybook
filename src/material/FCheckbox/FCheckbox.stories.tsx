@@ -1,6 +1,5 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.css"
-import "./FCheckbox.stories.css"
 
 import {ComponentMeta, Story} from '@storybook/react';
 
@@ -22,7 +21,8 @@ Default.args = {
     defaultChecked: true,
     checked: true,
     label: 'Checkbox',
-    onClick: () => alert('Hello World!')
+    onClick: () => alert('Hello World!'),
+    disabled: false
 };
 
 

@@ -25,7 +25,7 @@
 .tag-default {
     background-color: #EDF4FF;
 }
-.tag {
+.tag-file {
     display: inline-block;
     overflow: hidden;
     position: relative;

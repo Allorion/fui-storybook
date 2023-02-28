@@ -4,7 +4,7 @@ import {ComponentMeta, Story} from '@storybook/react';
 
 import {IFGrid} from "./FGrid";
 
-import "./FGrid-story.css"
+// import "./FGrid-story.css"
 import FGrid from "./FGrid";
 
 import "bootstrap/dist/css/bootstrap.css"

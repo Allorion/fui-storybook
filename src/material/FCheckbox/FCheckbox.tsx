@@ -1,13 +1,15 @@
 import React, {FC} from "react";
+import "./Checkbox.css"
 
 export interface IFCheckbox {
-    label?: string | undefined
+    label?: React.ReactChild | React.ReactNode,
     onClick: React.MouseEventHandler<HTMLInputElement> | undefined
     defaultChecked?: boolean | undefined
     className?: string
     id?: string
     st?: React.CSSProperties | undefined,
-    checked?: boolean | undefined
+    checked?: boolean | undefined,
+    disabled?: boolean
 }
 
 
@@ -18,20 +20,22 @@ const FCheckbox: FC<IFCheckbox> = ({
                                        className,
                                        id,
                                        st,
-                                       checked
+                                       checked,
+                                       disabled
                                    }) => {
 
     return (
         <React.Fragment>
-            <div className={className !== undefined ? `checkbox ${className}` : 'checkbox'} id={id} style={st}>
+            <div className={`f-checkbox ${className !== undefined ? className : ''}`} id={id} style={st}>
                 <label>
                     <input
                         defaultChecked={defaultChecked}
                         type="checkbox"
                         onClick={onClick}
                         checked={checked}
+                        disabled={disabled}
                     />
-                    {label && <span>{label}</span>}
+                    {label}
                 </label>
             </div>
         </React.Fragment>
