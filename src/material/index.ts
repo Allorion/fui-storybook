@@ -52,6 +52,7 @@ export {default as FTrashIcon} from "./FIcons/FTrashIcon"
 export {default as FCheckIcon} from "./FIcons/FCheckIcon"
 export {default as FListIcon} from "./FIcons/FListIcon"
 export {default as FPenIcon} from "./FIcons/FPenIcon"
+export {default as FDownloadIcon} from "./FIcons/FDownloadIcon"
 
 export {default as FTextArea} from "./FTextArea"
 
