@@ -7,7 +7,7 @@ export interface IFTextField {
     st?: React.CSSProperties,
     value?: string | number | readonly string[] | undefined
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
-    type?: 'text' | 'number' | 'email' | 'tel'
+    type?: 'text' | 'number' | 'email' | 'tel' | 'password'
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined
     onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined
     fullWidth?: boolean
@@ -57,13 +57,20 @@ const FTextField: FC<IFTextField> = (
         } else {
             st.width = '100%'
         }
+    } else {
+        if (st === undefined) {
+            st = {
+                width: 'fit-content'
+            }
+        } else {
+            st.width = 'fit-content'
+        }
     }
 
     let style = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-
     }
     st = Object.assign({}, st, style);
 

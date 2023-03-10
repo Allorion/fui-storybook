@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FIcoClose, FStack} from "../index";
+import {FCloseIcon, FStack} from "../index";
 
 export interface IFFile {
     id?: string,
@@ -26,7 +26,7 @@ const FFile: FC<IFFile> = ({
                 </svg>
                 <FStack direction={'row'} justifyContent={'space-between'} st={{width: '100%'}}>
                     <span>{name}</span>
-                    <FIcoClose
+                    <FCloseIcon
                         handleClose={handleDelete}
                         st={{
                             width: '10px',

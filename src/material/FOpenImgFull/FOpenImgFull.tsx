@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FStack, FIcoClose, FDialog, FIcoArrow} from "../index";
+import {FStack, FCloseIcon, FDialog, FArrowIcon} from "../index";
 import './FOpenImgFull.css'
 
 export interface IFOpenImgFull {
@@ -62,7 +62,7 @@ const FOpenImgFull: FC<IFOpenImgFull> = ({
                                 }}
                             >
                                 {handleClose !== undefined &&
-                                    <FIcoClose
+                                    <FCloseIcon
                                         handleClose={() => {
                                             handleClose()
                                             document.body.style.overflow = 'auto'
@@ -72,7 +72,7 @@ const FOpenImgFull: FC<IFOpenImgFull> = ({
                             </div>
                             <FStack direction={'row'} spacing={2} alignItems={'center'} justifyContent={'center'}>
                                 {selectedImg > 0 ?
-                                    <FIcoArrow
+                                    <FArrowIcon
                                         direction={'left'}
                                         handleClick={() => setSelectedImg(selectedImg - 1)}
                                     />
@@ -88,7 +88,7 @@ const FOpenImgFull: FC<IFOpenImgFull> = ({
                                     }}
                                 />
                                 {selectedImg < imagesUrl.length - 1 ?
-                                    <FIcoArrow
+                                    <FArrowIcon
                                         direction={'right'}
                                         handleClick={() => setSelectedImg(selectedImg + 1)}
                                     />

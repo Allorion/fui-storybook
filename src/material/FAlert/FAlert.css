@@ -1,0 +1,42 @@
+.f-snackbar {
+    z-index: 1400;
+    position: fixed;
+    display: flex;
+}
+
+@media (min-width: 600px) {
+    .f-snackbar.top.left {
+        top: 24px;
+        left: 20px;
+    }
+
+    .f-snackbar.top.center {
+        top: 24px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .f-snackbar.top.right {
+        top: 24px;
+        right: 20px;
+    }
+
+    .f-snackbar.bottom.left {
+        bottom: 24px;
+        left: 20px;
+    }
+
+    .f-snackbar.bottom.center {
+        bottom: 24px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .f-snackbar.bottom.right {
+        bottom: 24px;
+        right: 20px;
+    }
+}
+

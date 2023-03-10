@@ -1,18 +1,18 @@
 import React, {FC} from 'react';
 import "./FIcoClose.css"
 
-export interface IFIcoClose {
+export interface IFCloseIcon {
     handleClose?: () => void,
     st?: React.CSSProperties,
     className?: string,
     id?: string
 }
 
-const FIcoClose: FC<IFIcoClose> = ({
+const FCloseIcon: FC<IFCloseIcon> = ({
                                        handleClose,
                                        st,
                                        className,
-                                       id
+                                       id,
                                    }) => {
     return (
         <React.Fragment>
@@ -29,4 +29,4 @@ const FIcoClose: FC<IFIcoClose> = ({
     );
 };
 
-export default FIcoClose;
+export default FCloseIcon;

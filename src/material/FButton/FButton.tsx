@@ -1,5 +1,6 @@
 import React from "react";
 import './FButton.css'
+import "../statick/Colors.css"
 
 export interface IFButton {
     children?: React.ReactChild | React.ReactNode,
@@ -27,7 +28,7 @@ const FButton = (
         className,
         fullWidth,
         id,
-        type='button'
+        type = 'button'
     }: IFButton
 ) => {
 
@@ -38,6 +39,14 @@ const FButton = (
             }
         } else {
             st.width = '100%'
+        }
+    } else {
+        if (st === undefined) {
+            st = {
+                width: "fit-content"
+            }
+        } else {
+            st.width = "fit-content"
         }
     }
 
