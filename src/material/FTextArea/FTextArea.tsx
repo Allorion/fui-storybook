@@ -13,6 +13,7 @@ export interface IFTextArea {
     className?: string,
     id?: string,
     fullWidth?: boolean,
+    onChange?: React.ChangeEventHandler<HTMLTextAreaElement> | undefined,
 }
 
 const FTextArea: FC<IFTextArea> = (
@@ -28,7 +29,8 @@ const FTextArea: FC<IFTextArea> = (
         autoComplete,
         className,
         id,
-        fullWidth
+        fullWidth,
+        onChange,
     }
 ) => {
 
@@ -58,6 +60,7 @@ const FTextArea: FC<IFTextArea> = (
                         value={value}
                         placeholder={placeholder}
                         className="form-control"
+                        onChange={onChange}
                     />
                 </div>
             </div>

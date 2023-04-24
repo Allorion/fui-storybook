@@ -39,7 +39,6 @@ Default.args = {
     selectedOpt: (e: any) => {
         console.log(e)
     },
-    optionLabel: 'name',
 };
 
 export const FullWidth = Template.bind({});

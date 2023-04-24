@@ -7,12 +7,14 @@ export interface IFNative {
     className?: string,
     st?: React.CSSProperties,
     children?: React.ReactChild | React.ReactNode,
-    value?: string[],
+    value?: string[] | number[],
     singleChoice?: (element: string[]) => void,
     multipleChoice?: (element: string[]) => void,
     disabled?: boolean,
     size?: number,
-    overflowX?: boolean
+    overflowX?: boolean,
+    width?: number | 'auto' | 'fit-content' | 'inherit' | 'initial' | 'max-content' | 'min-content' | 'revert' | 'unset' | '-webkit-fill-available'
+    fullWidth?: boolean
 }
 
 const FNative: FC<IFNative> = ({
@@ -25,8 +27,10 @@ const FNative: FC<IFNative> = ({
                                    singleChoice,
                                    multipleChoice,
                                    disabled,
-                                   size=4,
+                                   size = 4,
                                    overflowX,
+                                   width = '-webkit-fill-available',
+                                   fullWidth
                                }) => {
 
     const handleSingleChoice = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -38,7 +42,7 @@ const FNative: FC<IFNative> = ({
     }
 
     const handlerMultipleChoice = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const { options } = event.target;
+        const {options} = event.target;
         const value: string[] = [];
         for (let i = 0, l = options.length; i < l; i += 1) {
             if (options[i].selected) {
@@ -50,16 +54,28 @@ const FNative: FC<IFNative> = ({
         }
     }
 
+    if (fullWidth) {
+        if (st === undefined) {
+            st = {
+                width: '100%'
+            }
+        } else {
+            st.width = '100%'
+        }
+    }
+
     return (
         <React.Fragment>
             <div className={`f-form-native ${className !== undefined ? className : ''}`} style={st} id={id}>
                 <label className={'f-native-label'}>{label}</label>
                 <select
                     style={{
-                        overflowX: overflowX ? 'auto' : 'hidden'
+                        overflowX: overflowX ? 'auto' : 'hidden',
+                        width: width
                     }}
                     size={size}
                     disabled={disabled}
+                    //@ts-ignore
                     value={value}
                     multiple={true}
                     className={'f-native'}

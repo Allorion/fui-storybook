@@ -26,6 +26,7 @@
 
 .panel-body {
     padding: 15px 40px;
+    width: auto;
 }
 
 .portlet-body .panel-title:last-child, .panel-group.panel-group-accordion .panel-title:last-child, .form-title:last-child {

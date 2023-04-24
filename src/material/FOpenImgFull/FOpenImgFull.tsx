@@ -80,11 +80,12 @@ const FOpenImgFull: FC<IFOpenImgFull> = ({
                                     <div style={{width:'35px', height:'35px'}}>ㅤ</div>
                                 }
                                 <img
+                                    className={'open-full-img'}
                                     src={imagesUrl[selectedImg]}
                                     style={{
                                         objectFit: 'contain',
                                         width: '100%',
-                                        height: '100%',
+                                        maxHeight: '80%',
                                     }}
                                 />
                                 {selectedImg < imagesUrl.length - 1 ?

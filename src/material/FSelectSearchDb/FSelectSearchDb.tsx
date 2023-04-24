@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useState} from "react";
+import './FSelectSearchDb.css'
 
 export interface IFSelectSearchDb {
     label?: string
     st?: React.CSSProperties,
     selectedOpt: any
     value?: Object | undefined
-    optionLabel?: string
     optArray: any
     fetchingFc: any
     fullWidth?: boolean,
@@ -20,7 +20,6 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
         value,
         st,
         label,
-        optionLabel,
         optArray,
         fetchingFc,
         selectedOpt,
@@ -54,7 +53,6 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
 
     let style = {
         whiteSpace: 'nowrap',
-        overflow: 'hidden',
         textOverflow: 'ellipsis',
         width: 'fit-content'
     }
@@ -77,7 +75,6 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
                 {label &&
                     <label className="control-label with-offset" style={{
                         whiteSpace: 'nowrap',
-                        overflow: 'hidden',
                         textOverflow: 'ellipsis'
                     }}>
                         {label}
@@ -96,7 +93,9 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
                     className="form-control input-select-search"
                     onFocus={() => {
                         // @ts-ignore
-                        if (value === undefined || value[optionLabel] === '') {
+                        if (arrObj?.length !== 0) {
+                            setFlag(true)
+                        } else if (value === undefined) {
                             setFlag(false)
                         } else {
                             setFlag(true)
@@ -120,11 +119,11 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
                         arrObj.slice(0, 10).map((opt, index) => (
                             <option
                                 key={index}
-                                onClick={() => {
+                                onClick={(e) => {
                                     selectedOpt(opt)
                                     setFlag(false)
                                     // @ts-ignore
-                                    setTextValue(opt[optionLabel])
+                                    setTextValue(e.target.text)
                                 }}
                             >
                                 {optArray(opt)}

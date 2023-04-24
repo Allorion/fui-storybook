@@ -4,9 +4,12 @@
     gap: 4px;
 }
 
+.f-native-label {
+    padding-left: 11px;
+}
+
 .f-form-native .f-native {
     min-width: 120px;
-    max-width: 300px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     appearance: none;
     user-select: none;
