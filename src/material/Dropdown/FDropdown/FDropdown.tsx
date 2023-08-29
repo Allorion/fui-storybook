@@ -1,0 +1,53 @@
+import React, {FC} from "react";
+import './FDropdown.css'
+import {FButton} from "fui-material";
+
+export interface IFDropdown {
+    label?: React.ReactChild | React.ReactNode,
+    children?: React.ReactChild | React.ReactNode,
+    variant?: 'contained' | 'default'
+    color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
+    size?: 'btn-lg' | 'btn-sm' | 'btn-xs'
+    disabled?: boolean
+    st?: React.CSSProperties,
+    className?: string
+    id?: string,
+}
+
+const FDropdown: FC<IFDropdown> = ({
+                                       label,
+                                       variant = 'contained',
+                                       color = 'primary',
+                                       size = 'btn-sm',
+                                       disabled,
+                                       st,
+                                       className,
+                                       id,
+                                       children
+                                   }) => {
+
+    return (
+        <React.Fragment>
+            <div className="f-dropdown">
+                <FButton
+                    variant={variant}
+                    color={color}
+                    size={size}
+                    disabled={disabled}
+                    st={st}
+                    className={className}
+                    id={id}
+                >
+                    {label}
+                </FButton>
+                <div className="f-dropdown-paper">
+                    <ul className={'f-dropdown-content'}>
+                        {children}
+                    </ul>
+                </div>
+            </div>
+        </React.Fragment>
+    )
+}
+
+export default FDropdown
