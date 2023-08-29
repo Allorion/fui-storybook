@@ -14,6 +14,9 @@ export interface IFTextArea {
     id?: string,
     fullWidth?: boolean,
     onChange?: React.ChangeEventHandler<HTMLTextAreaElement> | undefined,
+    onClick?:  React.MouseEventHandler<HTMLTextAreaElement> | undefined
+    onFocus?: React.FocusEventHandler<HTMLTextAreaElement> | undefined,
+
 }
 
 const FTextArea: FC<IFTextArea> = (
@@ -31,6 +34,8 @@ const FTextArea: FC<IFTextArea> = (
         id,
         fullWidth,
         onChange,
+        onClick,
+        onFocus,
     }
 ) => {
 
@@ -50,6 +55,8 @@ const FTextArea: FC<IFTextArea> = (
                         </label>
                     }
                     <textarea
+                        onClick={onClick}
+                        onFocus={onFocus}
                         cols={cols}
                         rows={rows}
                         disabled={disabled}

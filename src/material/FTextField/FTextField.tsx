@@ -1,27 +1,28 @@
 import React, {FC} from "react";
-import {FProgress, FStack} from "../index";
+import {FStack} from "../index";
 import "./FTextField.css"
 
 export interface IFTextField {
-    label?: string
+    label?: string,
     st?: React.CSSProperties,
-    value?: string | number | readonly string[] | undefined
-    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password'
-    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined
-    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined
-    fullWidth?: boolean
-    disabled?: boolean
-    readOnly?: boolean | undefined
-    defaultValue?: string | number | readonly string[] | undefined
-    errText?: string[]
-    helpText?: string
-    onInput?: React.FormEventHandler<HTMLInputElement> | undefined
-    id?: string
-    className?: string
+    value?: string | number | readonly string[] | undefined,
+    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
+    type?: 'text' | 'number' | 'email' | 'tel' | 'password',
+    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
+    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
+    fullWidth?: boolean,
+    disabled?: boolean,
+    readOnly?: boolean | undefined,
+    defaultValue?: string | number | readonly string[] | undefined,
+    errText?: string[],
+    helpText?: string,
+    onInput?: React.FormEventHandler<HTMLInputElement> | undefined,
+    id?: string,
+    className?: string,
     load?: boolean,
-    min?: number
-    max?: number
+    min?: number,
+    max?: number,
+    placeholder?: string | undefined
 }
 
 const FTextField: FC<IFTextField> = (
@@ -39,13 +40,13 @@ const FTextField: FC<IFTextField> = (
         errText,
         helpText,
         onInput,
-
         st,
         id,
         className,
         load = false,
         min,
         max,
+        placeholder,
     }
 ) => {
 
@@ -90,6 +91,7 @@ const FTextField: FC<IFTextField> = (
                 }
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <input
+                        placeholder={placeholder}
                         style={{
                             borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
                         }}

@@ -13,7 +13,8 @@ export interface IFSelect {
     disabled?: boolean
     defaultValue?: string | number | readonly string[] | undefined,
     id?: string,
-    className?: string
+    className?: string,
+    load?: boolean,
 }
 
 const FSelect: FC<IFSelect> = ({
@@ -28,7 +29,8 @@ const FSelect: FC<IFSelect> = ({
                                    disabled,
                                    defaultValue,
                                    id,
-                                   className
+                                   className,
+                                   load = false
                                }) => {
 
     return (
@@ -54,18 +56,25 @@ const FSelect: FC<IFSelect> = ({
                 >
                     {label}
                 </label>
-                <select
-                    disabled={disabled}
-                    style={st}
-                    className="form-control"
-                    onChange={onChange}
-                    value={value}
-                    multiple={multiple}
-                    size={size}
-                    defaultValue={defaultValue}
-                >
-                    {children}
-                </select>
+                <div className={`${load ? 'ui left icon input loading' : ''}`}>
+                    <select
+                        disabled={disabled || load}
+                        style={st}
+                        className="form-control"
+                        onChange={onChange}
+                        value={load ? undefined : value}
+                        multiple={multiple}
+                        size={size}
+                        defaultValue={defaultValue}
+                    >
+                        {!load &&
+                            children
+                        }
+                    </select>
+                    {load &&
+                        <i className="search icon"></i>
+                    }
+                </div>
             </div>
         </React.Fragment>
     )

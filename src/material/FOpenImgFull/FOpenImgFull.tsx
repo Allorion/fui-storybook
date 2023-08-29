@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
-import {FStack, FCloseIcon, FDialog, FArrowIcon} from "../index";
+import {FStack, FDialog} from "../index";
 import './FOpenImgFull.css'
+import {FArrowIcon, FCloseIcon} from "../../icons";
 
 export interface IFOpenImgFull {
     id?: string,

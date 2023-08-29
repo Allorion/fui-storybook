@@ -11,6 +11,9 @@ export interface IFFullDateField {
     readOnly?: boolean,
     id?: string,
     className?: string
+    onkeydown?: React.KeyboardEventHandler<HTMLInputElement> | undefined,
+    min?: string | undefined,
+    max?: string | undefined,
 }
 
 const FFullDateField: FC<IFFullDateField> = (
@@ -22,7 +25,10 @@ const FFullDateField: FC<IFFullDateField> = (
         fullWidth,
         defaultValue,
         disabled,
-        readOnly
+        readOnly,
+        onkeydown,
+        min,
+        max,
     }
 ) => {
 
@@ -51,6 +57,9 @@ const FFullDateField: FC<IFFullDateField> = (
                     </label>
                 }
                 <input
+                    min={min}
+                    max={max}
+                    onKeyDown={onkeydown}
                     readOnly={readOnly}
                     disabled={disabled}
                     required
