@@ -20,7 +20,7 @@ export interface IFButtonFile {
     direction?: "row" | "row-reverse" | "column" | "column-reverse" | undefined
 }
 
-const FButton = (
+const FButtonFile = (
     {
         children,
         variant = 'contained',
@@ -42,7 +42,7 @@ const FButton = (
 
     const fileRef = useRef();
     const [files, setFiles] = useState<[]>([]);
-
+    // console.log(files)
     if (fullWidth) {
         if (st === undefined) {
             st = {
@@ -96,6 +96,8 @@ const FButton = (
                         files.map((opt, index) => {
                             return (
                                 <span
+                                    // @ts-ignore
+                                    key={`file-${opt.name}-${Math.round(+opt.size / 1024)}}`}
                                     className="tag tag-default tag-file tag-block"
                                     style={{
                                         width: 'fit-content',
@@ -127,6 +129,16 @@ const FButton = (
                                                  //@ts-ignore
                                                  setFiles(arFiles)
 
+                                                 if (arFiles.length === 0) {
+                                                     // @ts-ignore
+                                                     fileRef.current.value = null;
+                                                     // @ts-ignore
+                                                     onChange(null)
+                                                 } else {
+                                                     // @ts-ignore
+                                                     onChange(arFiles)
+                                                 }
+
                                              }}
                                         >
                                             <span className="top"></span>
@@ -142,4 +154,4 @@ const FButton = (
     )
 }
 
-export default FButton
+export default FButtonFile
