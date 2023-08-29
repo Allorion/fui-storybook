@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
-import {FCloseIcon, FStack} from "../index";
+import {FStack} from "../index";
+import {FCloseIcon} from "../../icons";
 
 export interface IFFile {
     id?: string,

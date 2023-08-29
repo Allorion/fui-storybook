@@ -1,6 +1,9 @@
 import React, {FC} from "react";
-import './FDropdown.css'
-import {FButton} from "fui-material";
+import '../statick/FDropdown.css'
+import {FButton, FStack} from "../../index";
+
+// @ts-ignore
+import downArrow from '../statick/down-arrow.png'
 
 export interface IFDropdown {
     label?: React.ReactChild | React.ReactNode,
@@ -38,7 +41,10 @@ const FDropdown: FC<IFDropdown> = ({
                     className={className}
                     id={id}
                 >
-                    {label}
+                    <FStack direction={'row'} spacing={1}>
+                        {label}
+                        <img src={downArrow} style={{width: '16px'}}/>
+                    </FStack>
                 </FButton>
                 <div className="f-dropdown-paper">
                     <ul className={'f-dropdown-content'}>

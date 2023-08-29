@@ -21,7 +21,7 @@ Default.args = {
     defaultChecked: true,
     checked: true,
     label: 'Checkbox',
-    onClick: () => alert('Hello World!'),
+    onChange: () => alert('Hello World!'),
     disabled: false
 };
 

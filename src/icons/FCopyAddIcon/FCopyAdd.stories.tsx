@@ -2,19 +2,18 @@ import React from 'react';
 
 import {ComponentMeta, Story} from '@storybook/react';
 
-import {IFCopyAdd} from "./FCopyAdd";
-import FCopyAdd from "./FCopyAdd";
 import "bootstrap/dist/css/bootstrap.css"
 import {FStack} from "../../material";
+import FCopyAddIcon, {IFCopyAddIcon} from "./FCopyAdd";
 
 export default {
-    title: 'FMaterial UI-Kit/FCopyAdd',
-    comment: FCopyAdd,
-} as ComponentMeta<typeof FCopyAdd>;
+    title: 'FMaterial UI-Kit/FCopyAddIconIcon',
+    comment: FCopyAddIcon,
+} as ComponentMeta<typeof FCopyAddIcon>;
 
-const Template: Story<IFCopyAdd> = (args) => {
+const Template: Story<IFCopyAddIcon> = (args) => {
     return (
-        <FCopyAdd {...args}/>
+        <FCopyAddIcon {...args}/>
     )
 }
 
@@ -30,16 +29,16 @@ Default.args = {
     }
 }
 
-export const ColorContained: Story<IFCopyAdd> = () => (
+export const ColorContained: Story<IFCopyAddIcon> = () => (
     <FStack spacing={2} direction={'row'}>
-        <FCopyAdd color={'primary'}/>
-        <FCopyAdd color={'secondary'}/>
-        <FCopyAdd color={'success'}/>
-        <FCopyAdd color={'danger'}/>
-        <FCopyAdd color={'warning'}/>
-        <FCopyAdd color={'info'}/>
-        <FCopyAdd color={'light'}/>
-        <FCopyAdd color={'dark'}/>
-        <FCopyAdd color={'link'}/>
+        <FCopyAddIcon color={'primary'}/>
+        <FCopyAddIcon color={'secondary'}/>
+        <FCopyAddIcon color={'success'}/>
+        <FCopyAddIcon color={'danger'}/>
+        <FCopyAddIcon color={'warning'}/>
+        <FCopyAddIcon color={'info'}/>
+        <FCopyAddIcon color={'light'}/>
+        <FCopyAddIcon color={'dark'}/>
+        <FCopyAddIcon color={'link'}/>
     </FStack>
 )

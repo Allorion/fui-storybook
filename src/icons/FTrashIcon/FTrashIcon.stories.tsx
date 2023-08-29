@@ -5,7 +5,7 @@ import {ComponentMeta, Story} from '@storybook/react';
 import {IFTrashIcon} from "./FTrashIcon";
 import FTrashIcon from "./FTrashIcon";
 import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../index";
+import {FStack} from "../../material";
 
 export default {
     title: 'FMaterial UI-Kit/FTrashIcon',

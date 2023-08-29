@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../material/statick/Colors.css"
 
-export interface IFCopyAdd {
+export interface IFUnlinkIcon {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
     size?: number
     st?: React.CSSProperties,
@@ -10,21 +10,29 @@ export interface IFCopyAdd {
     handleClick?: () => void,
 }
 
-const FCopyAdd = ({color = 'dark', size = 30, st, id, className, handleClick}: IFCopyAdd) => {
+const FUnlinkIcon = ({color = 'dark', size = 30, st, id, className, handleClick}: IFUnlinkIcon) => {
     return (
         <svg
             width={size}
             style={st}
             className={`bi bi-pencil ${color} ${className !== undefined ? className : ''}`}
-            viewBox="0 0 32 32"
+            viewBox="-0.5 0 25 25"
             onClick={handleClick}
             id={id}
+            fill={'none'}
         >
-            <path d="M27.2,8.22H23.78V5.42A3.42,3.42,0,0,0,20.36,2H5.42A3.42,3.42,0,0,0,2,5.42V20.36a3.42,3.42,0,0,0,3.42,3.42h2.8V27.2A2.81,2.81,0,0,0,11,30H27.2A2.81,2.81,0,0,0,30,27.2V11A2.81,2.81,0,0,0,27.2,8.22ZM5.42,21.91a1.55,1.55,0,0,1-1.55-1.55V5.42A1.54,1.54,0,0,1,5.42,3.87H20.36a1.55,1.55,0,0,1,1.55,1.55v2.8H11A2.81,2.81,0,0,0,8.22,11V21.91ZM28.13,27.2a.93.93,0,0,1-.93.93H11a.93.93,0,0,1-.93-.93V11a.93.93,0,0,1,.93-.93H27.2a.93.93,0,0,1,.93.93Z"/>
-            <path d="M24.09,18.18H20v-4a.93.93,0,1,0-1.86,0v4h-4a.93.93,0,0,0,0,1.86h4v4.05a.93.93,0,1,0,1.86,0V20h4.05a.93.93,0,1,0,0-1.86Z"/>
+            <path d="M9.23993 17.55L7.95993 18.84C7.33993 19.47 6.51992 19.79 5.69992 19.79C4.87992 19.79 4.05994 19.47 3.43994 18.84C2.18994 17.58 2.18994 15.54 3.43994 14.29L4.70993 13.02L6.11993 11.6L8.82993 8.86" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.82996 3.86V6.86" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5.32996 5.22L6.82996 7.81" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.23993 17.55L7.95993 18.84C7.33993 19.47 6.51992 19.79 5.69992 19.79C4.87992 19.79 4.05994 19.47 3.43994 18.84C2.18994 17.58 2.18994 15.54 3.43994 14.29L4.70993 13.02L6.11993 11.6L8.82993 8.86" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.7599 7.45L16.0399 6.16C16.6599 5.53 17.4799 5.21 18.2999 5.21C19.1199 5.21 19.9399 5.53 20.5599 6.16C21.8099 7.42 21.8099 9.46 20.5599 10.71L19.2899 11.98L17.8799 13.4L15.1699 16.14" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.33 5.22L10.83 7.81" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.1699 21.14V18.14" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.6699 19.79L17.1699 17.19" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.6699 19.79L13.1699 17.19" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 
         </svg>
     );
 };
 
-export default FCopyAdd;
+export default FUnlinkIcon;

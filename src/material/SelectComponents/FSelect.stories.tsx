@@ -55,6 +55,12 @@ FullWidth.args = {
     fullWidth: true
 };
 
+export const Load = Template.bind({});
+
+Load.args = {
+    load: true
+};
+
 export const Size = Template.bind({});
 
 Size.args = {
@@ -101,7 +107,5 @@ export const SelectItemDisabled = SelectItem.bind({});
 SelectItemDisabled.args = {
     disabled: true
 };
-
-
 
 

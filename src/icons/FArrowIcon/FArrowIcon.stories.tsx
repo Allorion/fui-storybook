@@ -1,7 +1,7 @@
 import React from 'react';
 import {ComponentMeta, Story} from '@storybook/react';
 import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../index";
+import {FStack} from "../../material";
 import FArrowIcon, {IFArrowIcon} from "./FArrowIcon";
 
 export default {

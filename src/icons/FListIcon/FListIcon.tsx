@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../statick/Colors.css"
+import "../../material/statick/Colors.css"
 
 export interface IFListIcon {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'

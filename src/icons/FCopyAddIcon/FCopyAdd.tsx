@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../material/statick/Colors.css"
 
-export interface IFCopyAdd {
+export interface IFCopyAddIcon {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
     size?: number
     st?: React.CSSProperties,
@@ -10,7 +10,7 @@ export interface IFCopyAdd {
     handleClick?: () => void,
 }
 
-const FCopyAdd = ({color = 'dark', size = 30, st, id, className, handleClick}: IFCopyAdd) => {
+const FCopyAddIcon = ({color = 'dark', size = 30, st, id, className, handleClick}: IFCopyAddIcon) => {
     return (
         <svg
             width={size}
@@ -27,4 +27,4 @@ const FCopyAdd = ({color = 'dark', size = 30, st, id, className, handleClick}: I
     );
 };
 
-export default FCopyAdd;
+export default FCopyAddIcon;

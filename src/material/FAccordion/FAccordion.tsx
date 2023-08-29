@@ -7,7 +7,8 @@ export interface IFAccordion {
     title?: string,
     id?: string,
     className?: string,
-    st?: React.CSSProperties
+    st?: React.CSSProperties,
+    defaultOpen?: boolean
 }
 
 const FAccordion: FC<IFAccordion> = ({
@@ -16,13 +17,14 @@ const FAccordion: FC<IFAccordion> = ({
                                          children,
                                          id,
                                          className,
-                                         st
+                                         st,
+                                         defaultOpen
                                      }) => {
     return (
         <React.Fragment>
             <div className={`card ${className !== undefined ? className : ''}`} id={id}>
 
-                <details className={variant} style={st}>
+                <details className={`${variant}`} open={defaultOpen} style={st}>
                     <summary className={'fv-accord-title'}>{title}</summary>
                     {children}
                 </details>

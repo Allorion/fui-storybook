@@ -45,17 +45,16 @@ export {default as FFullDateField} from "./FFullDateField"
 
 export {default as FSelectSearchDb} from "./FSelectSearchDb"
 
-export {default as FCloseIcon} from "./FIcons/FCloseIcon"
-export {default as FArrowIcon} from "./FIcons/FArrowIcon"
-export {default as FPlusIcon} from "./FIcons/FPlusIcon"
-export {default as FTrashIcon} from "./FIcons/FTrashIcon"
-export {default as FCheckIcon} from "./FIcons/FCheckIcon"
-export {default as FListIcon} from "./FIcons/FListIcon"
-export {default as FPenIcon} from "./FIcons/FPenIcon"
-export {default as FDownloadIcon} from "./FIcons/FDownloadIcon"
-
 export {default as FTextArea} from "./FTextArea"
 
 export {default as FAlert} from "./FAlert"
 
 export {default as FNative} from "./FNative"
+
+export {default as FTabs} from "./Tabs/FTabs"
+export {default as FTab} from "./Tabs/FTab"
+
+export {default as FDropdown} from "./Dropdown/FDropdown"
+export {default as FDropdownItem} from "./Dropdown/FDropdownItem"
+
+export {default as FSearchBox} from "./FSearchBox"

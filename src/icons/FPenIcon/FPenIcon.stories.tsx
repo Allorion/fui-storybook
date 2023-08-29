@@ -5,10 +5,10 @@ import {ComponentMeta, Story} from '@storybook/react';
 import {IFPenIcon} from "./FPenIcon";
 import FPenIcon from "./FPenIcon";
 import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../index";
+import {FStack} from "../../material";
 
 export default {
-    title: 'FMaterial UI-Kit/FPenIcon',
+    title: 'FMaterial UI-Kit/FCopyAddIcon',
     comment: FPenIcon,
 } as ComponentMeta<typeof FPenIcon>;
 

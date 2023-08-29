@@ -1,1 +1,1 @@
-export { default } from "./FAccordion";
+export { default } from "./FDropdown";

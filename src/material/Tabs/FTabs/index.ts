@@ -1,1 +1,1 @@
-export { default } from "./FTab";
+export { default } from "./FTabs";

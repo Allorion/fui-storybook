@@ -5,7 +5,7 @@ import {ComponentMeta, Story} from '@storybook/react';
 import {IFCheckIcon} from "./FCheckIcon";
 import FCheckIcon from "./FCheckIcon";
 import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../index";
+import {FStack} from "../../material";
 
 export default {
     title: 'FMaterial UI-Kit/FCheckIcon',

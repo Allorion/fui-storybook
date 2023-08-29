@@ -4,23 +4,23 @@ import "bootstrap/dist/css/bootstrap.css"
 
 import {ComponentMeta, Story} from '@storybook/react';
 
-import FDropdown, {IFDropdown} from "./FDropdown";
-import FDropdownItem from "../FDropdownItem";
+import FDropdownItem, {IFDropdownItem} from "./FDropdownItem";
+import FDropdown from "../FDropdown";
 
 
 export default {
-    title: 'FMaterial UI-Kit/FDropdown',
-    comment: FDropdown,
-} as ComponentMeta<typeof FDropdown>;
+    title: 'FMaterial UI-Kit/FDropdownItem',
+    comment: FDropdownItem,
+} as ComponentMeta<typeof FDropdownItem>;
 
-const Template: Story<IFDropdown> = (args) => {
+const Template: Story<IFDropdownItem> = (args) => {
     return (
         <FDropdown
             label={'Выбор'}
         >
-            <FDropdownItem>One</FDropdownItem>
+            <FDropdownItem {...args}>One</FDropdownItem>
             <FDropdownItem>Two</FDropdownItem>
-            <FDropdownItem disabled={true}>Thre</FDropdownItem>
+            <FDropdownItem>Three</FDropdownItem>
         </FDropdown>
     )
 };
@@ -28,16 +28,13 @@ const Template: Story<IFDropdown> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-    label: 'Dropdown',
-    variant: 'contained',
-    color: 'primary',
-    size: 'btn-lg',
+    onClick: () => {},
     disabled: false,
     st: {
         padding: '6px'
     },
-    className: 'class-f-dropdown',
-    id: 'id-f-dropdown',
+    className: 'class-f-dropdown-item',
+    id: 'id-f-dropdown-item',
 };
 
 

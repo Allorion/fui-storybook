@@ -2,17 +2,17 @@ import React from 'react';
 
 import {ComponentMeta, Story} from '@storybook/react';
 
-import {IFCopyAdd} from "./FUnlinkIcon";
+import {IFUnlinkIcon} from "./FUnlinkIcon";
 import FUnlinkIcon from "./FUnlinkIcon";
 import "bootstrap/dist/css/bootstrap.css"
 import {FStack} from "../../material";
 
 export default {
-    title: 'FMaterial UI-Kit/FCopyAddIcon',
+    title: 'FMaterial UI-Kit/FUnlinkIcon',
     comment: FUnlinkIcon,
 } as ComponentMeta<typeof FUnlinkIcon>;
 
-const Template: Story<IFCopyAdd> = (args) => {
+const Template: Story<IFUnlinkIcon> = (args) => {
     return (
         <FUnlinkIcon {...args}/>
     )
@@ -30,7 +30,7 @@ Default.args = {
     }
 }
 
-export const ColorContained: Story<IFCopyAdd> = () => (
+export const ColorContained: Story<IFUnlinkIcon> = () => (
     <FStack spacing={2} direction={'row'}>
         <FUnlinkIcon color={'primary'}/>
         <FUnlinkIcon color={'secondary'}/>

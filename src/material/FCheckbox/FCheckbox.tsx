@@ -3,7 +3,7 @@ import "./Checkbox.css"
 
 export interface IFCheckbox {
     label?: React.ReactChild | React.ReactNode,
-    onClick: React.MouseEventHandler<HTMLInputElement> | undefined
+    onChange: React.ChangeEventHandler<HTMLInputElement> | undefined
     defaultChecked?: boolean | undefined
     className?: string
     id?: string
@@ -15,7 +15,7 @@ export interface IFCheckbox {
 
 const FCheckbox: FC<IFCheckbox> = ({
                                        label,
-                                       onClick,
+                                       onChange,
                                        defaultChecked,
                                        className,
                                        id,
@@ -31,7 +31,7 @@ const FCheckbox: FC<IFCheckbox> = ({
                     <input
                         defaultChecked={defaultChecked}
                         type="checkbox"
-                        onClick={onClick}
+                        onChange={onChange}
                         checked={checked}
                         disabled={disabled}
                     />
