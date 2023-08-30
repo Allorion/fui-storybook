@@ -9,13 +9,14 @@ export interface IFTrashIcon {
     handleClick?: () => void,
 }
 
+
 const FTrashIcon = ({
                         color = "primary",
                         size = 32,
                         st,
                         id,
                         className,
-                        handleClick
+                        handleClick,
                     }: IFTrashIcon
 ) => {
     return (

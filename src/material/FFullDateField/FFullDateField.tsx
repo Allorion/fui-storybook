@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import {FStack} from "../index";
 
 export interface IFFullDateField {
     label?: string
@@ -14,6 +15,9 @@ export interface IFFullDateField {
     onkeydown?: React.KeyboardEventHandler<HTMLInputElement> | undefined,
     min?: string | undefined,
     max?: string | undefined,
+    load?: boolean,
+    errText?: string[],
+    helpText?: string,
 }
 
 const FFullDateField: FC<IFFullDateField> = (
@@ -29,6 +33,9 @@ const FFullDateField: FC<IFFullDateField> = (
         onkeydown,
         min,
         max,
+        load = false,
+        errText,
+        helpText
     }
 ) => {
 
@@ -43,7 +50,7 @@ const FFullDateField: FC<IFFullDateField> = (
 
     return (
         <React.Fragment>
-            <div className="form-group" style={st}>
+            <div className={`form - group ${load ? 'ui left icon input loading' : ''}`} style={st}>
                 {label &&
                     <label
                         className="control-label"
@@ -61,15 +68,48 @@ const FFullDateField: FC<IFFullDateField> = (
                     max={max}
                     onKeyDown={onkeydown}
                     readOnly={readOnly}
-                    disabled={disabled}
+                    disabled={disabled || load}
                     required
                     defaultValue={defaultValue}
-                    value={value}
+                    value={load ? undefined : value}
                     //@ts-ignore
                     onChange={onChange}
                     type='date'
                     className="form-control"
                 />
+                {helpText !== undefined &&
+                    <span
+                        style={{
+                            whiteSpace: 'initial',
+                            color: '#a6a3a3',
+                            fontSize: '12px'
+                        }}
+                    >
+                                    {helpText}
+                                </span>
+                }
+                {errText !== undefined && errText.length > 0 &&
+                    <FStack direction={'column'} st={{paddingLeft: '11px'}}>
+                        {
+                            errText?.map((opt, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        style={{
+                                            whiteSpace: 'initial',
+                                            color: 'red'
+                                        }}
+                                    >
+                                            {opt}
+                                        </span>
+                                )
+                            })
+                        }
+                    </FStack>
+                }
+                {load &&
+                    <i className="search icon"></i>
+                }
             </div>
         </React.Fragment>
     )

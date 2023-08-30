@@ -1,44 +1,43 @@
 import React from 'react';
 
-import {ComponentMeta, Story} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
-import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../material";
-import FCopyAddIcon, {IFCopyAddIcon} from "./FCopyAdd";
+import 'bootstrap/dist/css/bootstrap.css';
+import { FStack } from '../../material';
+import FCopyAddIcon, { IFCopyAddIcon } from './FCopyAdd';
 
 export default {
-    title: 'FMaterial UI-Kit/FCopyAddIconIcon',
-    comment: FCopyAddIcon,
-} as ComponentMeta<typeof FCopyAddIcon>;
+  title: 'FMaterial UI-Kit/FCopyAddIconIcon',
+    tags: ['autodocs'],
+    component: FCopyAddIcon,
+} satisfies Meta<typeof FCopyAddIcon>;
 
-const Template: Story<IFCopyAddIcon> = (args) => {
-    return (
-        <FCopyAddIcon {...args}/>
-    )
-}
+const Template: StoryFn<IFCopyAddIcon> = (args) => {
+  return <FCopyAddIcon {...args} />;
+};
 
 export const Default = Template.bind({});
 
 Default.args = {
-    id: 'pen-icon-id',
-    className: 'pen-icon-className',
-    st: {padding: '20px'},
-    size: 64,
-    handleClick: () => {
-        alert('Клик')
-    }
-}
+  id: 'pen-icon-id',
+  className: 'pen-icon-className',
+  st: { padding: '20px' },
+  size: 64,
+  handleClick: () => {
+    alert('Клик');
+  },
+};
 
-export const ColorContained: Story<IFCopyAddIcon> = () => (
-    <FStack spacing={2} direction={'row'}>
-        <FCopyAddIcon color={'primary'}/>
-        <FCopyAddIcon color={'secondary'}/>
-        <FCopyAddIcon color={'success'}/>
-        <FCopyAddIcon color={'danger'}/>
-        <FCopyAddIcon color={'warning'}/>
-        <FCopyAddIcon color={'info'}/>
-        <FCopyAddIcon color={'light'}/>
-        <FCopyAddIcon color={'dark'}/>
-        <FCopyAddIcon color={'link'}/>
-    </FStack>
-)
+export const ColorContained: StoryFn<IFCopyAddIcon> = () => (
+  <FStack spacing={2} direction={'row'}>
+    <FCopyAddIcon color={'primary'} />
+    <FCopyAddIcon color={'secondary'} />
+    <FCopyAddIcon color={'success'} />
+    <FCopyAddIcon color={'danger'} />
+    <FCopyAddIcon color={'warning'} />
+    <FCopyAddIcon color={'info'} />
+    <FCopyAddIcon color={'light'} />
+    <FCopyAddIcon color={'dark'} />
+    <FCopyAddIcon color={'link'} />
+  </FStack>
+);

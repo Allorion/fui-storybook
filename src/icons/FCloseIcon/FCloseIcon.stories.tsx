@@ -1,27 +1,25 @@
 import React from 'react';
-import {ComponentMeta, Story} from '@storybook/react';
-import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../material";
-import FCloseIcon, {IFCloseIcon} from "./FCloseIcon";
+import { Meta, StoryFn } from '@storybook/react';
+import 'bootstrap/dist/css/bootstrap.css';
+import FCloseIcon, { IFCloseIcon } from './FCloseIcon';
 
 export default {
-    title: 'FMaterial UI-Kit/FUnlinkIcon',
-    comment: FCloseIcon,
-} as ComponentMeta<typeof FCloseIcon>;
+  title: 'FMaterial UI-Kit/FCloseIcon',
+  tags: ['autodocs'],
+  component: FCloseIcon,
+} satisfies Meta<typeof FCloseIcon>;
 
-const Template: Story<IFCloseIcon> = (args) => {
-    return (
-        <FCloseIcon {...args}/>
-    )
-}
+const Template: StoryFn<IFCloseIcon> = (args) => {
+  return <FCloseIcon {...args} />;
+};
 
 export const Default = Template.bind({});
 
 Default.args = {
-    id: 'close-icon-id',
-    className: 'close-icon-className',
-    st: {padding: '20px'},
-    handleClose: () => {
-        alert('Клик')
-    }
-}
+  id: 'close-icon-id',
+  className: 'close-icon-className',
+  st: { padding: '20px' },
+  handleClose: () => {
+    alert('Клик');
+  },
+};

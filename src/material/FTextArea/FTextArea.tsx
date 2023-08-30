@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import {FStack} from "../index";
 
 export interface IFTextArea {
     label?: string
@@ -16,7 +17,9 @@ export interface IFTextArea {
     onChange?: React.ChangeEventHandler<HTMLTextAreaElement> | undefined,
     onClick?:  React.MouseEventHandler<HTMLTextAreaElement> | undefined
     onFocus?: React.FocusEventHandler<HTMLTextAreaElement> | undefined,
-
+    errText?: string[],
+    helpText?: string,
+    load?: boolean,
 }
 
 const FTextArea: FC<IFTextArea> = (
@@ -36,6 +39,9 @@ const FTextArea: FC<IFTextArea> = (
         onChange,
         onClick,
         onFocus,
+        errText,
+        helpText,
+        load,
     }
 ) => {
 
@@ -48,7 +54,7 @@ const FTextArea: FC<IFTextArea> = (
                 className={`control-group ${className !== undefined ? className : ''}`}
                 id={id}
             >
-                <div className="form-group" style={st}>
+                <div className={`${load ? 'ui left icon input loading' : ''} form-group`} style={st}>
                     {label &&
                         <label className="control-label with-offset required">
                             {label}
@@ -59,16 +65,49 @@ const FTextArea: FC<IFTextArea> = (
                         onFocus={onFocus}
                         cols={cols}
                         rows={rows}
-                        disabled={disabled}
+                        disabled={disabled || load}
                         readOnly={readOnly}
                         //@ts-ignore
                         autoComplete={autoComplete}
                         required
-                        value={value}
+                        value={load ? undefined : value}
                         placeholder={placeholder}
                         className="form-control"
                         onChange={onChange}
                     />
+                    {helpText !== undefined &&
+                        <span
+                            style={{
+                                whiteSpace: 'initial',
+                                color: '#a6a3a3',
+                                fontSize: '12px'
+                            }}
+                        >
+                                    {helpText}
+                                </span>
+                    }
+                    {errText !== undefined && errText.length > 0 &&
+                        <FStack direction={'column'} st={{paddingLeft: '11px'}}>
+                            {
+                                errText?.map((opt, index) => {
+                                    return (
+                                        <span
+                                            key={index}
+                                            style={{
+                                                whiteSpace: 'initial',
+                                                color: 'red'
+                                            }}
+                                        >
+                                            {opt}
+                                        </span>
+                                    )
+                                })
+                            }
+                        </FStack>
+                    }
+                    {load &&
+                        <i className="search icon"></i>
+                    }
                 </div>
             </div>
 

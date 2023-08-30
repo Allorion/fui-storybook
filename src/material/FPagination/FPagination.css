@@ -31,7 +31,7 @@
 }
 .pagination-container .pagination-item .arrow::before {
     position: relative;
-    /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+    /* top: 3pt; Uncomponent this to lower the icons as requested in components*/
     content: '';
     /* By using an em scale, the arrows will size with the font */
     display: inline-block;

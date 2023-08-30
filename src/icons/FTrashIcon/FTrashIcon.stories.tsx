@@ -1,27 +1,26 @@
 import React from 'react';
 
-import {ComponentMeta, Story} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import {IFTrashIcon} from "./FTrashIcon";
-import FTrashIcon from "./FTrashIcon";
-import "bootstrap/dist/css/bootstrap.css"
-import {FStack} from "../../material";
+import {IFTrashIcon} from './FTrashIcon';
+import FTrashIcon from './FTrashIcon';
+import 'bootstrap/dist/css/bootstrap.css';
+import {FStack} from '../../material';
 
 export default {
     title: 'FMaterial UI-Kit/FTrashIcon',
-    comment: FTrashIcon,
+    tags: ['autodocs'],
+    component: FTrashIcon,
     argTypes: {
         spacing: {
-            defaultValue: 2
-        }
-    }
-} as ComponentMeta<typeof FTrashIcon>;
+            defaultValue: 2,
+        },
+    },
+} satisfies Meta<typeof FTrashIcon>;
 
-const Template: Story<IFTrashIcon> = (args) => {
-    return (
-        <FTrashIcon {...args}/>
-    )
-}
+const Template: StoryFn<IFTrashIcon> = (args) => {
+    return <FTrashIcon {...args} />;
+};
 
 export const Default = Template.bind({});
 
@@ -31,11 +30,11 @@ Default.args = {
     st: {padding: '20px'},
     size: 64,
     handleClick: () => {
-        alert('Клик')
-    }
-}
+        alert('Клик');
+    },
+};
 
-export const ColorContained: Story<IFTrashIcon> = () => (
+export const ColorContained: StoryFn<IFTrashIcon> = () => (
     <FStack spacing={2} direction={'row'}>
         <FTrashIcon color={'primary'}/>
         <FTrashIcon color={'secondary'}/>
@@ -47,4 +46,4 @@ export const ColorContained: Story<IFTrashIcon> = () => (
         <FTrashIcon color={'dark'}/>
         <FTrashIcon color={'link'}/>
     </FStack>
-)
+);

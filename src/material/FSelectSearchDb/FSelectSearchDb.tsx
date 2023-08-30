@@ -1,5 +1,6 @@
 import React, {FC, useEffect, useState} from "react";
 import './FSelectSearchDb.css'
+import {FStack} from "../index";
 
 export interface IFSelectSearchDb {
     label?: string
@@ -13,6 +14,9 @@ export interface IFSelectSearchDb {
     className?: string,
     disabled?: boolean
     readOnly?: boolean,
+    load?: boolean,
+    errText?: string[],
+    helpText?: string,
 }
 
 const FSelectSearchDb: FC<IFSelectSearchDb> = (
@@ -27,7 +31,10 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
         id,
         className,
         disabled,
-        readOnly
+        readOnly,
+        load = false,
+        errText,
+        helpText,
     }
 ) => {
 
@@ -71,7 +78,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
     // @ts-ignore
     return (
         <React.Fragment>
-            <div className={`form-group ${className !== undefined ? className : ''}`} style={st} id={id}>
+            <div className={`form-group ${className !== undefined ? className : ''} ${load ? 'ui left icon input loading' : ''}`} style={st} id={id}>
                 {label &&
                     <label className="control-label with-offset" style={{
                         whiteSpace: 'nowrap',
@@ -82,12 +89,12 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
                 }
                 <input
                     readOnly={readOnly}
-                    disabled={disabled}
+                    disabled={disabled || load}
                     required
                     type="text"
                     list="cars"
                     //@ts-ignore
-                    value={textValue}
+                    value={load ? undefined : textValue}
                     //@ts-ignore
                     onChange={onChange}
                     className="form-control input-select-search"
@@ -131,6 +138,39 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
                         ))
                     }
                 </div>
+                {helpText !== undefined &&
+                    <span
+                        style={{
+                            whiteSpace: 'initial',
+                            color: '#a6a3a3',
+                            fontSize: '12px'
+                        }}
+                    >
+                                    {helpText}
+                                </span>
+                }
+                {errText !== undefined && errText.length > 0 &&
+                    <FStack direction={'column'} st={{paddingLeft: '11px'}}>
+                        {
+                            errText?.map((opt, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        style={{
+                                            whiteSpace: 'initial',
+                                            color: 'red'
+                                        }}
+                                    >
+                                            {opt}
+                                        </span>
+                                )
+                            })
+                        }
+                    </FStack>
+                }
+                {load &&
+                    <i className="search icon"></i>
+                }
             </div>
         </React.Fragment>
     )

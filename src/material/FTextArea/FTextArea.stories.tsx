@@ -1,43 +1,58 @@
 import React from 'react';
 
-import {ComponentMeta, Story} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
-import FTextArea, {IFTextArea} from "./FTextArea";
+import FTextArea, { IFTextArea } from './FTextArea';
 
 export default {
-    title: 'FMaterial UI-Kit/FTextArea',
-    comment: FTextArea,
-} as ComponentMeta<typeof FTextArea>;
+  title: 'FMaterial UI-Kit/FTextArea',
+  tags: ['autodocs'],
+  component: FTextArea,
+} satisfies Meta<typeof FTextArea>;
 
-const Template: Story<IFTextArea> = (args) => <FTextArea {...args}/>
+const Template: StoryFn<IFTextArea> = (args) => <FTextArea {...args} />;
 
 export const Default = Template.bind({});
 
 Default.args = {
-    className: 'text-area-className',
-    id: 'text-area-id',
-    st: {padding: '20px'},
-    label: 'FTextArea',
-    placeholder: 'Тут должен быть текст',
-    cols: 3,
-    rows: 5,
-    autoComplete: true
+  className: 'text-area-className',
+  id: 'text-area-id',
+  st: { padding: '20px' },
+  label: 'FTextArea',
+  placeholder: 'Тут должен быть текст',
+  cols: 3,
+  rows: 5,
+  autoComplete: true,
 };
 
 export const Disabled = Template.bind({});
 
 Disabled.args = {
-    disabled: true
+  disabled: true,
 };
 
 export const ReadOnly = Template.bind({});
 
 ReadOnly.args = {
-    readOnly: true
+  readOnly: true,
 };
 
 export const FullWidth = Template.bind({});
 
 FullWidth.args = {
-    fullWidth: true
+  fullWidth: true,
 };
+
+export const Load = Template.bind({});
+
+Load.args = {
+  load: true,
+};
+
+export const ErrText: StoryFn<IFTextArea> = () => (
+  <FTextArea fullWidth={true} errText={['Первая ошибка', 'Вторая ошибка']} label={'Error Text'} />
+);
+
+export const HelpText: StoryFn<IFTextArea> = () => (
+  <FTextArea fullWidth={true} helpText={'Текст помощи'} />
+);

@@ -1,5 +1,6 @@
 import React, {FC} from "react";
 import "./FSelect.css"
+import {FStack} from "../../index";
 
 export interface IFSelect {
     label?: string
@@ -15,6 +16,8 @@ export interface IFSelect {
     id?: string,
     className?: string,
     load?: boolean,
+    errText?: string[],
+    helpText?: string,
 }
 
 const FSelect: FC<IFSelect> = ({
@@ -30,7 +33,9 @@ const FSelect: FC<IFSelect> = ({
                                    defaultValue,
                                    id,
                                    className,
-                                   load = false
+                                   load = false,
+                                   errText,
+                                   helpText,
                                }) => {
 
     return (
@@ -59,7 +64,7 @@ const FSelect: FC<IFSelect> = ({
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <select
                         disabled={disabled || load}
-                        style={st}
+                        style={Object.assign({}, st, {borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'})}
                         className="form-control"
                         onChange={onChange}
                         value={load ? undefined : value}
@@ -71,6 +76,36 @@ const FSelect: FC<IFSelect> = ({
                             children
                         }
                     </select>
+                    {helpText !== undefined &&
+                        <span
+                            style={{
+                                whiteSpace: 'initial',
+                                color: '#a6a3a3',
+                                fontSize: '12px'
+                            }}
+                        >
+                                    {helpText}
+                                </span>
+                    }
+                    {errText !== undefined && errText.length > 0 &&
+                        <FStack direction={'column'} st={{paddingLeft: '11px'}}>
+                            {
+                                errText?.map((opt, index) => {
+                                    return (
+                                        <span
+                                            key={index}
+                                            style={{
+                                                whiteSpace: 'initial',
+                                                color: 'red'
+                                            }}
+                                        >
+                                            {opt}
+                                        </span>
+                                    )
+                                })
+                            }
+                        </FStack>
+                    }
                     {load &&
                         <i className="search icon"></i>
                     }
