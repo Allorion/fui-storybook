@@ -21,7 +21,7 @@ const FDropdownItem: FC<IFDropdownItem> = ({
     return (
         <React.Fragment>
             <li
-                className={`${className !== undefined ? className : ''} ${disabled ? 'disabled' : ''}`}
+                className={`f-dropdown-link ${className !== undefined ? className : ''} ${disabled ? 'disabled' : ''}`}
                 id={id}
                 style={st}
                 onClick={onClick}

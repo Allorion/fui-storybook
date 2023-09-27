@@ -4,7 +4,7 @@ import {FStack} from "../index";
 export interface IFFullDateField {
     label?: string
     st?: React.CSSProperties,
-    value?: string | undefined
+    value?: string | number | undefined | null
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
     fullWidth?: boolean
     defaultValue?: string | number | readonly string[] | undefined
@@ -18,6 +18,8 @@ export interface IFFullDateField {
     load?: boolean,
     errText?: string[],
     helpText?: string,
+    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
+    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined
 }
 
 const FFullDateField: FC<IFFullDateField> = (
@@ -35,7 +37,9 @@ const FFullDateField: FC<IFFullDateField> = (
         max,
         load = false,
         errText,
-        helpText
+        helpText,
+        onBlur,
+        onFocus
     }
 ) => {
 
@@ -47,6 +51,14 @@ const FFullDateField: FC<IFFullDateField> = (
     }
 
     st = Object.assign({}, st, style);
+
+    if (typeof value === 'number') {
+        value = new Date().toISOString().split('T')[0]
+    }
+
+    if (value === undefined || value === null) {
+        value = ''
+    }
 
     return (
         <React.Fragment>
@@ -68,6 +80,8 @@ const FFullDateField: FC<IFFullDateField> = (
                     max={max}
                     onKeyDown={onkeydown}
                     readOnly={readOnly}
+                    onBlur={onBlur}
+                    onFocus={onFocus}
                     disabled={disabled || load}
                     required
                     defaultValue={defaultValue}

@@ -12,6 +12,7 @@ export default {
     tags: ['autodocs'],
     component: FTrashIcon,
     argTypes: {
+        // @ts-ignore
         spacing: {
             defaultValue: 2,
         },

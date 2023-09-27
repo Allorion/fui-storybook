@@ -31,7 +31,7 @@ const FDropdown: FC<IFDropdown> = ({
 
     return (
         <React.Fragment>
-            <div className="f-dropdown">
+            <div className={'f-dropdown'}>
                 <FButton
                     variant={variant}
                     color={color}
@@ -40,16 +40,17 @@ const FDropdown: FC<IFDropdown> = ({
                     st={st}
                     className={className}
                     id={id}
+                    onClick={() => {
+                        document.getElementsByClassName('#heading');
+                    }}
                 >
                     <FStack direction={'row'} spacing={1}>
                         {label}
-                        <img src={downArrow} style={{width: '16px'}}/>
+                        <img className={'f-dropdown-down-arrow'} src={downArrow}/>
                     </FStack>
                 </FButton>
-                <div className="f-dropdown-paper">
-                    <ul className={'f-dropdown-content'}>
-                        {children}
-                    </ul>
+                <div className="f-dropdown-content">
+                    {children}
                 </div>
             </div>
         </React.Fragment>

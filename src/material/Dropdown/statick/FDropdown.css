@@ -1,105 +1,49 @@
 .f-dropdown {
     position: relative;
     display: inline-block;
+    padding: 16px;
 }
 
-.f-dropdown-paper {
-    display: block;
-    position: absolute;
-    opacity: 0;
-    transform: none;
-    transition: opacity 270ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 180ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    border-radius: 6px;
-    margin-top: 8px;
-    min-width: 180px;
-    color: rgb(55, 65, 81);
-    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-
-    background-color: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.87);
-    min-height: 16px;
-    outline: 0px;
-    z-index: 9999999;
-}
-
-.f-dropdown-paper ul {
-    padding: 4px 0px;
-    list-style: none;
-    margin: 0px;
-    padding: 8px 0px;
-    position: relative;
-    outline: 0px;
-}
-
-.f-dropdown-paper ul li {
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    position: relative;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    background-color: transparent;
-    outline: 0;
-    border: 0;
-    margin: 0;
-    border-radius: 0;
-    padding: 0;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    vertical-align: middle;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    color: inherit;
-    font-family: "SF UI Display", sans-serif;
-    font-weight: 500;
-    word-break: normal;
-    line-height: 1.2;
-    letter-spacing: 0.00938em;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+.f-dropdown-content {
     display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    min-height: 30px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    box-sizing: border-box;
-    white-space: nowrap;
-    padding-left: 16px;
-    padding-right: 16px;
+    flex-direction: column;
+    position: absolute;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    min-width: 200px;
+    max-width: 400px;
+    z-index: 3;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(-40%);
+    transition: transform 1s linear;
 }
 
-.f-dropdown button:focus + .f-dropdown-paper {
+.f-dropdown-link {
+    padding: 8px;
+    color: #656565;
+    font-size: 14px;
+    border-bottom: 1px solid #C4C4C4;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.f-dropdown:hover .f-dropdown-content {
     opacity: 1;
+    transition: all 1.5s ease;
+    transform: translateY(0);
 }
 
-.f-dropdown-paper ul li.disabled {
-    pointer-events: none;
-    opacity: 0.6;
+.f-dropdown-link:last-child {
+    border-bottom: 0;
 }
-.f-dropdown-paper ul li:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+
+.f-dropdown-link:hover {
+    color: #2F80ED;
+}
+
+.f-dropdown-down-arrow {
+    width: 25px;
+    height: 30px;
 }

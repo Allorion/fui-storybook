@@ -7,11 +7,13 @@ import FFilterIcon from './FFilterIcon';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FStack } from '../../material';
 
+
 export default {
   title: 'FMaterial UI-Kit/FFilterIcon',
     tags: ['autodocs'],
     component: FFilterIcon,
   argTypes: {
+    // @ts-ignore
     spacing: {
       defaultValue: 2,
     },

@@ -4,6 +4,7 @@
 
 import React, {FC, useEffect} from "react";
 import "../style/style.css"
+import {FContainer} from "../../index";
 
 export interface IFDialog {
     children?: React.ReactChild | React.ReactNode
@@ -32,22 +33,24 @@ const FDialog: FC<IFDialog> = ({
 
     return (
         <React.Fragment>
-            <div
-                className={`f-dialog ${className !== undefined ? className : ''}`}
-                style={{
-                    display: openAndClose ? 'block' : 'none'
-                }}
-                id={id}
-            >
-                <div className="f-dialog-table">
-                    <div
-                        className="f-dialog-content modal-content"
-                        style={st}
-                    >
-                        {children}
+            <FContainer maxWidth={'container-fluid'}>
+                <div
+                    className={`f-dialog ${className !== undefined ? className : ''}`}
+                    style={{
+                        display: openAndClose ? 'block' : 'none'
+                    }}
+                    id={id}
+                >
+                    <div className="f-dialog-table">
+                        <div
+                            className="f-dialog-content modal-content"
+                            style={Object.assign({}, {maxHeight: '80vh', minWidth: '85%'}, st)}
+                        >
+                            {children}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </FContainer>
         </React.Fragment>
     )
 }

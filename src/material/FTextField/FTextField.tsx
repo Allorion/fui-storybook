@@ -5,7 +5,7 @@ import "./FTextField.css"
 export interface IFTextField {
     label?: string,
     st?: React.CSSProperties,
-    value?: string | number | readonly string[] | undefined,
+    value?: string | number | readonly string[] | undefined | null,
     onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
     type?: 'text' | 'number' | 'email' | 'tel' | 'password',
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
@@ -22,7 +22,7 @@ export interface IFTextField {
     load?: boolean,
     min?: number,
     max?: number,
-    placeholder?: string | undefined
+    placeholder?: string | undefined,
 }
 
 const FTextField: FC<IFTextField> = (
@@ -30,7 +30,7 @@ const FTextField: FC<IFTextField> = (
         label,
         value,
         onChange,
-        type,
+        type = 'text',
         onBlur,
         onFocus,
         fullWidth,
@@ -75,6 +75,14 @@ const FTextField: FC<IFTextField> = (
     }
     st = Object.assign({}, st, style);
 
+    if (value === null) {
+        value = ''
+    }
+
+    if (type === 'number' && (value === undefined)) {
+        value = ''
+    }
+
     return (
         <React.Fragment>
             <div
@@ -105,7 +113,7 @@ const FTextField: FC<IFTextField> = (
                         value={value}
                         //@ts-ignore
                         onChange={onChange}
-                        type={type === undefined ? 'text' : type}
+                        type={type}
                         className="form-control"
                         onBlur={onBlur}
                         onFocus={onFocus}
@@ -115,7 +123,7 @@ const FTextField: FC<IFTextField> = (
                             style={{
                                 whiteSpace: 'initial',
                                 color: '#a6a3a3',
-                                    fontSize: '12px'
+                                fontSize: '12px'
                             }}
                         >
                                     {helpText}

@@ -60,24 +60,6 @@ const FSearchBox: FC<IFSearchBox> = ({
                                          variant
                                      }) => {
 
-    if (fullWidth) {
-        if (st === undefined) {
-            st = {
-                width: '100%'
-            }
-        } else {
-            st.width = '100%'
-        }
-    } else {
-        if (st === undefined) {
-            st = {
-                width: 'fit-content'
-            }
-        } else {
-            st.width = 'fit-content'
-        }
-    }
-
     let style = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
@@ -100,7 +82,7 @@ const FSearchBox: FC<IFSearchBox> = ({
                     </label>
                 }
                 <div className={'f-search-box-box'}>
-                    <div className={`${load ? 'ui left icon input loading' : ''}`}>
+                    <div className={`${load ? 'ui left icon input loading' : ''}`} style={{width: fullWidth ? '100%' : 'fit-content'}}>
                         <input
                             id={id}
                             placeholder={placeholder}
@@ -161,6 +143,8 @@ const FSearchBox: FC<IFSearchBox> = ({
                             borderTopLeftRadius: '0',
                             borderBottomLeftRadius: '0',
                             height: '34px',
+                            whiteSpace: 'nowrap',
+                            textAlign: 'center',
                         }}
                         disabled={disabled}
                         onClick={onClick}

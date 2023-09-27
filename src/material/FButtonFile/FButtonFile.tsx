@@ -42,7 +42,7 @@ const FButtonFile = (
 
     const fileRef = useRef();
     const [files, setFiles] = useState<[]>([]);
-    // console.log(files)
+
     if (fullWidth) {
         if (st === undefined) {
             st = {

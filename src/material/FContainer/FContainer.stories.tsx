@@ -14,6 +14,7 @@ export default {
   tags: ['autodocs'],
   component: FContainer,
   argTypes: {
+    // @ts-ignore
     spacing: {
       defaultValue: 2,
     },
