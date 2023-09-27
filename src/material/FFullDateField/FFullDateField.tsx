@@ -53,10 +53,8 @@ const FFullDateField: FC<IFFullDateField> = (
     st = Object.assign({}, st, style);
 
     if (typeof value === 'number') {
-        value = new Date().toISOString().split('T')[0]
-    }
-
-    if (value === undefined || value === null) {
+        value = new Date(value).toISOString().split('T')[0]
+    } else if (value === undefined || value === null) {
         value = ''
     }
 
@@ -85,7 +83,7 @@ const FFullDateField: FC<IFFullDateField> = (
                     disabled={disabled || load}
                     required
                     defaultValue={defaultValue}
-                    value={load ? undefined : value}
+                    value={load ? '' : value}
                     //@ts-ignore
                     onChange={onChange}
                     type='date'
