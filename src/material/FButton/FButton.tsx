@@ -43,10 +43,10 @@ const FButton = (
     } else {
         if (st === undefined) {
             st = {
-                width: "fit-content"
+                width: "initial"
             }
         } else {
-            st.width = "fit-content"
+            st.width = "initial"
         }
     }
 

@@ -1,3 +1,7 @@
+.btn {
+    height: min-content;
+}
+
 .btn-default-primary {
     color: #2F80ED !important;
     background-color: #fff !important;

@@ -38,13 +38,13 @@ const FDropdown: FC<IFDropdown> = ({
                     size={size}
                     disabled={disabled}
                     st={st}
-                    className={className}
+                    className={`f-dropdown-bottom ${className !== undefined ? className : ''}`}
                     id={id}
                     onClick={() => {
                         document.getElementsByClassName('#heading');
                     }}
                 >
-                    <FStack direction={'row'} spacing={1}>
+                    <FStack direction={'row'} spacing={1} justifyContent={"center"} alignItems={'center'}>
                         {label}
                         <img className={'f-dropdown-down-arrow'} src={downArrow}/>
                     </FStack>
