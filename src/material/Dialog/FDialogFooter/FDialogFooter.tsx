@@ -16,7 +16,7 @@ const FDialogFooter: FC<IFDialogFooter> = ({
 
     return (
         <React.Fragment>
-            <div className={'modal-footer'}>
+            <div className={'dialog-footer'}>
                 {children}
             </div>
         </React.Fragment>

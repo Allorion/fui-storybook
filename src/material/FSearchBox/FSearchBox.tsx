@@ -67,6 +67,24 @@ const FSearchBox: FC<IFSearchBox> = ({
     }
     st = Object.assign({}, st, style);
 
+    if (fullWidth) {
+        if (st === undefined) {
+            st = {
+                width: '100%'
+            }
+        } else {
+            st.width = '100%'
+        }
+    } else {
+        if (st === undefined) {
+            st = {
+                width: 'fit-content'
+            }
+        } else {
+            st.width = 'fit-content'
+        }
+    }
+
     return (
         <React.Fragment>
             <div
@@ -82,7 +100,7 @@ const FSearchBox: FC<IFSearchBox> = ({
                     </label>
                 }
                 <div className={'f-search-box-box'}>
-                    <div className={`${load ? 'ui left icon input loading' : ''}`} style={{width: fullWidth ? '100%' : 'fit-content'}}>
+                    <div className={`${load ? 'ui left icon input loading' : ''}`} style={{width: '100%'}}>
                         <input
                             id={id}
                             placeholder={placeholder}

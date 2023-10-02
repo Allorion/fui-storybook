@@ -24,7 +24,7 @@ const FDialogBody: FC<IFDialogBody> = ({
     }
 
     if (scroll) {
-        style['overflowY'] = 'scroll'
+        style['overflowY'] = 'auto'
     }
 
     if (st !== undefined) {
@@ -33,7 +33,7 @@ const FDialogBody: FC<IFDialogBody> = ({
 
     return (
         <React.Fragment>
-            <div className="modal-body" style={style}>
+            <div className="dialog-body" style={style}>
                 {children}
             </div>
         </React.Fragment>

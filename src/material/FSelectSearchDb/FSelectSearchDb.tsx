@@ -1,11 +1,12 @@
 import React, {FC, useEffect, useState} from "react";
 import './FSelectSearchDb.css'
 import {FStack} from "../index";
+import {FArrowIcon} from "../../icons";
 
 export interface IFSelectSearchDb {
     label?: string
     st?: React.CSSProperties,
-    selectedOpt: any
+    selectedOpt: (e: any | undefined) => void
     value?: Object | undefined
     optArray: any
     fetchingFc: any
@@ -17,29 +18,29 @@ export interface IFSelectSearchDb {
     load?: boolean,
     errText?: string[],
     helpText?: string,
+    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
+    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
 }
 
-const FSelectSearchDb: FC<IFSelectSearchDb> = (
-    {
-        value,
-        st,
-        label,
-        optArray,
-        fetchingFc,
-        selectedOpt,
-        fullWidth,
-        id,
-        className,
-        disabled,
-        readOnly,
-        load = false,
-        errText,
-        helpText,
-    }
-) => {
+const FSelectSearchDb: FC<IFSelectSearchDb> = ({
+                                                   value,
+                                                   st,
+                                                   label,
+                                                   optArray,
+                                                   fetchingFc,
+                                                   selectedOpt,
+                                                   fullWidth,
+                                                   id,
+                                                   className,
+                                                   disabled,
+                                                   readOnly,
+                                                   load = false,
+                                                   errText,
+                                                   helpText,
+                                                   onFocus,
+                                                   onBlur,
+                                               }) => {
 
-    // @ts-ignore
-    const [flag, setFlag] = useState<boolean>(false)
     const [textValue, setTextValue] = useState<string>('')
 
     const [arrObj, setArrObj] = useState<any[] | undefined>(undefined)
@@ -49,12 +50,10 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
         if (e.target.value !== '') {
             setTextValue(e.target.value)
             fetchingFc(e.target.value, setArrObj)
-            setFlag(true)
         } else {
             setTextValue('')
             setArrObj(undefined)
             selectedOpt(undefined)
-            setFlag(false)
         }
     }
 
@@ -75,69 +74,61 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
         setTextValue(value);
     }, [value])
 
-    // @ts-ignore
     return (
         <React.Fragment>
-            <div className={`form-group ${className !== undefined ? className : ''} ${load ? 'ui left icon input loading' : ''}`} style={st} id={id}>
+            <div
+                className={`select-search-db ${className !== undefined ? className : ''} ${load ? 'ui left icon input loading' : ''}`}
+                style={st} id={id}>
                 {label &&
-                    <label className="control-label with-offset" style={{
-                        whiteSpace: 'nowrap',
-                        textOverflow: 'ellipsis'
-                    }}>
+                    <label
+                        className="control-label with-offset"
+                        style={{
+                            whiteSpace: 'nowrap',
+                            textOverflow: 'ellipsis'
+                        }}
+                    >
                         {label}
                     </label>
                 }
-                <input
-                    readOnly={readOnly}
-                    disabled={disabled || load}
-                    required
-                    type="text"
-                    list="cars"
-                    //@ts-ignore
-                    value={load ? undefined : textValue}
-                    //@ts-ignore
-                    onChange={onChange}
-                    className="form-control input-select-search"
-                    onFocus={() => {
-                        // @ts-ignore
-                        if (arrObj?.length !== 0) {
-                            setFlag(true)
-                        } else if (value === undefined) {
-                            setFlag(false)
-                        } else {
-                            setFlag(true)
-                        }
-                    }}
-                    onBlur={() => {
-                        if (Object.values(textValue).length === 0) {
-                            setFlag(false)
-                        }
-                    }}
-                />
-                <div
-                    className={'dropdown-select-search'}
-                    style={{
-                        display: !flag ? 'none' : 'block',
-                        width: 'inherit'
-                    }}
-                >
-                    {
-                        arrObj !== undefined && arrObj !== null &&
-                        arrObj.slice(0, 10).map((opt, index) => (
-                            <option
-                                key={index}
-                                onClick={(e) => {
-                                    selectedOpt(opt)
-                                    setFlag(false)
-                                    // @ts-ignore
-                                    setTextValue(e.target.text)
-                                }}
-                            >
-                                {optArray(opt)}
-                            </option>
-                        ))
+                <div className={'select-search-db-input-block'}>
+                    <input
+                        readOnly={readOnly}
+                        disabled={disabled || load}
+                        required
+                        type={'text'}
+                        className="form-control select-search-db-input"
+                        //@ts-ignore
+                        value={load ? undefined : textValue}
+                        //@ts-ignore
+                        onChange={onChange}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
+                    />
+                    {!load &&
+                        <div className={'select-search-db-input-arrow'}>
+                            <FArrowIcon direction={'down'} size={15}/>
+                        </div>
                     }
                 </div>
+                {(!load && arrObj !== undefined && arrObj !== null && arrObj.length > 0) &&
+                    <div className={'select-search-db-dropdown'}>
+                        <FStack direction={'column'} st={{paddingLeft: '11px'}}>
+                            {arrObj.slice(0, 10).map((opt, index) => (
+                                <li
+                                    key={index}
+                                    onClick={(e) => {
+                                        selectedOpt(opt)
+                                        // @ts-ignore
+                                        setTextValue(e.target.text)
+                                    }}
+                                >
+                                    {optArray(opt)}
+                                </li>
+                            ))
+                            }
+                        </FStack>
+                    </div>
+                }
                 {helpText !== undefined &&
                     <span
                         style={{
@@ -169,7 +160,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = (
                     </FStack>
                 }
                 {load &&
-                    <i className="search icon"></i>
+                    <i className="search icon" style={{top: '4px'}}/>
                 }
             </div>
         </React.Fragment>

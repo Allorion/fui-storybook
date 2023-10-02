@@ -33,7 +33,9 @@
     background-color: #6c757d !important;
 }
 .btn-success {
-    background-color: #198754 !important;
+    color: #EFF5F0 !important;
+    background-color: #2E7D32 !important;
+    border-color: #2E7D32 !important;
 }
 .btn-danger {
     background-color: #dc3545 !important;

@@ -1,181 +1,72 @@
 .f-dialog {
+    z-index: 999999;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.65);
-    display: none;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-}
-
-.f-dialog:target {
-    display: none;
-    -webkit-animation: fade .6s;
-    -moz-animation: fade .6s;
-    animation: fade .6s;
-}
-
-.f-dialog-table {
-    justify-content: center;
-    align-items: center;
     display: flex;
-    width: 100%;
-    height: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s;
+}
+
+.f-dialog.active-dialog {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .f-dialog-content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    transform: scale(0.5);
+    transition: 1s;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     /* максимально возможная ширина */
-    margin: 8em 1em 5em 1em;
-    max-width: 100vh;
+    max-width: 80vw;
     max-height: 95vh;
 }
 
+.dialog-body {
+    width: 100%;
+}
+
+.f-dialog-content.active {
+    transform: scale(1);
+}
+
+.f-dialog-content.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.f-dialog-content.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* Заголовок с кнопкой закрытия */
-.f-dialog-container {
+.dialog-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    padding: 8px 16px 8px 16px;
 }
 
-.f-dialog-container div:nth-child(1) {
-    float: left;
+/* Заголовок с кнопкой закрытия */
+.dialog-footer {
+    padding: 16px 8px 8px 8px;
 }
 
-.f-dialog-container div:nth-child(2) {
-    float: right;
-}
-
-.cl-btn-3 {
-    width: 16px;
-    height: 16px;
-    position: relative;
-    transform: rotate(45deg) scale(2);
-}
-
-.cl-btn-3 .top,
-.cl-btn-3 .bot {
-    display: block;
-    background: #337AB7;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    animation-timing-function: cubic-bezier(1, 0, 0, 1);
-    animation-iteration-count: 1;
-}
-
-.cl-btn-3 .top {
-    height: 100%;
-    width: 2px;
-    margin-left: -1px;
-    transform: skewY(45deg);
-    top: 0;
-}
-
-.cl-btn-3 .bot {
-    width: 100%;
-    height: 2px;
-    margin-top: -1px;
-    transform: skewX(-45deg);
-    left: 0;
-}
-
-.cl-btn-3:hover {
-    cursor: pointer;
-}
-
-.cl-btn-3:hover .top {
-    animation: top-out 0.25s forwards, top-in 0.25s forwards 0.25s;
-}
-
-.cl-btn-3:hover .bot {
-    animation: bot-out 0.25s forwards 0.1s, bot-in 0.25s forwards 0.35s;
-}
-
-@-webkit-keyframes top-out {
-    from {
-        top: 0%;
-        height: 100%;
-    }
-    to {
-        top: 100%;
-        height: 0%;
-    }
-}
-
-@keyframes top-out {
-    from {
-        top: 0%;
-        height: 100%;
-    }
-    to {
-        top: 100%;
-        height: 0%;
-    }
-}
-
-@-webkit-keyframes top-in {
-    from {
-        top: -100%;
-        height: 0%;
-    }
-    to {
-        top: 0%;
-        height: 100%;
-    }
-}
-
-@keyframes top-in {
-    from {
-        top: -100%;
-        height: 0%;
-    }
-    to {
-        top: 0%;
-        height: 100%;
-    }
-}
-
-@-webkit-keyframes bot-out {
-    from {
-        left: 0%;
-        width: 100%;
-    }
-    to {
-        left: 100%;
-        width: 0%;
-    }
-}
-
-@keyframes bot-out {
-    from {
-        left: 0%;
-        width: 100%;
-    }
-    to {
-        left: 100%;
-        width: 0%;
-    }
-}
-
-@-webkit-keyframes bot-in {
-    from {
-        left: -100%;
-        width: 0%;
-    }
-    to {
-        left: 0%;
-        width: 100%;
-    }
-}
-
-@keyframes bot-in {
-    from {
-        left: -100%;
-        width: 0%;
-    }
-    to {
-        left: 0%;
-        width: 100%;
-    }
+body.open-dialog {
+    overflow: hidden;
 }

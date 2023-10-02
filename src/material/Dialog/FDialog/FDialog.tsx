@@ -4,53 +4,56 @@
 
 import React, {FC, useEffect} from "react";
 import "../style/style.css"
-import {FContainer} from "../../index";
 
 export interface IFDialog {
-    children?: React.ReactChild | React.ReactNode
     openAndClose: boolean
     id?: string,
     className?: string
-    st?: React.CSSProperties
+    st?: React.CSSProperties,
+    children?: React.ReactChild | React.ReactNode,
+    hide?: boolean
+    closeButtonBackPage?: React.Dispatch<React.SetStateAction<boolean>>,
+    width?: 'xs' | 'md' | 'lg' | 'xxl'
 }
 
 
 const FDialog: FC<IFDialog> = ({
-                                   children,
                                    openAndClose,
+                                   closeButtonBackPage,
+                                   hide,
+                                   children,
                                    id,
                                    className,
-                                   st
+                                   st,
+                                   width = 'lg'
                                }) => {
 
     useEffect(() => {
-        if (openAndClose) {
-            document.body.style.overflow = 'hidden';
+        if (document.getElementsByClassName("active-dialog").length > 0) {
+            document.body.classList.add('open-dialog')
         } else {
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('open-dialog')
         }
     }, [openAndClose])
 
     return (
         <React.Fragment>
-            <FContainer maxWidth={'container-fluid'}>
+            <div
+                className={`${openAndClose ? 'f-dialog active-dialog' : 'f-dialog'} ${className !== undefined ? className : ''}`}
+                onClick={() => closeButtonBackPage && closeButtonBackPage(false)}
+                id={id}
+                style={st}
+            >
                 <div
-                    className={`f-dialog ${className !== undefined ? className : ''}`}
+                    className={`${openAndClose ? 'f-dialog-content active' : 'f-dialog-content'} ${hide ? 'hide' : ''}`}
                     style={{
-                        display: openAndClose ? 'block' : 'none'
+                        width: width === 'xxl' ? '95vw' : width === 'lg' ? '80vw' : width === 'md' ? '65vw' : '50vw'
                     }}
-                    id={id}
+                    onClick={(e) => e.stopPropagation()}
                 >
-                    <div className="f-dialog-table">
-                        <div
-                            className="f-dialog-content modal-content"
-                            style={Object.assign({}, {maxHeight: '80vh', minWidth: '85%'}, st)}
-                        >
-                            {children}
-                        </div>
-                    </div>
+                    {children}
                 </div>
-            </FContainer>
+            </div>
         </React.Fragment>
     )
 }
