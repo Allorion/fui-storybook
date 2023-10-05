@@ -7,7 +7,7 @@ import FTabs, { IFTabs } from './FTabs/FTabs';
 import FTab from './FTab/FTab';
 
 export default {
-  title: 'FMaterial UI-Kit/FTabs',
+  title: 'Components/NAVIGATION/FTabs',
     tags: ['autodocs'],
   component: FTabs,
 } satisfies Meta<typeof FTabs>;

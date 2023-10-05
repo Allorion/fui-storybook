@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { FStack } from '../../material';
 
 export default {
-  title: 'FMaterial UI-Kit/FCopyAddIcon',
+  title: 'Icons/FCopyAddIcon',
     tags: ['autodocs'],
     component: FPenIcon,
 } satisfies Meta<typeof FPenIcon>;

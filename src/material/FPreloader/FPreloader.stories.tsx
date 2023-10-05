@@ -7,7 +7,7 @@ import FPreloader, { IFPreloader } from './FPreloader';
 import { FProgress } from '../index';
 
 export default {
-  title: 'FMaterial UI-Kit/FPreloader',
+  title: 'Components/FEEDBACK/FPreloader',
   tags: ['autodocs'],
   component: FPreloader,
 } satisfies Meta<typeof FPreloader>;

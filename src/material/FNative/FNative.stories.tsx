@@ -9,7 +9,7 @@ import FNative from './FNative';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FNative',
+  title: 'Components/INPUTS/FNative',
     tags: ['autodocs'],
     component: FNative,
 } satisfies Meta<typeof FNative>;

@@ -5,7 +5,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import FRadioButton, { IFRadioButton } from './FRadioButton';
 
 export default {
-  title: 'FMaterial UI-Kit/FRadioButton',
+  title: 'Components/INPUTS/FRadioButton',
   tags: ['autodocs'],
   component: FRadioButton,
 } satisfies Meta<typeof FRadioButton>;

@@ -1,5 +1,7 @@
 import React, {FC} from "react";
 import {FStack} from "../index";
+import '../statick/index.css'
+import FLoadIcon from "../../icons/FLoadIcon";
 
 export interface IFFullDateField {
     label?: string
@@ -82,6 +84,9 @@ const FFullDateField: FC<IFFullDateField> = (
                     onFocus={onFocus}
                     disabled={disabled || load}
                     required
+                    style={{
+                        borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
+                    }}
                     defaultValue={defaultValue}
                     value={load ? '' : value}
                     //@ts-ignore
@@ -120,7 +125,9 @@ const FFullDateField: FC<IFFullDateField> = (
                     </FStack>
                 }
                 {load &&
-                    <i className="search icon"></i>
+                    <div className={'input-load'}>
+                        <FLoadIcon size={10}/>
+                    </div>
                 }
             </div>
         </React.Fragment>

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import FSearchBox, { IFSearchBox } from './FSearchBox';
 
 export default {
-  title: 'FMaterial UI-Kit/FSearchBox',
+  title: 'Components/INPUTS/FSearchBox',
     tags: ['autodocs'],
   component: FSearchBox,
 } satisfies Meta<typeof FSearchBox>;

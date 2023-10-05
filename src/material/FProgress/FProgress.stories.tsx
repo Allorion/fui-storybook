@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import FProgress, { IFProgress } from './FProgress';
 
 export default {
-  title: 'FMaterial UI-Kit/FProgress',
+  title: 'Components/FEEDBACK/FProgress',
   tags: ['autodocs'],
   component: FProgress,
 } satisfies Meta<typeof FProgress>;

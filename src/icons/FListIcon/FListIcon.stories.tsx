@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { FStack } from '../../material';
 
 export default {
-  title: 'FMaterial UI-Kit/FListIcon',
+  title: 'Icons/FListIcon',
     tags: ['autodocs'],
     component: FListIcon,
 } satisfies Meta<typeof FListIcon>;

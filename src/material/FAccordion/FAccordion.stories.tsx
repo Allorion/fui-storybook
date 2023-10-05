@@ -8,7 +8,7 @@ import FAccordion, { IFAccordion } from './FAccordion';
 import { FStack } from '../index';
 
 export default {
-  title: 'FMaterial UI-Kit/FAccordion',
+  title: 'Components/SURFACES/FAccordion',
     tags: ['autodocs'],
     component: FAccordion,
 } satisfies Meta<typeof FAccordion>;

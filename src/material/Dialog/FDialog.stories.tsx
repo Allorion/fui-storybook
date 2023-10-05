@@ -11,7 +11,7 @@ import FDialogFooter from './FDialogFooter';
 import {FButton, FStack} from '../index';
 
 export default {
-    title: 'FMaterial UI-Kit/FDialog',
+    title: 'Components/FEEDBACK/FDialog',
     tags: ['autodocs'],
     component: FDialog,
 } satisfies Meta<typeof FDialog>;
@@ -34,81 +34,7 @@ const Dialog: StoryFn<IFDialog> = (args) => {
             <FDialog {...args} closeButtonBackPage={setOpen}>
                 <FDialogHeader title={'Это диалоговое окно'} handleClose={() => setOpen(false)}/>
                 <FDialogBody scroll={true}>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cum, ea eius
-                        fugit incidunt nulla rerum veniam? A cumque deleniti dignissimos dolores eos excepturi
-                        perferendis praesentium recusandae repudiandae vel.
-                    </p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolor eveniet explicabo laboriosam maxime minus non placeat porro vel veritatis.
                 </FDialogBody>
                 <FDialogFooter>
                     <FStack direction={'row'} spacing={2}>

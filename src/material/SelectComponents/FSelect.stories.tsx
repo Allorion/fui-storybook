@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { IFSelectItem } from './FSelectItem/FSelectItem';
 
 export default {
-  title: 'FMaterial UI-Kit/SelectComponents',
+  title: 'Components/INPUTS/SelectComponents',
     tags: ['autodocs'],
   component: FSelect,
 } satisfies Meta<typeof FSelect>;

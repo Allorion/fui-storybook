@@ -8,7 +8,7 @@ import FTimelineCard from './FTimelineCard/FTimelineCard';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FTimeline',
+  title: 'Components/LAB/FTimeline',
     tags: ['autodocs'],
   component: FTimeline,
 } satisfies Meta<typeof FTimeline>;

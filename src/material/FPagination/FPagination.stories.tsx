@@ -9,7 +9,7 @@ import './FPagination.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FPagination',
+  title: 'Components/NAVIGATION/FPagination',
   tags: ['autodocs'],
   component: FPagination,
 } satisfies Meta<typeof FPagination>;

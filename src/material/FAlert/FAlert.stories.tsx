@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import { Meta, StoryFn } from '@storybook/react';
 
@@ -8,10 +8,10 @@ import FAlert from './FAlert';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import './FAlert-stories.css';
+import {FButton} from "../index";
 
 export default {
-  title: 'FMaterial UI-Kit/FAlert',
+  title: 'Components/FEEDBACK/FAlert',
   tags: ['autodocs'],
   component: FAlert,
   argTypes: {
@@ -27,27 +27,41 @@ export default {
   },
 } satisfies Meta<typeof FAlert>;
 
-const TemplateDefault: StoryFn<IFAlert> = (args) => <FAlert {...args} />;
+const TemplateDefault: StoryFn<IFAlert> = (args) => {
+
+  const [open, setOpen  ] = useState<boolean>(false)
+
+  return (
+      <>
+        <FButton
+          onClick={() => {
+            setOpen(true)
+          }}
+        >
+          Открыть Alert
+        </FButton>
+        <FAlert {...args} open={open} onClose={setOpen}/>
+      </>
+  )
+};
 
 export const Default = TemplateDefault.bind({});
 
 Default.args = {
-  open: true,
   title: 'Информация',
-  body: 'Отчет правки внесены',
+  body: 'Mac лучший ноут для программиста!',
   st: {
     marginTop: '20px',
   },
-  id: 'f-alert-id',
   className: 'f-alert-class',
-  buttonClose: true,
+  variant: "info"
 };
 
 export const ButtonClose = TemplateDefault.bind({});
 
 ButtonClose.args = {
   buttonClose: true,
-  onClose: () => {},
+  onClose: (e) => {},
 };
 
 export const Variant = TemplateDefault.bind({});

@@ -8,7 +8,7 @@ import { IFTextField } from './FTextField';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FTextField',
+  title: 'Components/INPUTS/FTextField',
   tags: ['autodocs'],
   component: FTextField,
 } satisfies Meta<typeof FTextField>;

@@ -1,60 +1,87 @@
-import React, {FC, useEffect, useState} from "react";
-import './FSelectSearchDb.css'
+import React, {FC, useRef, useState} from "react";
 import {FStack} from "../index";
 import {FArrowIcon} from "../../icons";
+import './FSelectSearchDb.css'
+import FLoadIcon from "../../icons/FLoadIcon";
 
 export interface IFSelectSearchDb {
+    fetchingFunc: (text: string) => Promise<any[]>,
+    selectedElement: (e: any | undefined) => void,
+    selectItem: any,
     label?: string
     st?: React.CSSProperties,
-    selectedOpt: (e: any | undefined) => void
-    value?: Object | undefined
-    optArray: any
-    fetchingFc: any
-    fullWidth?: boolean,
     id?: string,
+    fullWidth?: boolean,
     className?: string,
     disabled?: boolean
     readOnly?: boolean,
-    load?: boolean,
     errText?: string[],
     helpText?: string,
     onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
+    minLengthText?: number
 }
 
 const FSelectSearchDb: FC<IFSelectSearchDb> = ({
-                                                   value,
-                                                   st,
-                                                   label,
-                                                   optArray,
-                                                   fetchingFc,
-                                                   selectedOpt,
-                                                   fullWidth,
-                                                   id,
-                                                   className,
-                                                   disabled,
-                                                   readOnly,
-                                                   load = false,
-                                                   errText,
-                                                   helpText,
-                                                   onFocus,
-                                                   onBlur,
-                                               }) => {
+                                         fetchingFunc,
+                                         selectedElement,
+                                         selectItem,
+                                         st,
+                                         id,
+                                         className,
+                                         disabled,
+                                         readOnly,
+                                         fullWidth,
+                                         label,
+                                         onBlur,
+                                         onFocus,
+                                         errText,
+                                         helpText,
+                                                   minLengthText
+                                     }) => {
 
-    const [textValue, setTextValue] = useState<string>('')
+    const [valueInput, setValueInput] = useState<string>('')
 
-    const [arrObj, setArrObj] = useState<any[] | undefined>(undefined)
+    const [arrObject, setArrObject] = useState<any[]>([])
 
-    // Обязательно в функции с запросом передается и текст и стейт
-    const onChange = (e: { target: { value: string; }; }) => {
-        if (e.target.value !== '') {
-            setTextValue(e.target.value)
-            fetchingFc(e.target.value, setArrObj)
-        } else {
-            setTextValue('')
-            setArrObj(undefined)
-            selectedOpt(undefined)
+    const timerDebounceRef = useRef<string | number | NodeJS.Timeout | undefined>();
+
+    const [load, setLoad] = useState<boolean>(false)
+
+    const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+        const text = e.target.value
+
+        setValueInput(text)
+
+        if (timerDebounceRef.current) {
+            clearTimeout(timerDebounceRef.current);
         }
+
+        if (text !== '') {
+            if (minLengthText !== undefined && text.length === minLengthText) {
+                timerDebounceRef.current = setTimeout(() => {
+                    setLoad(true)
+                    fetchingFunc(e.target.value).then(r => {
+                        setArrObject(r)
+                        setLoad(false)
+                    })
+                }, 1000);
+            } else {
+                timerDebounceRef.current = setTimeout(() => {
+                    setLoad(true)
+                    fetchingFunc(e.target.value).then(r => {
+                        setArrObject(r)
+                        setLoad(false)
+                    })
+                }, 1000);
+            }
+
+        } else {
+            setArrObject([])
+            setLoad(false)
+        }
+
     }
 
     let style = {
@@ -68,11 +95,6 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
     if (fullWidth) {
         st.width = '100%'
     }
-
-    useEffect(() => {
-        //@ts-ignore
-        setTextValue(value);
-    }, [value])
 
     return (
         <React.Fragment>
@@ -94,35 +116,42 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                     <input
                         readOnly={readOnly}
                         disabled={disabled || load}
-                        required
+                        required={true}
+                        style={{
+                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
+                        }}
                         type={'text'}
                         className="form-control select-search-db-input"
-                        //@ts-ignore
-                        value={load ? undefined : textValue}
-                        //@ts-ignore
-                        onChange={onChange}
+                        value={valueInput}
+                        onChange={handlerOnChange}
                         onFocus={onFocus}
                         onBlur={onBlur}
                     />
-                    {!load &&
+                    {(!load && !disabled) &&
                         <div className={'select-search-db-input-arrow'}>
                             <FArrowIcon direction={'down'} size={15}/>
                         </div>
                     }
+                    {load &&
+                        <div className={'select-search-db-input-load'}>
+                            <FLoadIcon size={10}/>
+                        </div>
+                    }
                 </div>
-                {(!load && arrObj !== undefined && arrObj !== null && arrObj.length > 0) &&
+
+                {(!load && arrObject !== undefined && arrObject.length > 0) &&
                     <div className={'select-search-db-dropdown'}>
                         <FStack direction={'column'} st={{paddingLeft: '11px'}}>
-                            {arrObj.slice(0, 10).map((opt, index) => (
+                            {arrObject.slice(0, 10).map((opt, index) => (
                                 <li
                                     key={index}
                                     onClick={(e) => {
-                                        selectedOpt(opt)
-                                        // @ts-ignore
-                                        setTextValue(e.target.text)
+                                        selectedElement(opt)
+                                        //@ts-ignore
+                                        setValueInput(e.target.textContent)
                                     }}
                                 >
-                                    {optArray(opt)}
+                                    {selectItem(opt)}
                                 </li>
                             ))
                             }
@@ -159,12 +188,9 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         }
                     </FStack>
                 }
-                {load &&
-                    <i className="search icon" style={{top: '4px'}}/>
-                }
             </div>
         </React.Fragment>
     )
-}
+};
 
-export default FSelectSearchDb
+export default FSelectSearchDb;

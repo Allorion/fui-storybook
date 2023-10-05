@@ -10,7 +10,7 @@ import FGrid from './FGrid';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FGrid',
+  title: 'Components/LAYOUT/FGrid',
     tags: ['autodocs'],
     component: FGrid,
 } satisfies Meta<typeof FGrid>;

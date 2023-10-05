@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { FStack } from '../../material';
 
 export default {
-  title: 'FMaterial UI-Kit/FPlusIcon',
+  title: 'Icons/FPlusIcon',
     tags: ['autodocs'],
     component: FPlusIcon,
 } satisfies Meta<typeof FPlusIcon>;

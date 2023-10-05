@@ -8,7 +8,7 @@ import FDropdownItem, { IFDropdownItem } from './FDropdownItem';
 import FDropdown from '../FDropdown';
 
 export default {
-  title: 'FMaterial UI-Kit/FDropdownItem',
+  title: 'Components/INPUTS/FDropdownItem',
     tags: ['autodocs'],
   component: FDropdownItem,
 } satisfies Meta<typeof FDropdownItem>;

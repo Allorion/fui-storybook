@@ -1,5 +1,4 @@
 import React from 'react';
-// import "./FButton-story.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {Meta, StoryFn} from '@storybook/react';
@@ -7,7 +6,7 @@ import {Meta, StoryFn} from '@storybook/react';
 import FButton, {IFButton} from './FButton';
 
 export default {
-    title: 'FMaterial UI-Kit/FButton',
+    title: 'Components/INPUTS/FButton',
     tags: ['autodocs'],
     component: FButton,
 } satisfies Meta<typeof FButton>;

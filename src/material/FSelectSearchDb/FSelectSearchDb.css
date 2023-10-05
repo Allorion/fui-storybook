@@ -4,12 +4,24 @@
     padding-bottom: 16px;
 }
 
+.select-search-db-input-block {
+    position: relative;
+}
+
 .select-search-db-input-arrow{
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1em;
+}
+
+.select-search-db-input-load {
     position: absolute;
     cursor: pointer;
     top: 60%;
     transform: translateY(-50%);
-    right: 1em;
+    left: 1em;
 }
 
 .select-search-db-dropdown {

@@ -9,7 +9,7 @@ import { FStack } from '../../material';
 
 
 export default {
-  title: 'FMaterial UI-Kit/FFilterIcon',
+  title: 'Icons/FFilterIcon',
     tags: ['autodocs'],
     component: FFilterIcon,
   argTypes: {

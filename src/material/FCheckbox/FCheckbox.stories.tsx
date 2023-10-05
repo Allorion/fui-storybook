@@ -6,7 +6,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import FCheckbox, { IFCheckbox } from './FCheckbox';
 
 export default {
-  title: 'FMaterial UI-Kit/FCheckbox',
+  title: 'Components/INPUTS/FCheckbox',
   tags: ['autodocs'],
   component: FCheckbox,
 } satisfies Meta<typeof FCheckbox>;

@@ -14,7 +14,7 @@ import img3 from './statick/3.png';
 import img2 from './statick/1.png';
 
 export default {
-  title: 'FMaterial UI-Kit/FOpenImgFull',
+  title: 'Components/LAB/FOpenImgFull',
   tags: ['autodocs'],
   component: FOpenImgFull,
 } satisfies Meta<typeof FOpenImgFull>;

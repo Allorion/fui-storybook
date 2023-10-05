@@ -1,5 +1,6 @@
 import React, {FC} from "react";
 import {FStack} from "../index";
+import FLoadIcon from "../../icons/FLoadIcon";
 
 export interface IFTextArea {
     label?: string
@@ -65,6 +66,9 @@ const FTextArea: FC<IFTextArea> = (
                         onFocus={onFocus}
                         cols={cols}
                         rows={rows}
+                        style={{
+                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
+                        }}
                         disabled={disabled || load}
                         readOnly={readOnly}
                         //@ts-ignore
@@ -106,7 +110,9 @@ const FTextArea: FC<IFTextArea> = (
                         </FStack>
                     }
                     {load &&
-                        <i className="search icon"></i>
+                        <div className={'input-load'}>
+                            <FLoadIcon size={10}/>
+                        </div>
                     }
                 </div>
             </div>

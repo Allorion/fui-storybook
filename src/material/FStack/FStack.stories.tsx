@@ -9,7 +9,7 @@ import FStack, { IFStack } from './FStack';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FStack',
+  title: 'Components/LAYOUT/FStack',
   tags: ['autodocs'],
   component: FStack,
   argTypes: {

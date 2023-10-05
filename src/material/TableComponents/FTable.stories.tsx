@@ -22,7 +22,7 @@ import { IFTableRow } from './FTableRow/FTableRow';
 import FPagination from '../FPagination/FPagination';
 
 export default {
-  title: 'FMaterial UI-Kit/FTable',
+  title: 'Components/DATA DISPLAY/FTable',
   tags: ['autodocs'],
   component: FTable,
 } satisfies Meta<typeof FTable>;

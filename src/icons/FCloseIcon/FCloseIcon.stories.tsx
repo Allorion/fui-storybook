@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import FCloseIcon, { IFCloseIcon } from './FCloseIcon';
 
 export default {
-  title: 'FMaterial UI-Kit/FCloseIcon',
+  title: 'Icons/FCloseIcon',
   tags: ['autodocs'],
   component: FCloseIcon,
 } satisfies Meta<typeof FCloseIcon>;

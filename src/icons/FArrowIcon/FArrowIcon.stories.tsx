@@ -5,7 +5,7 @@ import { FStack } from '../../material';
 import FArrowIcon, { IFArrowIcon } from './FArrowIcon';
 
 export default {
-  title: 'FMaterial UI-Kit/FArrowIcon',
+  title: 'Icons/FArrowIcon',
     tags: ['autodocs'],
     component: FArrowIcon,
 } satisfies Meta<typeof FArrowIcon>;

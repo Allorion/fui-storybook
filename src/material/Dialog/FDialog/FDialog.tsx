@@ -13,7 +13,7 @@ export interface IFDialog {
     children?: React.ReactChild | React.ReactNode,
     hide?: boolean
     closeButtonBackPage?: React.Dispatch<React.SetStateAction<boolean>>,
-    width?: 'xs' | 'md' | 'lg' | 'xxl'
+    width?: 'xs' | 'md' | 'lg' | 'xxl' | 'adaptive'
 }
 
 
@@ -47,7 +47,7 @@ const FDialog: FC<IFDialog> = ({
                 <div
                     className={`${openAndClose ? 'f-dialog-content active' : 'f-dialog-content'} ${hide ? 'hide' : ''}`}
                     style={{
-                        width: width === 'xxl' ? '95vw' : width === 'lg' ? '80vw' : width === 'md' ? '65vw' : '50vw'
+                        width: width === 'xxl' ? '95vw' : width === 'lg' ? '80vw' : width === 'md' ? '65vw' : width === 'xs' ? '50vw' : 'fit-content'
                     }}
                     onClick={(e) => e.stopPropagation()}
                 >

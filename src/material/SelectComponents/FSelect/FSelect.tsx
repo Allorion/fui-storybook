@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import "./FSelect.css"
 import {FStack} from "../../index";
+import FLoadIcon from "../../../icons/FLoadIcon";
 
 export interface IFSelect {
     label?: string
@@ -107,7 +108,9 @@ const FSelect: FC<IFSelect> = ({
                         </FStack>
                     }
                     {load &&
-                        <i className="search icon"></i>
+                        <div className={'input-load'}>
+                            <FLoadIcon size={10}/>
+                        </div>
                     }
                 </div>
             </div>

@@ -7,7 +7,7 @@ import { FStack } from '../../material';
 import FCopyAddIcon, { IFCopyAddIcon } from './FCopyAdd';
 
 export default {
-  title: 'FMaterial UI-Kit/FCopyAddIconIcon',
+  title: 'Icons/FCopyAddIconIcon',
     tags: ['autodocs'],
     component: FCopyAddIcon,
 } satisfies Meta<typeof FCopyAddIcon>;

@@ -7,7 +7,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import FButtonFile, { IFButtonFile } from './FButtonFile';
 
 export default {
-  title: 'FMaterial UI-Kit/FButtonFile',
+  title: 'Components/INPUTS/FButtonFile',
     tags: ['autodocs'],
     component: FButtonFile,
 } satisfies Meta<typeof FButtonFile>;

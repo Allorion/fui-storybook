@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {FStack} from "../index";
 import "./FTextField.css"
+import FLoadIcon from "../../icons/FLoadIcon";
 
 export interface IFTextField {
     label?: string,
@@ -149,7 +150,9 @@ const FTextField: FC<IFTextField> = (
                         </FStack>
                     }
                     {load &&
-                        <i className="search icon"></i>
+                        <div className={'input-load'}>
+                            <FLoadIcon size={10}/>
+                        </div>
                     }
                 </div>
             </div>

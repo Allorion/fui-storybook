@@ -5,7 +5,8 @@ export interface IFCloseIcon {
     handleClose?: () => void,
     st?: React.CSSProperties,
     className?: string,
-    id?: string
+    id?: string,
+    size?: number
 }
 
 const FCloseIcon: FC<IFCloseIcon> = ({
@@ -13,7 +14,13 @@ const FCloseIcon: FC<IFCloseIcon> = ({
                                        st,
                                        className,
                                        id,
+                                         size
                                    }) => {
+
+    if (size) {
+        st = Object.assign({}, st, {width: `${size}px`, height: `${size}px`})
+    }
+
     return (
         <React.Fragment>
             <div

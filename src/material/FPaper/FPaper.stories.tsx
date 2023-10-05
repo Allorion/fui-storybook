@@ -7,7 +7,7 @@ import FPaper, { IFPaper } from './FPaper';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FPaper',
+  title: 'Components/SURFACES/FPaper',
   tags: ['autodocs'],
   component: FPaper,
 } satisfies Meta<typeof FPaper>;

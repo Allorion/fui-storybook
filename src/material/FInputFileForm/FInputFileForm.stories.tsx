@@ -9,7 +9,7 @@ import FInputFileForm from './FInputFileForm';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FInputFileForm',
+  title: 'Components/INPUTS/FInputFileForm',
   tags: ['autodocs'],
   component: FInputFileForm,
 } satisfies Meta<typeof FInputFileForm>;

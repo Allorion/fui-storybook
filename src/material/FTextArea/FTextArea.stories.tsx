@@ -5,7 +5,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import FTextArea, { IFTextArea } from './FTextArea';
 
 export default {
-  title: 'FMaterial UI-Kit/FTextArea',
+  title: 'Components/INPUTS/FTextArea',
   tags: ['autodocs'],
   component: FTextArea,
 } satisfies Meta<typeof FTextArea>;

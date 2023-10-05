@@ -5,7 +5,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import FFullDateField, { IFFullDateField } from './FFullDateField';
 
 export default {
-  title: 'FMaterial UI-Kit/FFullDateField',
+  title: 'Components/INPUTS/FFullDateField',
   tags: ['autodocs'],
   component: FFullDateField,
 } satisfies Meta<typeof FFullDateField>;

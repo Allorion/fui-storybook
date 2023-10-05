@@ -1,88 +1,221 @@
-import React, {FC} from 'react'
-import "./FAlert.css"
+import React, {FC, useEffect, useRef} from "react";
+import {FCloseIcon} from "../../icons";
+import './FAlert.css'
 
 export interface IFAlert {
-    variant: 'info' | 'error'
-    onClose?: React.MouseEventHandler<HTMLButtonElement> | undefined
-    title: string
-    body: string
-    st?: React.CSSProperties | undefined
-    open: boolean
-    vertical: 'top' | 'bottom';
-    horizontal: 'left' | 'center' | 'right';
-    buttonClose: boolean,
-    id?: string,
-    className?: string
+    title?: string,
+    body?: string,
+    variant: 'info' | 'error' | 'success' | 'warning',
+    onClose?: (e: boolean) => void,
+    st?: React.CSSProperties | undefined,
+    open: boolean,
+    vertical?: 'top' | 'bottom' | 'center',
+    horizontal?: 'left' | 'center' | 'right',
+    buttonClose?: boolean,
+    className?: string,
+    displayTime?: number,
+    size?: string
 }
 
-const FAlert: FC<IFAlert> = ({
-                                 variant,
-                                 open = false,
-                                 title,
-                                 body,
-                                 st,
-                                 vertical,
-                                 horizontal,
-                                 onClose,
-                                 buttonClose,
-                                 className,
-                                 id
-                             }) => {
+const FAlert: FC<IFAlert> = (
+    {
+        title,
+        body,
+        variant = 'info',
+        displayTime,
+        open,
+        onClose,
+        vertical = 'center',
+        horizontal = 'center',
+        buttonClose = false,
+        size
+    }
+) => {
 
-    let style: React.CSSProperties = {
-        opacity: open ? 1 : 0,
-        transition: '1s'
+    const visible = useRef<NodeJS.Timeout>();
+    const hidden = useRef<NodeJS.Timeout>();
+    const close = useRef<NodeJS.Timeout>();
+
+    const randomId = useRef<string>((Math.random() + 1).toString(36).substring(2))
+
+    let newTime = displayTime
+
+    useEffect(() => {
+
+        const progress = document.getElementById(`f-alert-progress-value-${randomId.current}`)
+
+        visible.current = setTimeout(() => {
+            if (open) {
+                const el = document.querySelector(`#f-block-alert-${randomId.current}`)
+                el!.classList.add('f-alert-visible')
+                if (progress !== null) {
+                    progress!.style.width = '0'
+                }
+            }
+        })
+
+        if (newTime !== undefined && open && onClose !== undefined) {
+
+            if (newTime < 1) newTime = 1
+
+            const el = document.querySelector(`#f-block-alert-${randomId.current}`)
+
+            progress!.style.transition = `${newTime}s linear`
+
+            hidden.current = setTimeout(() => {
+                el!.classList.remove('f-alert-visible')
+                el!.classList.add('f-alert-hidden')
+            }, (newTime - 1) * 1000)
+            close.current = setTimeout(() => {
+                onClose(false)
+                el!.classList.remove('f-alert-hidden')
+                el!.classList.remove('f-alert-visible')
+            }, newTime * 1000)
+        }
+    }, [open]);
+
+    const handlerIco = (): JSX.Element => {
+        let ico: JSX.Element = <>
+            <path
+                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+            <path
+                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </>
+
+        switch (variant) {
+            case 'info':
+                ico = <>
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </>
+                break
+            case "success":
+                ico = <>
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path
+                        d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+                </>
+                break
+            case 'error':
+                ico = <>
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </>
+                break
+            case 'warning':
+                ico = <>
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path
+                        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                </>
+                break
+        }
+        return ico
     }
 
-    if (st !== undefined) {
-        style = Object.assign({}, st, style)
+    const handlerPosition = () => {
+
+        const styleVertical: {
+            top?: string | number,
+            bottom?: string | number,
+            transform?: string
+        } = {}
+
+        const styleHorizontal: {
+            left?: string | number,
+            right?: string | number,
+            transform?: string
+        } = {}
+
+        switch (vertical) {
+            case 'top':
+                styleVertical.top = 0
+                break
+            case 'bottom':
+                styleVertical.bottom = 0
+                break
+            case 'center':
+                if (vertical === 'center' && horizontal !== 'center') {
+                    styleVertical.transform = 'translateY(-50%)'
+                }
+                styleVertical.top = '50%'
+                break
+        }
+
+        switch (horizontal) {
+            case 'left':
+                styleHorizontal.left = 0
+                break
+            case 'right':
+                styleHorizontal.right = 0
+                break
+            case 'center':
+                if (vertical === 'center' && horizontal === 'center') {
+                    styleHorizontal.transform = 'translate(-50%, -50%)'
+                } else {
+                    styleHorizontal.transform = 'translateX(-50%)'
+                }
+                styleHorizontal.left = '50%'
+                break
+        }
+
+
+        return Object.assign({}, styleHorizontal, styleVertical)
     }
 
     return (
         <React.Fragment>
-            <div
-                className={`f-snackbar ${vertical} ${horizontal} ${className !== undefined ? className : ''}`}
-                id={id}
-                style={style}
-            >
-                <div className="alert alert-notice-static alert-notice alert-info alert-dismissable in"
-                     style={{width: '100%'}}>
-                    {buttonClose &&
-                        <button data-dismiss="alert" className="close" onClick={onClose}
-                                type="button">
-                            <svg className="lexicon-icon lexicon-icon-times icon-monospaced"
-                                 focusable="false" viewBox="0 0 22 22">
-                                <path
-                                    d="M13.484 11L21 3.484 18.516 1 11 8.516 3.484 1 1 3.484 8.516 11 1 18.516 3.484 21 11 13.484 18.516 21 21 18.516 13.484 11z"></path>
-                            </svg>
-                        </button>
-                    }
-                    <div className="alert-icon" style={{
-                        color: variant === 'info' ? '#95BFFF' : '#D10000',
-                        background: variant === 'info' ? 'rgba(149, 191, 255, 0.4)' : 'rgba(209, 0, 0, 0.4)'
-                    }}>
-                        <svg className="svg-icon" focusable="false" role="img">
-                            {variant === 'info' ?
-                                <path
-                                    d="M7.234 2.313c.308 0 .571.031.79.092.219.062.417.144.595.246.177.102.335.208.471.318.137.109.274.215.41.318.137.103.287.181.451.236.164.055.352.089.564.103h10.172c.185 0 .355.034.513.103.157.068.294.161.41.277.116.116.212.256.287.42.076.163.11.334.103.512v4.625L20.688 8.25V4.938H10.516c-.212 0-.396.031-.554.092a2.027 2.027 0 0 0-.451.246 8.753 8.753 0 0 0-.421.318c-.136.109-.29.215-.461.318-.171.102-.369.181-.595.235s-.492.089-.8.103H2.313v11.813h6.563v1.313H1V3.625c0-.185.034-.355.103-.513.068-.157.161-.294.277-.41.116-.116.256-.212.42-.287.164-.075.335-.109.513-.102h4.921zm0 2.625c.164 0 .308-.014.431-.041.123-.027.236-.072.338-.133a2.85 2.85 0 0 0 .297-.205c.096-.075.205-.167.328-.277a6.22 6.22 0 0 0-.317-.267 2.258 2.258 0 0 0-.308-.205c-.109-.062-.222-.106-.338-.134s-.26-.044-.431-.051H2.313v1.313h4.921zm10.449 2.625L22 11.879V22H10.188V7.563h7.495zm.38 3.937h1.692l-1.692-1.692V11.5zm2.625 9.188v-7.875H16.75V8.875H11.5v11.813h9.188zm-6.563-2.625h5.25v1.313h-5.25v-1.313zm2.625-2.625h2.625v1.313H16.75v-1.313z"></path>
-                                :
-                                <>
-                                    <path
-                                        d="M21.145 24.146H3.854c-1.047 0-2.001-.532-2.552-1.423s-.6-1.982-.131-2.919L9.816 2.513A2.984 2.984 0 0 1 12.499.855c1.144 0 2.172.635 2.684 1.658l8.646 17.292a2.981 2.981 0 0 1-.131 2.919 2.984 2.984 0 0 1-2.553 1.422zM12.5 1.854c-.774 0-1.442.413-1.789 1.105L2.065 20.251a1.986 1.986 0 0 0 .087 1.946 1.986 1.986 0 0 0 1.701.948h17.292c.698 0 1.335-.354 1.701-.948.367-.594.4-1.321.088-1.946L14.289 2.96A1.965 1.965 0 0 0 12.5 1.854z"></path>
-                                    <path
-                                        d="M10.945 18.15c0 .674.52 1.143 1.274 1.143.791 0 1.304-.469 1.304-1.143 0-.688-.513-1.15-1.304-1.15-.761 0-1.274.461-1.274 1.15zm.227-9.002l.22 6.614h1.677l.227-6.614h-2.124z"></path>
-                                </>
+            {open &&
+                <div className='f-block-alert' id={`f-block-alert-${randomId.current}`}>
+                    <div className="f-alert-component" style={handlerPosition()}>
+                        <div className='f-alert'>
+                            <div className={`f-alert-ico ${variant}`}>
+                                <svg width="28" height="28" viewBox="0 0 16 16">
+                                    {handlerIco()}
+                                </svg>
+                            </div>
+                            <div className='f-alert-inside'
+                                 style={{width: size !== undefined ? `${size}` : "fit-content"}}>
+                                <div className='f-alert-header'>
+                                    <h4>{title !== undefined ? title : ''}</h4>
+                                    {(buttonClose && onClose) &&
+                                        <FCloseIcon size={12} handleClose={() => {
+                                            const el = document.querySelector(`#f-block-alert-${randomId.current}`)
+                                            el!.classList.remove('f-alert-visible')
+                                            el!.classList.add('f-alert-hidden')
+                                            onClose(false)
+                                            el!.classList.remove('f-alert-visible')
+                                            el!.classList.remove('f-alert-hidden')
+                                            clearTimeout(visible.current)
+                                            clearTimeout(hidden.current)
+                                            clearTimeout(close.current)
+                                        }}/>
+                                    }
+                                </div>
+                                <div className='f-alert-body'>
+                                    <span>{body}</span>
+                                </div>
+                            </div>
+                            {newTime &&
+                                <div className={'f-alert-progress'}>
+                                    <div className="f-alert-progress-bar">
+                                        <div className="f-alert-progress-value"
+                                             id={`f-alert-progress-value-${randomId.current}`}/>
+                                    </div>
+                                </div>
                             }
-                        </svg>
+                        </div>
                     </div>
-                    <div className="alert-body"><p className="alert-title">
-                        {title}</p>
-                        <p>{body}</p></div>
                 </div>
-            </div>
+            }
         </React.Fragment>
     )
+};
 
-}
-
-export default FAlert
+export default FAlert;

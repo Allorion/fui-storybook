@@ -9,7 +9,7 @@ import FFile from './FFile';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FFile',
+  title: 'Components/INPUTS/FFile',
   tags: ['autodocs'],
   component: FFile,
 } satisfies Meta<typeof FFile>;

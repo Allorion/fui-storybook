@@ -1,42 +1,138 @@
-.f-snackbar {
-    z-index: 1400;
+.f-block-alert {
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
     position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.f-alert-component {
+    margin: 16px;
+    position: absolute;
+}
+
+.f-alert {
     display: flex;
+    flex-direction: row;
+    width: fit-content;
+    min-height: 75px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-@media (min-width: 600px) {
-    .f-snackbar.top.left {
-        top: 24px;
-        left: 20px;
-    }
-
-    .f-snackbar.top.center {
-        top: 24px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-    }
-
-    .f-snackbar.top.right {
-        top: 24px;
-        right: 20px;
-    }
-
-    .f-snackbar.bottom.left {
-        bottom: 24px;
-        left: 20px;
-    }
-
-    .f-snackbar.bottom.center {
-        bottom: 24px;
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-    }
-
-    .f-snackbar.bottom.right {
-        bottom: 24px;
-        right: 20px;
-    }
+.f-alert-ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
+.f-alert-ico.info {
+    color: #2164BE !important;
+    background-color: rgba(149, 191, 255, 0.4) !important;
+    fill: #2164BE !important;
+}
+
+.f-alert-ico.error {
+    color: #D10000 !important;
+    background-color: rgba(209, 0, 0, 0.4) !important;
+    fill: #D10000 !important;
+}
+
+.f-alert-ico.success {
+    color: #0f7a11 !important;
+    background-color: rgba(72, 159, 73, 0.4) !important;
+    fill: #0f7a11 !important;
+}
+
+.f-alert-ico.warning {
+    color: #ffc107 !important;
+    background-color: rgba(255, 193, 7, 0.4) !important;
+    fill: #ffc107 !important;
+}
+
+.f-alert-inside {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    gap: 16px;
+}
+
+.f-alert-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.f-alert-header h4 {
+    font-family: "SF UI Display", sans-serif;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.f-alert-body {
+    display: flex;
+    align-items: center;
+}
+
+.f-alert-body span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #656565;
+    white-space: normal;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-wrap: anywhere;
+}
+
+.f-alert-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.f-alert-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+.f-alert-progress {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(100% - 40px);
+}
+
+.f-alert-progress-bar {
+    position: relative;
+    border: 0;
+    height: 6px;
+    background-color: #e9ecef !important;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+}
+
+.f-alert-progress-value {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #2164BE;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    transform: rotate(180deg) scaleX(1);
+    height: 6px;
+    width: 100%;
+}

@@ -2,6 +2,8 @@ import React, {FC} from "react";
 import {FButton, FStack} from "../index";
 import './FSearchBox.css'
 import '../FTextField/FTextField.css'
+import FLoadIcon from "../../icons/FLoadIcon";
+import '../statick/index.css'
 
 export interface IFSearchBox {
     label?: string,
@@ -153,7 +155,9 @@ const FSearchBox: FC<IFSearchBox> = ({
                             </FStack>
                         }
                         {load &&
-                            <i className="search icon"></i>
+                            <div className={'input-load'}>
+                                <FLoadIcon size={10}/>
+                            </div>
                         }
                     </div>
                     <FButton

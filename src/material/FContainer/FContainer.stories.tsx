@@ -10,7 +10,7 @@ import FContainer from './FContainer';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {
-  title: 'FMaterial UI-Kit/FContainer',
+  title: 'Components/LAYOUT/FContainer',
   tags: ['autodocs'],
   component: FContainer,
   argTypes: {
