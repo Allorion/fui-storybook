@@ -1,0 +1,61 @@
+{
+  "name": "fui-material",
+  "version": "0.2.72",
+  "private": false,
+  "dependencies": {
+    "eslint": "^8.51.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "deploy-storybook": "storybook build && gh-pages -d storybook-static",
+    "build-storybook": "storybook build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-mdx-gfm": "^7.4.6",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/react": "^7.4.6",
+    "@storybook/react-vite": "^7.4.6",
+    "@storybook/react-webpack5": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/react": "^18.2.27",
+    "bootstrap": "^5.2.2",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.0.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "storybook": "^7.4.6"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
