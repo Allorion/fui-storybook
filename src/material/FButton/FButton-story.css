@@ -1,9 +1,0 @@
-.stack {
-    margin: 1ch;
-    display: flex;
-    flex-direction: row;
-}
-
-.stack button {
-    margin: 1ch;
-}
