@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFRadioButton} from '../../../../fui/src/material/interfaces';
-import {FRadioButton} from '../../../../fui/src/material/index';
+import FRadioButton, {IFRadioButton} from "../../../../fui/src/material/FRadioButton/FRadioButton";
 
 export default {
   title: 'Components/INPUTS/FRadioButton',

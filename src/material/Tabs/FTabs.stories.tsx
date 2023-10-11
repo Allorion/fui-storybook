@@ -3,9 +3,8 @@ import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-
-import {IFTabs} from '../../../../fui/src/material/interfaces';
-import {FTab, FTabs} from '../../../../fui/src/material/index';
+import FTabs from "../../../../fui/src/material/Tabs/FTabs";
+import FTab, {IFTabs} from "../../../../fui/src/material/Tabs/FTab/FTab";
 
 export default {
   title: 'Components/NAVIGATION/FTabs',

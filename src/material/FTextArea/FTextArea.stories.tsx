@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFTextArea} from '../../../../fui/src/material/interfaces';
-import {FTextArea} from '../../../../fui/src/material/index';
+import FTextArea, {IFTextArea} from "../../../../fui/src/material/FTextArea/FTextArea";
 
 export default {
   title: 'Components/INPUTS/FTextArea',

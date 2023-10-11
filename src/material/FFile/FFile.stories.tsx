@@ -2,10 +2,8 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 
-import {IFFile} from '../../../../fui/src/material/interfaces';
-import {FFile} from '../../../../fui/src/material/index';
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FFile, {IFFile} from "../../../../fui/src/material/FFile/FFile";
 
 export default {
   title: 'Components/INPUTS/FFile',

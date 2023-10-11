@@ -1,9 +1,10 @@
 import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {FButton, FStack} from '../../../../fui/src/material/index';
-import {fAlert, fPrompt} from "../../../../fui/src/function-elements/index";
-import {IfPrompt} from "../../../../fui/src/function-elements/interfaces";
+import fAlert from "../../../../fui/src/function-elements/fAlert/fAlert";
+import fPrompt, {IfPrompt} from "../../../../fui/src/function-elements/fPrompt/fPrompt";
+import FStack from "../../../../fui/src/material/FStack/FStack";
+import FButton from "../../../../fui/src/material/FButton/FButton";
 
 export default {
     title: 'Function Elements/fPrompt',

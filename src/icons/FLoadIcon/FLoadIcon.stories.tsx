@@ -2,10 +2,8 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-
-import {FLoadIcon} from '../../../../fui/src/icons/index'
-import {IFLoadIcon} from '../../../../fui/src/icons/interfaces'
-import {FStack} from '../../../../fui/src//material';
+import FLoadIcon, {IFLoadIcon} from "../../../../fui/src/icons/FLoadIcon/FLoadIcon";
+import FStack from "../../../../fui/src/material/FStack/FStack";
 
 
 export default {

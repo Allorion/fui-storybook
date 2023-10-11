@@ -4,25 +4,15 @@ import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import {
-    IFTable,
-    IFTableBody,
-    IFTableDataCell,
-    IFTableHead,
-    IFTableHeaderCell,
-    IFTableRow
-} from '../../../../fui/src/material/interfaces';
+import FTable, {IFTable} from "../../../../fui/src/material/TableComponents/FTable/FTable";
+import FTableHead, {IFTableHead} from "../../../../fui/src/material/TableComponents/FTableHead/FTableHead";
+import FTableBody, {IFTableBody} from "../../../../fui/src/material/TableComponents/FTableBody/FTableBody";
+import FTableRow, {IFTableRow} from "../../../../fui/src/material/TableComponents/FTableRow/FTableRow";
+import FTableHeaderCell, {IFTableHeaderCell} from "../../../../fui/src/material/TableComponents/FTableHeaderCell/FTableHeaderCell";
+import FTableDataCell, {IFTableDataCell} from "../../../../fui/src/material/TableComponents/FTableDataCell/FTableDataCell";
+import FTableFooter from "../../../../fui/src/material/TableComponents/FTableFooter/FTableFooter";
+import FPagination from "../../../../fui/src/material/FPagination/FPagination";
 
-import {
-    FPagination,
-    FTable,
-    FTableBody,
-    FTableDataCell,
-    FTableFooter,
-    FTableHead,
-    FTableHeaderCell,
-    FTableRow
-} from '../../../../fui/src/material/index';
 
 export default {
     title: 'Components/DATA DISPLAY/FTable',

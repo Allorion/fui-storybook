@@ -3,9 +3,8 @@ import React, {useState} from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-
-import {IFAlert} from '../../../../fui/src/material/interfaces';
-import {FAlert, FButton} from '../../../../fui/src/material/index';
+import FAlert, {IFAlert} from "../../../../fui/src/material/FAlert/FAlert";
+import FButton from "../../../../fui/src/material/FButton/FButton";
 
 export default {
   title: 'Components/FEEDBACK/FAlert',

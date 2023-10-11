@@ -1,11 +1,9 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FProgress, {IFProgress} from "../../../../fui/src/material/FProgress/FProgress";
 
-import {IFProgress} from '../../../../fui/src/material/interfaces';
-import {FProgress} from '../../../../fui/src/material/index';
 
 export default {
   title: 'Components/FEEDBACK/FProgress',

@@ -1,11 +1,8 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFInputFileForm} from '../../../../fui/src/material/interfaces';
-import {FInputFileForm} from '../../../../fui/src/material/index';
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FInputFileForm, {IFInputFileForm} from "../../../../fui/src/material/FInputFileForm/FInputFileForm";
 
 export default {
   title: 'Components/INPUTS/FInputFileForm',

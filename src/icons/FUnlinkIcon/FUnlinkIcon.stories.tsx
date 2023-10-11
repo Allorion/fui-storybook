@@ -2,9 +2,8 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {FUnlinkIcon} from '../../../../fui/src/icons/index'
-import {IFUnlinkIcon} from '../../../../fui/src/icons/interfaces'
-import {FStack} from '../../../../fui/src//material';
+import FUnlinkIcon, {IFUnlinkIcon} from "../../../../fui/src/icons/FUnlinkIcon/FUnlinkIcon";
+import FStack from "../../../../fui/src/material/FStack/FStack";
 
 export default {
   title: 'Icons/FUnlinkIcon',

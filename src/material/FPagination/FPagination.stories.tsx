@@ -1,11 +1,8 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFPagination} from '../../../../fui/src/material/interfaces';
-import {FPagination} from '../../../../fui/src/material/index';
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FPagination, {IFPagination} from "../../../../fui/src/material/FPagination/FPagination";
 
 export default {
   title: 'Components/NAVIGATION/FPagination',

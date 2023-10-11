@@ -3,9 +3,8 @@ import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import {FCopyAddIcon} from '../../../../fui/src/icons/index'
-import {IFCopyAddIcon} from '../../../../fui/src/icons/interfaces'
-import {FStack} from '../../../../fui/src//material';
+import FCopyAddIcon, {IFCopyAddIcon} from "../../../../fui/src/icons/FCopyAddIcon/FCopyAdd";
+import FStack from "../../../../fui/src/material/FStack/FStack";
 
 export default {
   title: 'Icons/FCopyAddIconIcon',

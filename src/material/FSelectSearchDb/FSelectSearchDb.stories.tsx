@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFSelectSearchDb} from '../../../../fui/src/material/interfaces';
-import {FSelectSearchDb} from '../../../../fui/src/material/index';
+import FSelectSearchDb, {IFSelectSearchDb} from "../../../../fui/src/material/FSelectSearchDb/FSelectSearchDb";
 
 export default {
     title: 'Components/INPUTS/FSelectSearchDb',
@@ -19,6 +17,7 @@ Default.args = {
     className: 'select-search-db-className',
     st: {marginTop: '20px'},
     label: 'Поле поиска по базе',
+    // @ts-ignore
     fetchingFunc: (e) => {
         return []
     },
@@ -57,17 +56,12 @@ ReadOnly.args = {
     readOnly: true,
 };
 
-export const Load = Template.bind({});
-
-Load.args = {
-    load: true,
-};
-
 export const ErrText: StoryFn<IFSelectSearchDb> = () => (
     <FSelectSearchDb
         fullWidth={true}
         errText={['Первая ошибка', 'Вторая ошибка']}
         label={'Error Text'}
+        // @ts-ignore
         fetchingFunc={() => {
             return []
         }}
@@ -81,6 +75,7 @@ export const HelpText: StoryFn<IFSelectSearchDb> = () => (
     <FSelectSearchDb
         fullWidth={true}
         helpText={'Текст помощи'}
+        // @ts-ignore
         fetchingFunc={() => {
             return []
         }}

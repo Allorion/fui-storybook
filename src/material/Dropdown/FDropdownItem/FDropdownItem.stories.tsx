@@ -3,9 +3,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFDropdownItem} from '../../../../../fui/src/material/interfaces';
-import {FDropdown, FDropdownItem} from '../../../../../fui/src/material/index';
+import FDropdownItem, {IFDropdownItem} from "../../../../../fui/src/material/Dropdown/FDropdownItem/FDropdownItem";
+import FDropdown from "../../../../../fui/src/material/Dropdown/FDropdown/FDropdown";
 
 export default {
   title: 'Components/INPUTS/FDropdownItem',

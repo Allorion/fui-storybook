@@ -53,7 +53,11 @@
     "react-dom": "^18.2.0",
     "rollup": "^4.0.2",
     "rollup-plugin-copy": "^3.5.0",
-    "storybook": "^7.4.6"
+    "storybook": "^7.4.6",
+    "@babel/core": "^7.20.2",
+    "babel-loader": "^8.3.0",
+    "style-loader": "^3.3.3",
+    "css-loader": "^6.8.1"
   },
   "peerDependencies": {
     "react": "^18.2.0"

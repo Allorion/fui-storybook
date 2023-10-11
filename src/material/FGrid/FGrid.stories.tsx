@@ -1,12 +1,7 @@
 import React from 'react';
-
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFGrid} from '../../../../fui/src/material/interfaces';
-import {FGrid} from '../../../../fui/src/material/index';
-
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FGrid, {IFGrid} from "../../../../fui/src/material/FGrid/FGrid";
 
 export default {
   title: 'Components/LAYOUT/FGrid',

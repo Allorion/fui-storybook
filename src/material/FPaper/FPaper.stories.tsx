@@ -1,11 +1,8 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import {IFPaper} from '../../../../fui/src/material/interfaces';
-import {FPaper} from '../../../../fui/src/material/index';
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FPaper, {IFPaper} from "../../../../fui/src/material/FPaper/FPaper";
 
 export default {
   title: 'Components/SURFACES/FPaper',

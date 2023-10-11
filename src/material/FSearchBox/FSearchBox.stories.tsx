@@ -3,9 +3,7 @@ import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-
-import {IFSearchBox} from '../../../../fui/src/material/interfaces';
-import {FSearchBox} from '../../../../fui/src/material/index';
+import FSearchBox, {IFSearchBox} from "../../../../fui/src/material/FSearchBox/FSearchBox";
 
 export default {
   title: 'Components/INPUTS/FSearchBox',

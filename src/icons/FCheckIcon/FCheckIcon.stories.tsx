@@ -2,10 +2,9 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 
-import {FCheckIcon} from '../../../../fui/src/icons/index';
-import {IFCheckIcon} from '../../../../fui/src/icons/interfaces';
 import 'bootstrap/dist/css/bootstrap.css';
-import {FStack} from '../../../../fui/src/material/index';
+import FCheckIcon, {IFCheckIcon} from "../../../../fui/src/icons/FCheckIcon/FCheckIcon";
+import FStack from "../../../../fui/src/material/FStack/FStack";
 
 export default {
   title: 'Icons/FCheckIcon',

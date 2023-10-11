@@ -2,10 +2,9 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
+import FPenIcon, {IFPenIcon} from "../../../../fui/src/icons/FPenIcon/FPenIcon";
+import FStack from "../../../../fui/src/material/FStack/FStack";
 
-import {FPenIcon} from '../../../../fui/src/icons/index'
-import {IFPenIcon} from '../../../../fui/src/icons/interfaces'
-import {FStack} from '../../../../fui/src//material';
 
 export default {
   title: 'Icons/FCopyAddIcon',

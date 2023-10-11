@@ -2,10 +2,9 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 
-import {IFSelect, IFSelectItem} from '../../../../fui/src/material/interfaces';
-import {FSelect, FSelectItem} from '../../../../fui/src/material/index';
-
 import 'bootstrap/dist/css/bootstrap.css';
+import FSelect, {IFSelect} from "../../../../fui/src/material/SelectComponents/FSelect/FSelect";
+import FSelectItem, {IFSelectItem} from "../../../../fui/src/material/SelectComponents/FSelectItem/FSelectItem";
 
 export default {
   title: 'Components/INPUTS/SelectComponents',
