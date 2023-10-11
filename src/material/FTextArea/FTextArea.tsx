@@ -21,6 +21,7 @@ export interface IFTextArea {
     errText?: string[],
     helpText?: string,
     load?: boolean,
+    required?: boolean,
 }
 
 const FTextArea: FC<IFTextArea> = (
@@ -43,6 +44,7 @@ const FTextArea: FC<IFTextArea> = (
         errText,
         helpText,
         load,
+        required
     }
 ) => {
 
@@ -73,7 +75,7 @@ const FTextArea: FC<IFTextArea> = (
                         readOnly={readOnly}
                         //@ts-ignore
                         autoComplete={autoComplete}
-                        required
+                        required={required}
                         value={load ? undefined : value}
                         placeholder={placeholder}
                         className="form-control"

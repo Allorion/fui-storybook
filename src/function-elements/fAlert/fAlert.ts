@@ -36,7 +36,7 @@ const fAlert = (
         `
             <div class='f-function-block-alert' id='f-function-block-alert'>
                 <div class='f-function-alert'>
-                    <div class='f-function-alert-ico ${variant}'>
+                    <div class='f-function-alert-ico ${variant}-alert'>
                         <svg width="28" height="28" viewBox="0 0 16 16">
                             ${ico}
                         </svg>

@@ -15,36 +15,38 @@ export interface IFSelectSearchDb {
     className?: string,
     disabled?: boolean
     readOnly?: boolean,
+    required?: boolean,
     errText?: string[],
     helpText?: string,
     onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
-    minLengthText?: number
+    minLengthText?: number,
 }
 
 const FSelectSearchDb: FC<IFSelectSearchDb> = ({
-                                         fetchingFunc,
-                                         selectedElement,
-                                         selectItem,
-                                         st,
-                                         id,
-                                         className,
-                                         disabled,
-                                         readOnly,
-                                         fullWidth,
-                                         label,
-                                         onBlur,
-                                         onFocus,
-                                         errText,
-                                         helpText,
-                                                   minLengthText
-                                     }) => {
+                                                   fetchingFunc,
+                                                   selectedElement,
+                                                   selectItem,
+                                                   st,
+                                                   id,
+                                                   className,
+                                                   disabled,
+                                                   readOnly,
+                                                   fullWidth,
+                                                   label,
+                                                   onBlur,
+                                                   onFocus,
+                                                   errText,
+                                                   helpText,
+                                                   minLengthText,
+                                                   required
+                                               }) => {
 
     const [valueInput, setValueInput] = useState<string>('')
 
     const [arrObject, setArrObject] = useState<any[]>([])
 
-    const timerDebounceRef = useRef<string | number | NodeJS.Timeout | undefined>();
+    const timerDebounceRef = useRef<number>();
 
     const [load, setLoad] = useState<boolean>(false)
 
@@ -60,6 +62,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
 
         if (text !== '') {
             if (minLengthText !== undefined && text.length === minLengthText) {
+                // @ts-ignore
                 timerDebounceRef.current = setTimeout(() => {
                     setLoad(true)
                     fetchingFunc(e.target.value).then(r => {
@@ -68,6 +71,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                     })
                 }, 1000);
             } else {
+                // @ts-ignore
                 timerDebounceRef.current = setTimeout(() => {
                     setLoad(true)
                     fetchingFunc(e.target.value).then(r => {
@@ -116,7 +120,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                     <input
                         readOnly={readOnly}
                         disabled={disabled || load}
-                        required={true}
+                        required={required}
                         style={{
                             borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
                         }}

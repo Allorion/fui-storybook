@@ -12,7 +12,6 @@ export interface IFCheckbox {
     disabled?: boolean
 }
 
-
 const FCheckbox: FC<IFCheckbox> = ({
                                        label,
                                        onChange,

@@ -17,6 +17,7 @@ export interface IFSelect {
     id?: string,
     className?: string,
     load?: boolean,
+    required?: boolean,
     errText?: string[],
     helpText?: string,
 }
@@ -37,6 +38,7 @@ const FSelect: FC<IFSelect> = ({
                                    load = false,
                                    errText,
                                    helpText,
+                                   required
                                }) => {
 
     return (
@@ -64,6 +66,7 @@ const FSelect: FC<IFSelect> = ({
                 </label>
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <select
+                        required={required}
                         disabled={disabled || load}
                         style={Object.assign({}, st, {borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'})}
                         className="form-control"

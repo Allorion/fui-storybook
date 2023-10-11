@@ -3,13 +3,12 @@
 // *********************************************************************************************************************
 
 import React, {FC} from "react";
-
+import {FCloseIcon} from "../../../icons";
 
 export interface IFDialogHeader {
     title?: string
     handleClose?: () => void
 }
-
 
 const FDialogHeader: FC<IFDialogHeader> = ({
                                                title,
@@ -25,12 +24,7 @@ const FDialogHeader: FC<IFDialogHeader> = ({
                     </h3>
                 </div>
                 {handleClose !== undefined &&
-                    <div>
-                        <div className="cl-btn-3" onClick={handleClose}>
-                            <span className="top"></span>
-                            <span className="bot"></span>
-                        </div>
-                    </div>
+                    <FCloseIcon st={{cursor: "pointer"}} handleClose={handleClose} color={'primary'} size={30}/>
                 }
             </div>
         </React.Fragment>

@@ -10,6 +10,7 @@ export interface IFUnlinkIcon {
     handleClick?: () => void,
 }
 
+
 const FUnlinkIcon = ({color = 'dark', size = 30, st, id, className, handleClick}: IFUnlinkIcon) => {
     return (
         <svg

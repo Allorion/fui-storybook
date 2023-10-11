@@ -1,6 +1,7 @@
 import React, {FC, useEffect, useRef} from "react";
 import {FCloseIcon} from "../../icons";
 import './FAlert.css'
+import "../../static/styles/index.css"
 
 export interface IFAlert {
     title?: string,
@@ -32,9 +33,9 @@ const FAlert: FC<IFAlert> = (
     }
 ) => {
 
-    const visible = useRef<NodeJS.Timeout>();
-    const hidden = useRef<NodeJS.Timeout>();
-    const close = useRef<NodeJS.Timeout>();
+    const visible = useRef<number>();
+    const hidden = useRef<number>();
+    const close = useRef<number>();
 
     const randomId = useRef<string>((Math.random() + 1).toString(36).substring(2))
 
@@ -44,6 +45,7 @@ const FAlert: FC<IFAlert> = (
 
         const progress = document.getElementById(`f-alert-progress-value-${randomId.current}`)
 
+        // @ts-ignore
         visible.current = setTimeout(() => {
             if (open) {
                 const el = document.querySelector(`#f-block-alert-${randomId.current}`)
@@ -62,10 +64,12 @@ const FAlert: FC<IFAlert> = (
 
             progress!.style.transition = `${newTime}s linear`
 
+            // @ts-ignore
             hidden.current = setTimeout(() => {
                 el!.classList.remove('f-alert-visible')
                 el!.classList.add('f-alert-hidden')
             }, (newTime - 1) * 1000)
+            // @ts-ignore
             close.current = setTimeout(() => {
                 onClose(false)
                 el!.classList.remove('f-alert-hidden')
@@ -185,17 +189,22 @@ const FAlert: FC<IFAlert> = (
                                 <div className='f-alert-header'>
                                     <h4>{title !== undefined ? title : ''}</h4>
                                     {(buttonClose && onClose) &&
-                                        <FCloseIcon size={12} handleClose={() => {
-                                            const el = document.querySelector(`#f-block-alert-${randomId.current}`)
-                                            el!.classList.remove('f-alert-visible')
-                                            el!.classList.add('f-alert-hidden')
-                                            onClose(false)
-                                            el!.classList.remove('f-alert-visible')
-                                            el!.classList.remove('f-alert-hidden')
-                                            clearTimeout(visible.current)
-                                            clearTimeout(hidden.current)
-                                            clearTimeout(close.current)
-                                        }}/>
+                                        <FCloseIcon
+                                            size={25}
+                                            st={{
+                                                cursor: 'pointer'
+                                            }}
+                                            handleClose={() => {
+                                                const el = document.querySelector(`#f-block-alert-${randomId.current}`)
+                                                el!.classList.remove('f-alert-visible')
+                                                el!.classList.add('f-alert-hidden')
+                                                onClose(false)
+                                                el!.classList.remove('f-alert-visible')
+                                                el!.classList.remove('f-alert-hidden')
+                                                clearTimeout(visible.current)
+                                                clearTimeout(hidden.current)
+                                                clearTimeout(close.current)
+                                            }}/>
                                     }
                                 </div>
                                 <div className='f-alert-body'>
@@ -205,7 +214,7 @@ const FAlert: FC<IFAlert> = (
                             {newTime &&
                                 <div className={'f-alert-progress'}>
                                     <div className="f-alert-progress-bar">
-                                        <div className="f-alert-progress-value"
+                                        <div className={`f-alert-progress-value ${variant}`}
                                              id={`f-alert-progress-value-${randomId.current}`}/>
                                     </div>
                                 </div>

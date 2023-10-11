@@ -9,7 +9,6 @@ export interface IFCheckIcon {
     className?: string,
     handleClick?: () => void,
 }
-
 const FCheckIcon = ({
                         color = 'success',
                         size = 30,

@@ -14,6 +14,7 @@ export interface IFOpenImgFull {
     openAndClose: boolean
 }
 
+
 const FOpenImgFull: FC<IFOpenImgFull> = ({
                                              id,
                                              className,

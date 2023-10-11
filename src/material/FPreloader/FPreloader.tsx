@@ -12,7 +12,6 @@ export interface IFPreloader {
     open: boolean
 }
 
-
 const FPreloader: FC<IFPreloader> = ({
                                          st,
                                          backgroundColor = '#e0e0e0',

@@ -21,6 +21,7 @@ export interface IFTextField {
     id?: string,
     className?: string,
     load?: boolean,
+    required?: boolean,
     min?: number,
     max?: number,
     placeholder?: string | undefined,
@@ -48,6 +49,7 @@ const FTextField: FC<IFTextField> = (
         min,
         max,
         placeholder,
+        required,
     }
 ) => {
 
@@ -108,7 +110,7 @@ const FTextField: FC<IFTextField> = (
                         max={max}
                         disabled={disabled}
                         defaultValue={defaultValue}
-                        required
+                        required={required}
                         onInput={onInput}
                         readOnly={readOnly || load}
                         value={value}

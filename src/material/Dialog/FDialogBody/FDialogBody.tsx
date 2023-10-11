@@ -5,7 +5,6 @@
 
 import React, {FC} from "react";
 
-
 export interface IFDialogBody {
     st?: React.CSSProperties
     children?: React.ReactChild | React.ReactNode

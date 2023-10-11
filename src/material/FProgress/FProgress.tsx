@@ -10,7 +10,6 @@ export interface IFProgress {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
 }
 
-
 const FProgress: FC<IFProgress> = ({
                                        st,
                                        color = 'primary'

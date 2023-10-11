@@ -10,7 +10,6 @@ export interface IFTableHeaderCell {
     className?: string
 }
 
-
 const FTableHeaderCell: FC<IFTableHeaderCell> = ({
                                           st,
                                           row,

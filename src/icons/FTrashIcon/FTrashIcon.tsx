@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../material/statick/Colors.css"
+
 export interface IFTrashIcon {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
     size?: number
@@ -8,7 +9,6 @@ export interface IFTrashIcon {
     className?: string,
     handleClick?: () => void,
 }
-
 
 const FTrashIcon = ({
                         color = "primary",

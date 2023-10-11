@@ -8,7 +8,6 @@ export interface IFTableBody {
     className?: string
 }
 
-
 const FTableBody: FC<IFTableBody> = ({
                                     st,
                                     children,

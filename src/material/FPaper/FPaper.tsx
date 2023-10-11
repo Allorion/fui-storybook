@@ -1,6 +1,5 @@
 import React, {FC, useEffect} from "react";
 import "./FPaper.css"
-import {FontSizeBody} from "./FPaper.stories";
 
 export interface IFPaper {
     label?: string

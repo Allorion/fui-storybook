@@ -10,7 +10,6 @@ export interface IFArrowIcon {
     id?: string,
     className?: string,
 }
-
 const FArrowIcon = ({
                         color = 'primary',
                         size = 32,

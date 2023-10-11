@@ -16,7 +16,6 @@ export interface IFDialog {
     width?: 'xs' | 'md' | 'lg' | 'xxl' | 'adaptive'
 }
 
-
 const FDialog: FC<IFDialog> = ({
                                    openAndClose,
                                    closeButtonBackPage,

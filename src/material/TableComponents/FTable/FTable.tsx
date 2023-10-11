@@ -11,7 +11,6 @@ export interface IFTable {
     overflowX?: 'visible' | 'hidden' | 'clip' | 'scroll' | 'auto' | undefined
 }
 
-
 const FTable: FC<IFTable> = ({
                                  st,
                                  children,

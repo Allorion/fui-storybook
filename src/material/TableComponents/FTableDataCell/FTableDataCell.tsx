@@ -12,7 +12,6 @@ export interface IFTableDataCell {
     className?: string
 }
 
-
 const FTableDataCell: FC<IFTableDataCell> = ({
                                         st,
                                         row,

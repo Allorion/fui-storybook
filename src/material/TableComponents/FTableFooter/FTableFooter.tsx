@@ -8,7 +8,6 @@ export interface IFTableFooter {
     className?: string
 }
 
-
 const FTableFooter: FC<IFTableFooter> = ({
                                              st,
                                              children,

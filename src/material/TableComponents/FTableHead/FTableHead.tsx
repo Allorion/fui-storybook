@@ -8,7 +8,6 @@ export interface IFTableHead {
     className?: string
 }
 
-
 const FTableHead: FC<IFTableHead> = ({
                                     st,
                                     children,

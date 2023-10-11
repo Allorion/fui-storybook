@@ -1,5 +1,6 @@
 import React, {useRef} from 'react';
 import './FLoadIconCss.css'
+
 export interface IFLoadIcon {
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
     size?: number

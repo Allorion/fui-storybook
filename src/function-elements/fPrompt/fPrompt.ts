@@ -1,8 +1,17 @@
-import {getValue} from "@testing-library/user-event/dist/utils";
 import './fPrompt.css'
+
 export interface IfPrompt {
     title?: string,
     body?: string,
+}
+
+
+export function getValue(element: HTMLInputElement | null): string | null {
+    if (element) {
+        return element.value;
+    } else {
+        return null;
+    }
 }
 
 const fPrompt = ({title, body}: IfPrompt): Promise<string | null> => {
@@ -52,9 +61,9 @@ const fPrompt = ({title, body}: IfPrompt): Promise<string | null> => {
         `
         );
 
-        let ok = document.querySelector('#f-function-prompt-ok')
-        let cancellation = document.querySelector('#f-function-prompt-cancellation')
-        let submit = document.querySelector('#f-function-prompt-input')
+        let ok: HTMLButtonElement | null = document.querySelector('#f-function-prompt-ok')
+        let cancellation: HTMLButtonElement | null = document.querySelector('#f-function-prompt-cancellation')
+        let submit: HTMLInputElement | null = document.querySelector('#f-function-prompt-input')
 
         ok!.addEventListener('click', function () {
             resolve(getValue(submit));

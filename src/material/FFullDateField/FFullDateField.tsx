@@ -18,6 +18,7 @@ export interface IFFullDateField {
     min?: string | undefined,
     max?: string | undefined,
     load?: boolean,
+    required?: boolean,
     errText?: string[],
     helpText?: string,
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
@@ -41,7 +42,8 @@ const FFullDateField: FC<IFFullDateField> = (
         errText,
         helpText,
         onBlur,
-        onFocus
+        onFocus,
+        required
     }
 ) => {
 
@@ -83,7 +85,7 @@ const FFullDateField: FC<IFFullDateField> = (
                     onBlur={onBlur}
                     onFocus={onFocus}
                     disabled={disabled || load}
-                    required
+                    required={required}
                     style={{
                         borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
                     }}

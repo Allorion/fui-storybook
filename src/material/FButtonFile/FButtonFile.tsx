@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState} from 'react';
 import './FButtonFile.css'
 import {FStack} from "../index";
 
@@ -17,7 +17,8 @@ export interface IFButtonFile {
     maxCount?: number,
     accept?: string
     spacing?: 0 | 0.5 | 1 | 2 | 3 | 4 | 8 | 12 | undefined,
-    direction?: "row" | "row-reverse" | "column" | "column-reverse" | undefined
+    direction?: "row" | "row-reverse" | "column" | "column-reverse" | undefined,
+    required?: boolean,
 }
 
 const FButtonFile = (
@@ -36,7 +37,8 @@ const FButtonFile = (
         maxCount,
         accept,
         spacing,
-        direction
+        direction,
+        required
     }: IFButtonFile
 ) => {
 
@@ -66,6 +68,7 @@ const FButtonFile = (
                 {children}
             </button>
             <input
+                required={required}
                 style={{display: 'none'}}
                 //@ts-ignore
                 ref={fileRef}

@@ -8,7 +8,6 @@ export interface IFTableRow {
     className?: string
 }
 
-
 const FTableRow: FC<IFTableRow> = ({
                                    st,
                                    children,

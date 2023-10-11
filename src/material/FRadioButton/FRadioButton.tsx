@@ -11,7 +11,6 @@ export interface IFRadioButton {
     disabled?: boolean
 }
 
-
 const FRadioButton: FC<IFRadioButton> = ({
                                           label,
                                           onClick,
