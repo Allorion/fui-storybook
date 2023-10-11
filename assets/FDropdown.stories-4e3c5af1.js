@@ -1,8 +1,0 @@
-import{j as m,a as r}from"./jsx-runtime-03b4ddbf.js";/* empty css                  */import{s as i,r as t}from"./FSelect-06b341f5.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./FButton-e5c79c89.js";/* empty css               */import"./FStack-e49fc9aa.js";import"./FGrid-bad13094.js";import"./FContainer-040ae8b7.js";import"./FPaper-d5aa57d5.js";import"./FDialogFooter-46a2ddb5.js";import"./FFilterIcon-27e807f4.js";import"./FProgress-06696b81.js";import"./FPreloader-5e8e753e.js";import"./FCheckbox-a1e223c2.js";import"./FRadioButton-a987e6ee.js";import"./FPagination-90c139ef.js";import"./FAccordion-cc7c404d.js";import"./FInputFileForm-51f95fb4.js";import"./FAlert-f7454b4b.js";import"./FNative-c4016f0a.js";import"./FTab-d7a1be1e.js";const z={title:"Components/INPUTS/FDropdown",tags:["autodocs"],component:i},d=s=>m(i,{...s,children:[r(t,{children:"One"}),r(t,{onClick:()=>console.log(1),children:"Two"}),r(t,{disabled:!0,children:"Three"})]}),o=d.bind({});o.args={label:"Dropdown",variant:"contained",color:"primary",size:"btn-lg",disabled:!1,st:{padding:"6px"},className:"class-f-dropdown",id:"id-f-dropdown"};var e,p,n;o.parameters={...o.parameters,docs:{...(e=o.parameters)==null?void 0:e.docs,source:{originalSource:`args => {
-  return <FDropdown {...args}>
-      <FDropdownItem>One</FDropdownItem>
-      <FDropdownItem onClick={() => console.log(1)}>Two</FDropdownItem>
-      <FDropdownItem disabled={true}>Three</FDropdownItem>
-    </FDropdown>;
-}`,...(n=(p=o.parameters)==null?void 0:p.docs)==null?void 0:n.source}}};const E=["Default"];export{o as Default,E as __namedExportsOrder,z as default};
-//# sourceMappingURL=FDropdown.stories-4e3c5af1.js.map
