@@ -1,0 +1,4 @@
+import{a as n}from"./jsx-runtime-03b4ddbf.js";/* empty css                  */import{F as t}from"./FProgress-06696b81.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";const l={title:"Components/FEEDBACK/FProgress",tags:["autodocs"],component:t},c=a=>n(t,{...a}),r=c.bind({});r.argTypes={color:{options:["primary","secondary","success","danger","warning","info","light","dark","link"],control:{type:"select"}}};r.args={st:{width:"5rem",height:"5rem"}};var s,o,e;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`args => {
+  return <FProgress {...args}></FProgress>;
+}`,...(e=(o=r.parameters)==null?void 0:o.docs)==null?void 0:e.source}}};const u=["Default"];export{r as Default,u as __namedExportsOrder,l as default};
+//# sourceMappingURL=FProgress.stories-9c352590.js.map
