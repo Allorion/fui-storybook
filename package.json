@@ -1,10 +1,28 @@
 {
   "name": "fui-material",
+<<<<<<< HEAD
   "version": "0.2.72",
   "private": false,
   "dependencies": {
     "eslint": "^8.51.0",
     "typescript": "^5.2.2"
+=======
+  "version": "0.2.58",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://allorion.github.io/fui-storybook/",
+  "private": false,
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.3"
+>>>>>>> allori
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -33,6 +51,10 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
+=======
+    "@babel/core": "^7.20.2",
+>>>>>>> allori
     "@storybook/addon-essentials": "^7.4.6",
     "@storybook/addon-interactions": "^7.4.6",
     "@storybook/addon-links": "^7.4.6",
@@ -43,12 +65,17 @@
     "@storybook/react-vite": "^7.4.6",
     "@storybook/react-webpack5": "^7.4.6",
     "@storybook/testing-library": "^0.2.2",
+<<<<<<< HEAD
     "@types/react": "^18.2.27",
+=======
+    "babel-loader": "^8.3.0",
+>>>>>>> allori
     "bootstrap": "^5.2.2",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-storybook": "^0.6.15",
     "gh-pages": "^4.0.0",
+<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^4.0.2",
@@ -58,6 +85,9 @@
     "babel-loader": "^8.3.0",
     "style-loader": "^3.3.3",
     "css-loader": "^6.8.1"
+=======
+    "storybook": "^7.4.6"
+>>>>>>> allori
   },
   "peerDependencies": {
     "react": "^18.2.0"
