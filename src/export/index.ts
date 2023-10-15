@@ -1,0 +1,1 @@
+export {default as FExportTableToExcel} from "./export-table-to-excel"
