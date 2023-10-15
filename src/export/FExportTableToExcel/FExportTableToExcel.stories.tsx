@@ -20,7 +20,7 @@ export default {
 const Template: StoryFn<IFExportTableToExcel> = (args) => {
     return (
         <React.Fragment>
-            <FExportTableToExcel {...args}>Button</FExportTableToExcel>
+            <FExportTableToExcel {...args}/>
             <FTable id={'test-export-table'}>
                 <FTableHead>
                     <FTableRow>
@@ -54,11 +54,12 @@ const Template: StoryFn<IFExportTableToExcel> = (args) => {
 export const Default = Template.bind({});
 
 Default.args = {
-    id: 'export-table-to-excel-id',
-    className: 'export-table-to-excel-className',
+    id: 'FExportTableToExcel-id',
+    className: 'FExportTableToExcel-className',
     st: {marginTop: '20px'},
     fileName: 'testExport',
-    idTable: 'test-export-table'
+    idTable: 'test-export-table',
+    label: 'Экспорт Excel'
 };
 
 export const onClick: StoryFn<IFExportTableToExcel> = () => (
