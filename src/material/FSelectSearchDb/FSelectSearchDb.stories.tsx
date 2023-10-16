@@ -18,6 +18,7 @@ Default.args = {
     className: 'select-search-db-className',
     st: {marginTop: '20px'},
     label: 'Поле поиска по базе',
+    defaultValue: "Текст при первом рендере",
     fetchingFunc: (e) => {
         return []
     },

@@ -1,4 +1,4 @@
-import React, {FC, useRef, useState} from "react";
+import React, {FC, useEffect, useRef, useState} from "react";
 import {FStack} from "../index";
 import {FArrowIcon} from "../../icons";
 import './FSelectSearchDb.css'
@@ -21,6 +21,7 @@ export interface IFSelectSearchDb {
     onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
     minLengthText?: number,
+    defaultValue?: string
 }
 
 const FSelectSearchDb: FC<IFSelectSearchDb> = ({
@@ -39,7 +40,8 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                                                    errText,
                                                    helpText,
                                                    minLengthText,
-                                                   required
+                                                   required,
+                                                   defaultValue
                                                }) => {
 
     const [valueInput, setValueInput] = useState<string>('')
@@ -49,6 +51,42 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
     const timerDebounceRef = useRef<number>();
 
     const [load, setLoad] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (defaultValue !== undefined) {
+            setValueInput(defaultValue)
+
+            if (timerDebounceRef.current) {
+                clearTimeout(timerDebounceRef.current);
+            }
+
+            if (defaultValue !== '') {
+                if (minLengthText !== undefined && defaultValue.length === minLengthText) {
+                    // @ts-ignore
+                    timerDebounceRef.current = setTimeout(() => {
+                        setLoad(true)
+                        fetchingFunc(defaultValue).then(r => {
+                            setArrObject(r)
+                            setLoad(false)
+                        })
+                    }, 1000);
+                } else {
+                    // @ts-ignore
+                    timerDebounceRef.current = setTimeout(() => {
+                        setLoad(true)
+                        fetchingFunc(defaultValue).then(r => {
+                            setArrObject(r)
+                            setLoad(false)
+                        })
+                    }, 1000);
+                }
+
+            } else {
+                setArrObject([])
+                setLoad(false)
+            }
+        }
+    }, [defaultValue]);
 
     const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
