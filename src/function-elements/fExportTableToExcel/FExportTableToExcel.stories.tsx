@@ -93,9 +93,48 @@ const Template: StoryFn<IfExportTableToExcel> = (args) => {
     )
 };
 
-export const Default = Template.bind({});
+export const TableId = Template.bind({});
 
-Default.args = {
+TableId.args = {
     fileName: 'testExport',
     tableId: 'test-export-table',
+};
+
+export const HtmlCode = Template.bind({});
+
+
+HtmlCode.args = {
+    fileName: 'testExport',
+    tableId: 'test-export-table',
+    jsxElement: (
+        <FTable id={'test-export-table'}>
+            <FTableHead>
+                <FTableRow>
+                    <FTableHeaderCell row={2}>№ п/п</FTableHeaderCell>
+                    <FTableHeaderCell col={2}>Разработчики</FTableHeaderCell>
+                </FTableRow>
+                <FTableRow>
+                    <FTableHeaderCell>Имя</FTableHeaderCell>
+                    <FTableHeaderCell>Возраст</FTableHeaderCell>
+                </FTableRow>
+            </FTableHead>
+            <FTableBody>
+                <FTableRow>
+                    <FTableDataCell>1</FTableDataCell>
+                    <FTableDataCell>Влад</FTableDataCell>
+                    <FTableDataCell>23</FTableDataCell>
+                </FTableRow>
+                <FTableRow>
+                    <FTableDataCell>2</FTableDataCell>
+                    <FTableDataCell>Стас</FTableDataCell>
+                    <FTableDataCell>24</FTableDataCell>
+                </FTableRow>
+                <FTableRow>
+                    <FTableDataCell>3</FTableDataCell>
+                    <FTableDataCell>Ваня</FTableDataCell>
+                    <FTableDataCell>24</FTableDataCell>
+                </FTableRow>
+            </FTableBody>
+        </FTable>
+    )
 };

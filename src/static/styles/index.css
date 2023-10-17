@@ -75,9 +75,3 @@ body {
     color: #000000 !important;
     font-family: "SF UI Display", sans-serif !important;
 }
-
-.stack {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-}
