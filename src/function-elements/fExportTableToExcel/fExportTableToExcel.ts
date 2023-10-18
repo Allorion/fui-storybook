@@ -1,39 +1,15 @@
 import * as XLSX from 'xlsx';
-import ReactDOM from 'react-dom/client';
+import {jsxToHtml} from "../../dop-function/jsxToHtml";
 
 export interface IfExportTableToExcel {
-    tableId: string,
+    tableId?: string,
     fileName: string,
     jsxElement?: JSX.Element
 }
 
 const fExportTableToExcel = async ({tableId, fileName, jsxElement}: IfExportTableToExcel) => {
 
-    function jsxToHtml(element: JSX.Element): Promise<Element | null> {
-        return new Promise((resolve) => {
-            const container = document.createElement('div');
-            const root = ReactDOM.createRoot(container);
-
-            const observer = new MutationObserver((mutationsList) => {
-                for (const mutation of mutationsList) {
-                    if (mutation.addedNodes.length) {
-                        // Проверяем добавление элементов с нужным ID
-                        const table = container.querySelector(`#${tableId}`);
-                        if (table) {
-                            observer.disconnect(); // Отключаем наблюдателя
-                            resolve(table);
-                        }
-                    }
-                }
-            });
-
-            root.render(element);
-
-            observer.observe(container, {childList: true, subtree: true});
-        });
-    }
-
-    if (jsxElement === undefined) {
+    if (jsxElement === undefined && tableId !== undefined) {
 
         const htmlTable = document.getElementById(tableId);
 
@@ -42,7 +18,7 @@ const fExportTableToExcel = async ({tableId, fileName, jsxElement}: IfExportTabl
             const workbook = XLSX.utils.book_new();
 
             // Создайте лист XLSX
-            const worksheet = XLSX.utils.table_to_sheet(htmlTable);
+            const worksheet = XLSX.utils.table_to_sheet(htmlTable, { raw: true });
 
             // Примените стиль к всей таблице
             worksheet['!cols'] = [{wch: 15}, {wch: 15}, {wch: 15}]; // Настройте ширину столбцов
@@ -67,7 +43,7 @@ const fExportTableToExcel = async ({tableId, fileName, jsxElement}: IfExportTabl
         } else {
             return false
         }
-    } else {
+    } else if (jsxElement !== undefined){
         jsxToHtml(jsxElement).then((table) => {
             if (table) {
 
@@ -75,7 +51,7 @@ const fExportTableToExcel = async ({tableId, fileName, jsxElement}: IfExportTabl
                 const workbook = XLSX.utils.book_new();
 
                 // Создайте лист XLSX
-                const worksheet = XLSX.utils.table_to_sheet(table);
+                const worksheet = XLSX.utils.table_to_sheet(table, { raw: true });
 
                 // Примените стиль к всей таблице
                 worksheet['!cols'] = [{wch: 15}, {wch: 15}, {wch: 15}]; // Настройте ширину столбцов
@@ -102,6 +78,8 @@ const fExportTableToExcel = async ({tableId, fileName, jsxElement}: IfExportTabl
             }
         });
 
+    } else {
+        return false
     }
 };
 

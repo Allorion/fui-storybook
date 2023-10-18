@@ -13,7 +13,7 @@ import {fAlert} from "../../function-elements";
 
 
 export default {
-    title: 'Function Elements/fExportTableToExcel',
+    title: 'Function Elements/FExportHtmlToWord',
     tags: ['autodocs'],
 } satisfies Meta<typeof fExportTableToExcel>;
 
