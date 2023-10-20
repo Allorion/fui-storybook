@@ -17,7 +17,7 @@ export const Default: StoryFn<IfAlert> = () => (
             onClick={() => fAlert(
                 {
                     title: 'Информирование!',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, eligendi.',
+                    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, eligendi.\nasdasdasd\nadsasd',
                     variant: 'info'
                 }
             )}

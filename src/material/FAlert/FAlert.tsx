@@ -2,6 +2,7 @@ import React, {FC, useEffect, useRef} from "react";
 import {FCloseIcon} from "../../icons";
 import './FAlert.css'
 import "../../static/styles/index.css"
+import FStack from "../FStack";
 
 export interface IFAlert {
     title?: string,
@@ -208,7 +209,16 @@ const FAlert: FC<IFAlert> = (
                                     }
                                 </div>
                                 <div className='f-alert-body'>
-                                    <span>{body}</span>
+                                    <FStack direction={"column"} spacing={1}>
+                                        {body !== undefined &&
+                                            body.split('\n').map((opt, index) =>{
+                                                console.log(opt)
+                                                return (
+                                                    <span key={index}>{opt}</span>
+                                                )
+                                            })
+                                        }
+                                    </FStack>
                                 </div>
                             </div>
                             {newTime &&

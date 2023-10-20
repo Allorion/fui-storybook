@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import {generateUniqueId} from "./generateUniqueId";
 
-export function jsxToHtml(element: JSX.Element): Promise<Element | null> {
+export function jsxToHtml(element: JSX.Element): Promise<NodeListOf<HTMLTableElement> | null> {
     return new Promise((resolve) => {
         const container = document.createElement('div');
         const root = ReactDOM.createRoot(container);
@@ -10,7 +10,7 @@ export function jsxToHtml(element: JSX.Element): Promise<Element | null> {
             for (const mutation of mutationsList) {
                 if (mutation.addedNodes.length) {
                     // Проверяем добавление элементов с нужным ID
-                    const table = container.querySelector(`#${generateUniqueId()}`);
+                    const table = container.querySelectorAll(`table`);
                     if (table) {
                         observer.disconnect(); // Отключаем наблюдателя
                         resolve(table);
