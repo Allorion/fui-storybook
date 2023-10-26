@@ -28,7 +28,7 @@ const FDialog: FC<IFDialog> = ({
                                }) => {
 
     useEffect(() => {
-        if (document.getElementsByClassName("active-dialog").length > 0) {
+        if (document.querySelectorAll(".active-dialog").length > 0) {
             document.body.classList.add('open-dialog')
         } else {
             document.body.classList.remove('open-dialog')

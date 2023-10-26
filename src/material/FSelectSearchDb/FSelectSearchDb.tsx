@@ -164,7 +164,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         }}
                         type={'text'}
                         className="form-control select-search-db-input"
-                        value={valueInput}
+                        value={!load ? valueInput : ''}
                         onChange={handlerOnChange}
                         onFocus={onFocus}
                         onBlur={onBlur}
@@ -180,9 +180,13 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         </div>
                     }
                 </div>
-
-                {(!load && arrObject !== undefined && arrObject.length > 0) &&
+                {(arrObject.length === 0 && !disabled) &&
                     <div className={'select-search-db-dropdown'}>
+                        <li>Введите текст</li>
+                    </div>
+                }
+                {(!load && arrObject !== undefined && arrObject.length > 0) &&
+                    <div className={'select-search-db-dropdown active'}>
                         <FStack direction={'column'} st={{paddingLeft: '11px'}}>
                             {arrObject.slice(0, 10).map((opt, index) => (
                                 <li

@@ -1,5 +1,5 @@
-import * as XLSX from 'xlsx';
 import {jsxToHtml} from "./dop-function/jsxToHtml";
+import {XLSXUni} from "./dop-function/export-excel/core";
 
 export interface IfExportTableToExcel {
     tableId?: string,
@@ -12,59 +12,27 @@ const fExportTableToExcel = async ({tableId, fileName, jsxElement}: IfExportTabl
     if (jsxElement === undefined && tableId !== undefined) {
 
         const htmlTable = document.getElementById(tableId);
-
         if (htmlTable) {
-            // Создайте книгу XLSX
-            const workbook = XLSX.utils.book_new();
-
-            // Создайте лист XLSX
-            const worksheet = XLSX.utils.table_to_sheet(htmlTable, { raw: true });
-
-            // Примените стиль к всей таблице
-            worksheet['!cols'] = [{wch: 15}, {wch: 15}, {wch: 15}]; // Настройте ширину столбцов
-            worksheet['!rows'] = [{hpt: 15}]; // Настройте высоту строк
-
-            // Добавьте лист к книге
-            XLSX.utils.book_append_sheet(workbook, worksheet, 'Лист 1');
-
-            // Генерируйте XLSX-файл
-            XLSX.writeFile(workbook, `${fileName}.xlsx`);
+            const container = document.createElement('div');
+            const copiedElement = htmlTable.cloneNode(true); // Клонируем элемент
+            container.appendChild(copiedElement); // Добавляем клонированный элемент в блок назначения
+            let file: XLSXUni = XLSXUni.exportDOMToXLSX(container);
+            file.save(`${fileName}.xlsx`);
             return true
         } else {
             return false
         }
-    } else if (jsxElement !== undefined){
+    } else if (jsxElement !== undefined) {
+
         let status: boolean = false
-        await jsxToHtml(jsxElement).then((table) => {
-            if (table) {
-                // Создается временный элемент DOM
-                const tempElement = document.createElement('div');
 
-                // В цикле добавляем во временный элемент DOM полученные таблицы
-                table.forEach(opt => {
-
-                    // Вставьте HTML-код таблиц во временный DOM элемент
-                    tempElement.innerHTML += opt.outerHTML
-
-                })
-
-                // Создайте лист XLSX из объединенной HTML-таблицы
-                const worksheet = XLSX.utils.table_to_sheet(tempElement, { raw: true });
-
-                worksheet['!cols'] = [{wch: 15}, {wch: 15}, {wch: 15}]; // Настройте ширину столбцов
-                worksheet['!rows'] = [{hpt: 15}]; // Настройте высоту строк
-
-                // Создайте новую книгу XLSX
-                const workbook = XLSX.utils.book_new();
-
-                // Добавьте лист к книге
-                XLSX.utils.book_append_sheet(workbook, worksheet, 'Лист 1');
-
-                // Генерируйте XLSX-файл
-                XLSX.writeFile(workbook, `${fileName}.xlsx`);
-                status =  true
+        await jsxToHtml(jsxElement).then((element) => {
+            if (element) {
+                let file: XLSXUni = XLSXUni.exportDOMToXLSX(element);
+                file.save(`${fileName}.xlsx`);
+                status = true
             } else {
-                status =  true
+                status = true
             }
         });
         return status

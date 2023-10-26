@@ -1,19 +1,21 @@
 import ReactDOM from "react-dom/client";
-import {generateUniqueId} from "./generateUniqueId";
 
-export function jsxToHtml(element: JSX.Element): Promise<NodeListOf<HTMLTableElement> | null> {
+export function jsxToHtml(element: JSX.Element): Promise<HTMLDivElement | null> {
     return new Promise((resolve) => {
         const container = document.createElement('div');
         const root = ReactDOM.createRoot(container);
-
         const observer = new MutationObserver((mutationsList) => {
             for (const mutation of mutationsList) {
                 if (mutation.addedNodes.length) {
-                    // Проверяем добавление элементов с нужным ID
-                    const table = container.querySelectorAll(`table`);
-                    if (table) {
+                    const allElements: HTMLElement[] = Array.from(container.querySelectorAll('table, span, br, p, h1, h2, h3, h4, h5'));
+                    if (allElements) {
                         observer.disconnect(); // Отключаем наблюдателя
-                        resolve(table);
+
+                        const divBlock = document.createElement('div')
+                        allElements.forEach(opt => {
+                            divBlock.appendChild(opt)
+                        })
+                        resolve(divBlock);
                     }
                 }
             }
