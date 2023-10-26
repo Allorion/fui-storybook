@@ -1,7 +1,8 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
-import FSelectSearchDb, {IFSelectSearchDb} from "../../../../fui/src/material/FSelectSearchDb/FSelectSearchDb";
+
+import FSelectSearchDb, {IFSelectSearchDb} from './FSelectSearchDb';
 
 export default {
     title: 'Components/INPUTS/FSelectSearchDb',
@@ -17,7 +18,7 @@ Default.args = {
     className: 'select-search-db-className',
     st: {marginTop: '20px'},
     label: 'Поле поиска по базе',
-    // @ts-ignore
+    defaultValue: "Текст при первом рендере",
     fetchingFunc: (e) => {
         return []
     },
@@ -56,12 +57,17 @@ ReadOnly.args = {
     readOnly: true,
 };
 
+export const Load = Template.bind({});
+
+Load.args = {
+    load: true,
+};
+
 export const ErrText: StoryFn<IFSelectSearchDb> = () => (
     <FSelectSearchDb
         fullWidth={true}
         errText={['Первая ошибка', 'Вторая ошибка']}
         label={'Error Text'}
-        // @ts-ignore
         fetchingFunc={() => {
             return []
         }}
@@ -75,7 +81,6 @@ export const HelpText: StoryFn<IFSelectSearchDb> = () => (
     <FSelectSearchDb
         fullWidth={true}
         helpText={'Текст помощи'}
-        // @ts-ignore
         fetchingFunc={() => {
             return []
         }}

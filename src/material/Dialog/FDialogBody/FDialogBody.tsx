@@ -15,7 +15,7 @@ export interface IFDialogBody {
 const FDialogBody: FC<IFDialogBody> = ({
                                            st,
                                            children,
-                                           scroll
+                                           scroll=true
                                        }) => {
 
     let style: React.CSSProperties = {

@@ -1,4 +1,4 @@
-import React, {FC, useRef, useState} from "react";
+import React, {FC, useEffect, useRef, useState} from "react";
 import {FStack} from "../index";
 import {FArrowIcon} from "../../icons";
 import './FSelectSearchDb.css'
@@ -21,6 +21,7 @@ export interface IFSelectSearchDb {
     onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
     minLengthText?: number,
+    defaultValue?: string
 }
 
 const FSelectSearchDb: FC<IFSelectSearchDb> = ({
@@ -39,7 +40,8 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                                                    errText,
                                                    helpText,
                                                    minLengthText,
-                                                   required
+                                                   required,
+                                                   defaultValue
                                                }) => {
 
     const [valueInput, setValueInput] = useState<string>('')
@@ -49,6 +51,42 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
     const timerDebounceRef = useRef<number>();
 
     const [load, setLoad] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (defaultValue !== undefined) {
+            setValueInput(defaultValue)
+
+            if (timerDebounceRef.current) {
+                clearTimeout(timerDebounceRef.current);
+            }
+
+            if (defaultValue !== '') {
+                if (minLengthText !== undefined && defaultValue.length === minLengthText) {
+                    // @ts-ignore
+                    timerDebounceRef.current = setTimeout(() => {
+                        setLoad(true)
+                        fetchingFunc(defaultValue).then(r => {
+                            setArrObject(r)
+                            setLoad(false)
+                        })
+                    }, 1000);
+                } else {
+                    // @ts-ignore
+                    timerDebounceRef.current = setTimeout(() => {
+                        setLoad(true)
+                        fetchingFunc(defaultValue).then(r => {
+                            setArrObject(r)
+                            setLoad(false)
+                        })
+                    }, 1000);
+                }
+
+            } else {
+                setArrObject([])
+                setLoad(false)
+            }
+        }
+    }, [defaultValue]);
 
     const handlerOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
@@ -126,7 +164,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         }}
                         type={'text'}
                         className="form-control select-search-db-input"
-                        value={valueInput}
+                        value={!load ? valueInput : ''}
                         onChange={handlerOnChange}
                         onFocus={onFocus}
                         onBlur={onBlur}
@@ -142,9 +180,13 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         </div>
                     }
                 </div>
-
-                {(!load && arrObject !== undefined && arrObject.length > 0) &&
+                {(arrObject.length === 0 && !disabled) &&
                     <div className={'select-search-db-dropdown'}>
+                        <li>Введите текст</li>
+                    </div>
+                }
+                {(!load && arrObject !== undefined && arrObject.length > 0) &&
+                    <div className={'select-search-db-dropdown active'}>
                         <FStack direction={'column'} st={{paddingLeft: '11px'}}>
                             {arrObject.slice(0, 10).map((opt, index) => (
                                 <li
