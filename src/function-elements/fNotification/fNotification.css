@@ -4,9 +4,6 @@
     align-items: end;
     margin: 16px;
     gap: 16px;
-    position: fixed;
-    top: 0;
-    right: 0;
 }
 .f-function-block-notification {
     opacity: 0;
