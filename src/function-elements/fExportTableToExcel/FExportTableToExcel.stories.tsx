@@ -42,54 +42,56 @@ const Template: StoryFn<IfExportTableToExcel> = (args) => {
             >
                 Экспортировать в Excel
             </FButton>
-            <FTable id={'test-export-table'}>
-                <FTableHead>
-                    <FTableRow>
-                        <FTableHeaderCell row={2}>№ п/п</FTableHeaderCell>
-                        <FTableHeaderCell col={2}>Разработчики</FTableHeaderCell>
-                    </FTableRow>
-                    <FTableRow>
-                        <FTableHeaderCell>Имя</FTableHeaderCell>
-                        <FTableHeaderCell>Возраст</FTableHeaderCell>
-                    </FTableRow>
-                </FTableHead>
-                <FTableBody>
-                    <FTableRow>
-                        <FTableDataCell>1</FTableDataCell>
-                        <FTableDataCell>Влад</FTableDataCell>
-                        <FTableDataCell>23</FTableDataCell>
-                    </FTableRow>
-                    <FTableRow>
-                        <FTableDataCell>2</FTableDataCell>
-                        <FTableDataCell>Стас</FTableDataCell>
-                        <FTableDataCell>24</FTableDataCell>
-                    </FTableRow>
-                    <FTableRow>
-                        <FTableDataCell>3</FTableDataCell>
-                        <FTableDataCell>Ваня</FTableDataCell>
-                        <FTableDataCell>24</FTableDataCell>
-                    </FTableRow>
-                </FTableBody>
-            </FTable>
-            <span>
-                {`onClick={() => {
-                    fExportTableToExcel({tableId: 'test-export-table', fileName: 'testExport'}).then(result => {
-                        if (result) {
-                            fAlert({
-                                title: 'Файл создан',
-                                variant: "success",
-                                body: 'Таблица добавлена в Excel'
-                            })
-                        } else {
-                            fAlert({
-                                title: 'Файл не создан',
-                                variant: "error",
-                                body: 'Таблица не добавлена в Excel'
-                            })
-                        }
-                    })
-                }}`}
-            </span>
+            <div id={`${args.divId !== undefined ? args.divId : ''}`}>
+                <FTable id={`${args.tableId !== undefined ? args.tableId : ''}`}>
+                    <FTableHead>
+                        <FTableRow>
+                            <FTableHeaderCell row={2}>№ п/п</FTableHeaderCell>
+                            <FTableHeaderCell col={2}>Разработчики</FTableHeaderCell>
+                        </FTableRow>
+                        <FTableRow>
+                            <FTableHeaderCell>Имя</FTableHeaderCell>
+                            <FTableHeaderCell>Возраст</FTableHeaderCell>
+                        </FTableRow>
+                    </FTableHead>
+                    <FTableBody>
+                        <FTableRow>
+                            <FTableDataCell>1</FTableDataCell>
+                            <FTableDataCell>Влад</FTableDataCell>
+                            <FTableDataCell>23</FTableDataCell>
+                        </FTableRow>
+                        <FTableRow>
+                            <FTableDataCell>2</FTableDataCell>
+                            <FTableDataCell>Стас</FTableDataCell>
+                            <FTableDataCell>24</FTableDataCell>
+                        </FTableRow>
+                        <FTableRow>
+                            <FTableDataCell>3</FTableDataCell>
+                            <FTableDataCell>Ваня</FTableDataCell>
+                            <FTableDataCell>24</FTableDataCell>
+                        </FTableRow>
+                    </FTableBody>
+                </FTable>
+                <span>
+                    {`onClick={() => {
+                        fExportTableToExcel({tableId: 'test-export-table', fileName: 'testExport'}).then(result => {
+                            if (result) {
+                                fAlert({
+                                    title: 'Файл создан',
+                                    variant: "success",
+                                    body: 'Таблица добавлена в Excel'
+                                })
+                            } else {
+                                fAlert({
+                                    title: 'Файл не создан',
+                                    variant: "error",
+                                    body: 'Таблица не добавлена в Excel'
+                                })
+                            }
+                        })
+                    }}`}
+                </span>
+            </div>
         </React.Fragment>
     )
 };
@@ -99,6 +101,13 @@ export const TableId = Template.bind({});
 TableId.args = {
     fileName: 'testExport',
     tableId: 'test-export-table',
+};
+
+export const DivId = Template.bind({});
+
+DivId.args = {
+    fileName: 'testExport',
+    divId: 'test-div-export-table',
 };
 
 const HtmlCodeTemplate: StoryFn<IfExportTableToExcel> = (args) => {

@@ -17,6 +17,14 @@ export const convertHtmlTbToXml = (opt: Element) => {
         tbodyXml = createRow(tbody)
     }
 
-    return createTagTb(theadXml + tbodyXml)
+    let rows = 0
+
+    if (thead !== null) {
+        rows = thead.querySelectorAll('tr').length
+    } else if (tbody !== null) {
+        rows = tbody.querySelectorAll('tr').length
+    }
+
+    return createTagTb(theadXml + tbodyXml, rows)
 
 }

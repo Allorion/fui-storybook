@@ -26,8 +26,17 @@ export const createTagBr = () => {
     return `<w:p></w:p>`
 }
 
-export const createTagTb = (table: string): string => {
-    return `<w:tbl><w:tblPr><w:tblStyle w:val="a7"/><w:tblW w:w="0" w:type="auto"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr>${table}</w:tbl>`
+export const createTagTb = (table: string, rows: number): string => {
+
+    const arr: string[] = ['<w:tblGrid>']
+
+    for (let i = 0; i < rows; i++) {
+        arr.push('<w:gridCol/>')
+    }
+
+    arr.push('</w:tblGrid')
+
+    return `<w:tbl><w:tblPr><w:tblStyle w:val="a7"/><w:tblW w:w="0" w:type="auto"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr>${arr.join('')}${table}</w:tbl>`
 }
 
 export const createTagTbRow = (listCel: string) => {

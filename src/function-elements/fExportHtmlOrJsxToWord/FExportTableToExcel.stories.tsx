@@ -93,9 +93,6 @@ const Template: StoryFn<IfExportHtmlOrJsxToWord> = (args) => {
                     }}`}
                 </span>
                 </FPaper>
-                <FPaper>
-                    <p>asdsadasjasduudiafdguashydoaghdyasgyasy</p>
-                </FPaper>
             </div>
         </React.Fragment>
     )
