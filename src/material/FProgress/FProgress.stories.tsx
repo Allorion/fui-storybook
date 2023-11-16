@@ -4,6 +4,7 @@ import { Meta, StoryFn } from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import FProgress, { IFProgress } from './FProgress';
+import FPaper from "../FPaper";
 
 export default {
   title: 'Components/FEEDBACK/FProgress',
@@ -12,7 +13,7 @@ export default {
 } satisfies Meta<typeof FProgress>;
 
 const Progress: StoryFn<IFProgress> = (args) => {
-  return <FProgress {...args}></FProgress>;
+  return <FProgress {...args}/>;
 };
 
 export const Default = Progress.bind({});
@@ -35,6 +36,7 @@ Default.argTypes = {
 
 Default.args = {
   st: {
+    marginLeft: '20px',
     width: '5rem',
     height: '5rem',
   },

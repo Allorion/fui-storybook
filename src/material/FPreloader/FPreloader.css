@@ -1,5 +1,5 @@
 .f-preloader {
-    display: block;
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -18,4 +18,12 @@
     margin-left: -35px;
     text-align: center;
     animation: preloader-rotate 2s infinite linear;
+}
+
+.active-preloader {
+    display: block;
+}
+
+body.open-preloader {
+    overflow: hidden;
 }

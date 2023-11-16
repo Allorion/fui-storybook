@@ -1,4 +1,5 @@
 #block-notification {
+    z-index: 999999;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -12,6 +13,7 @@
     opacity: 0;
 }
 .f-function-notification {
+    z-index: 9999999999;
     display: flex;
     flex-direction: row;
     width: fit-content;

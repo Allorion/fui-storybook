@@ -15,24 +15,20 @@ const FProgress: FC<IFProgress> = ({
                                        color = 'primary'
                                    }) => {
 
-    let style: React.CSSProperties = {
-        borderTopColor: color === 'primary' ? '#007bff' :
-            color === 'secondary' ? '#6c757d' :
-                color === 'success' ? '#28a745' :
-                    color === 'danger' ? '#dc3545' :
-                        color === 'warning' ? '#ffc107' :
-                            color === 'info' ? '#17a2b8' :
-                                color === 'light' ? '#f8f9fa' :
-                                    color === 'dark' ? '#343a40' : '#007bff'
-    }
-
-    if (st !== undefined) {
-        style = Object.assign(style, st)
-    }
+    let valueColor: string = color === 'primary' ? '#007bff' :
+        color === 'secondary' ? '#6c757d' :
+            color === 'success' ? '#28a745' :
+                color === 'danger' ? '#dc3545' :
+                    color === 'warning' ? '#ffc107' :
+                        color === 'info' ? '#17a2b8' :
+                            color === 'light' ? '#f8f9fa' :
+                                color === 'dark' ? '#343a40' : '#007bff'
 
     return (
         <React.Fragment>
-            <div style={style} className={'f-progress'}/>
+            <div className="authorization-spinner visible" id="authorizationSpinner" style={st}>
+                <div className="spinner-item" style={{color: valueColor}}/>
+            </div>
         </React.Fragment>
     )
 }

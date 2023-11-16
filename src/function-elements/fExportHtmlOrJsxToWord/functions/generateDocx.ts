@@ -1,4 +1,3 @@
-import JSZip from "jszip";
 import {contentTypes} from "../xml-confs/contentTypes";
 import {rels} from "../xml-confs/_rels/rels";
 import {app} from "../xml-confs/docProps/app";
@@ -9,6 +8,8 @@ import {document as createDocumentFile} from "../xml-confs/word/document";
 import {styles} from "../xml-confs/word/styles";
 import {theme1} from "../xml-confs/word/theme/theme1";
 import {webSettings} from "../xml-confs/word/webSettings";
+import JSZip from "jszip";
+
 
 interface IProps {
     data: string,
