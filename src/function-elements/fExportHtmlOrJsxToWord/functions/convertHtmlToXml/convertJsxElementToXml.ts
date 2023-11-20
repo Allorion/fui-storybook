@@ -9,7 +9,7 @@ import {
 } from "../createXmlTags";
 import {convertHtmlTbToXml} from "./convertHtmlTbToXml";
 
-export const convertJsxElementToXml = (el: HTMLDivElement | HTMLElement) => {
+export const convertJsxElementToXml = (el: HTMLDivElement | HTMLElement, width: number) => {
 
     let listXmlStr: string[] = []
 
@@ -64,9 +64,9 @@ export const convertJsxElementToXml = (el: HTMLDivElement | HTMLElement) => {
                 if (span !== '') {
                     listXmlStr.push(span += createEndSpan())
                     span = ''
-                    listXmlStr.push(convertHtmlTbToXml(opt))
+                    listXmlStr.push(convertHtmlTbToXml(opt, width))
                 } else {
-                    listXmlStr.push(convertHtmlTbToXml(opt))
+                    listXmlStr.push(convertHtmlTbToXml(opt, width))
                 }
             }
         }

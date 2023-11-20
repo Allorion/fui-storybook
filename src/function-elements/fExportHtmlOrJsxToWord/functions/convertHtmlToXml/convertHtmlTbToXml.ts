@@ -1,7 +1,8 @@
 import {createRow} from "./createRow";
 import {createTagTb} from "../createXmlTags";
+import {getCellData} from "../getCellData";
 
-export const convertHtmlTbToXml = (opt: Element) => {
+export const convertHtmlTbToXml = (opt: Element, width: number) => {
 
     const thead = opt.querySelector('thead');
     const tbody = opt.querySelector('tbody');
@@ -17,14 +18,26 @@ export const convertHtmlTbToXml = (opt: Element) => {
         tbodyXml = createRow(tbody)
     }
 
-    let rows = 0
+    let countCell = 0
 
     if (thead !== null) {
-        rows = thead.querySelectorAll('tr').length
+        const rows = thead.querySelectorAll('tr')
+        const firstCell: HTMLTableCellElement[] = Array.from(rows[0].querySelectorAll('th, td'));
+
+        firstCell.forEach((cell, cellIndex) => {
+            const {colspan} = getCellData(cell);
+            countCell += colspan
+        })
     } else if (tbody !== null) {
-        rows = tbody.querySelectorAll('tr').length
+        const rows = tbody.querySelectorAll('tr')
+        const firstCell: HTMLTableCellElement[] = Array.from(rows[0].querySelectorAll('th, td'));
+
+        firstCell.forEach((cell, cellIndex) => {
+            const {colspan} = getCellData(cell);
+            countCell += colspan
+        })
     }
 
-    return createTagTb(theadXml + tbodyXml, rows)
+    return createTagTb(theadXml + tbodyXml, countCell, width)
 
 }
