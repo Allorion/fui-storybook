@@ -27,11 +27,11 @@
 .select-search-db-dropdown {
     display: none;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     padding: 10px;
     box-shadow: 0px 0px 5px rgb(0 0 0 / 20%);
     border-radius: 10px;
-    width: 100%;
+    width: fit-content;
     z-index: 6;
     margin-top: 2px;
     opacity: 0;
@@ -47,7 +47,7 @@
     animation: fadeInFromNone 0.3s ease;
 }
 
-.select-search-db-dropdown li {
+.select-search-db-dropdown option {
     padding: 8px;
     color: #656565;
     font-size: 14px;
@@ -55,11 +55,11 @@
     list-style-type: none;
 }
 
-.select-search-db-dropdown li:last-child {
+.select-search-db-dropdown option:last-child {
     border-bottom: 0;
 }
 
-.select-search-db-dropdown.active li:hover {
+.select-search-db-dropdown.active option:hover {
     cursor: pointer;
     background-color: rgb(47 128 237 / 21%);
 }
