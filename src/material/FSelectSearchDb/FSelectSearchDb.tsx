@@ -3,7 +3,6 @@ import {FStack} from "../index";
 import {FArrowIcon} from "../../icons";
 import './FSelectSearchDb.css'
 import FLoadIcon from "../../icons/FLoadIcon";
-import {generateUniqueId} from "../../dop-function/generateUniqueId";
 
 export interface IFSelectSearchDb {
     fetchingFunc: (text: string) => Promise<any[]>,
@@ -52,8 +51,6 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
     const timerDebounceRef = useRef<number>();
 
     const [load, setLoad] = useState<boolean>(false)
-
-    const idList = generateUniqueId()
 
     useEffect(() => {
         if (defaultValue !== undefined) {
@@ -174,8 +171,6 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         onChange={handlerOnChange}
                         onFocus={onFocus}
                         onBlur={onBlur}
-                        list={'f-select-search-' + idList}
-                        id={'f-select-search-input-' + idList}
                     />
                     {(!load && !disabled) &&
                         <div className={'select-search-db-input-arrow'}>
@@ -189,15 +184,15 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                     }
                 </div>
                 {(arrObject.length === 0 && !disabled) &&
-                    <datalist className={'datalist-class'} id={'f-select-search-' + idList}>
-                        <option>Введите текст</option>
-                    </datalist>
+                    <div className={'select-search-db-dropdown'}>
+                        <li>Введите текст</li>
+                    </div>
                 }
                 {(!load && arrObject !== undefined && arrObject.length > 0) &&
-                    <datalist id={'f-select-search-' + idList}>
+                    <div className={'select-search-db-dropdown active'}>
                         <FStack direction={'column'} st={{paddingLeft: '11px'}}>
                             {arrObject.slice(0, 10).map((opt, index) => (
-                                <option
+                                <li
                                     key={index}
                                     onClick={(e) => {
                                         selectedElement(opt)
@@ -206,11 +201,11 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                                     }}
                                 >
                                     {selectItem(opt)}
-                                </option>
+                                </li>
                             ))
                             }
                         </FStack>
-                    </datalist>
+                    </div>
                 }
                 {helpText !== undefined &&
                     <span
