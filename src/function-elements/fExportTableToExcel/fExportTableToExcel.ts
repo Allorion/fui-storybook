@@ -1,11 +1,11 @@
-import {jsxToHtml} from "./dop-function/jsxToHtml";
 import {XLSXUni} from "./dop-function/export-excel/core";
+import {jsxToHtml} from "./dop-function/jsxToHtml";
 
 export interface IfExportTableToExcel {
     tableId?: string,
     divId?: string,
     fileName: string,
-    jsxElement?: JSX.Element
+    jsxElement?: string
 }
 
 const fExportTableToExcel = async ({tableId, fileName, jsxElement, divId}: IfExportTableToExcel) => {
@@ -28,15 +28,37 @@ const fExportTableToExcel = async ({tableId, fileName, jsxElement, divId}: IfExp
 
         let status: boolean = false
 
+        // try {
+        //     const container = document.createElement('div');
+        //
+        //     container.innerHTML = jsxElement
+        //
+        //     const allElements: HTMLElement[] = Array.from(container.querySelectorAll('table, span, br, p, h1, h2, h3, h4, h5'));
+        //
+        //     const divBlock = document.createElement('div')
+        //
+        //     allElements.forEach(opt => {
+        //         divBlock.appendChild(opt)
+        //     })
+        //
+        //     let file: XLSXUni = XLSXUni.exportDOMToXLSX(divBlock);
+        //     file.save(`${fileName}.xlsx`);
+        //
+        //     status = false
+        // } catch (err) {
+        //     status = false
+        // }
+
         await jsxToHtml(jsxElement).then((element) => {
-            if (element) {
+            if (element !== null) {
                 let file: XLSXUni = XLSXUni.exportDOMToXLSX(element);
                 file.save(`${fileName}.xlsx`);
                 status = true
             } else {
-                status = true
+                status = false
             }
         });
+
         return status
     } else if (divId !== undefined && jsxElement === undefined && tableId === undefined) {
 

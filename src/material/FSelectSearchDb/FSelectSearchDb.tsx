@@ -69,7 +69,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                             setArrObject(r)
                             setLoad(false)
                         })
-                    }, 1000);
+                    }, 5000);
                 } else {
                     // @ts-ignore
                     timerDebounceRef.current = setTimeout(() => {
@@ -78,7 +78,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                             setArrObject(r)
                             setLoad(false)
                         })
-                    }, 1000);
+                    }, 5000);
                 }
 
             } else {
@@ -107,7 +107,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         setArrObject(r)
                         setLoad(false)
                     })
-                }, 1000);
+                }, 5000);
             } else {
                 // @ts-ignore
                 timerDebounceRef.current = setTimeout(() => {
@@ -116,7 +116,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                         setArrObject(r)
                         setLoad(false)
                     })
-                }, 1000);
+                }, 5000);
             }
 
         } else {

@@ -1,13 +1,13 @@
 import {convertHtmlTbToXml} from "./functions/convertHtmlToXml/convertHtmlTbToXml";
-import {jsxToHtml} from "./functions/jsxToHtml";
 import {generateDocx} from "./functions/generateDocx";
 import {convertJsxElementToXml} from "./functions/convertHtmlToXml/convertJsxElementToXml";
+import {jsxToHtml} from "./functions/jsxToHtml";
 
 export interface IfExportHtmlOrJsxToWord {
     tableId?: string,
     divId?: string,
     fileName: string,
-    jsxElement?: JSX.Element,
+    jsxElement?: string,
     format?: 'A4' | 'A3' | 'A2' | 'A1',
     orientation?: 'landscape' | 'vertical'
 }
@@ -49,7 +49,33 @@ export const fExportHtmlOrJsxToWord = async ({
             return false
         }
     } else if (jsxElement !== undefined && divId === undefined && tableId === undefined) {
+
         let status: boolean = false
+
+        // try {
+        //     const container = document.createElement('div');
+        //
+        //     container.innerHTML = jsxElement
+        //
+        //     const allElements: HTMLElement[] = Array.from(container.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, br, table'));
+        //
+        //     const divBlock = document.createElement('div')
+        //
+        //     allElements.forEach(opt => {
+        //         divBlock.appendChild(opt)
+        //     })
+        //
+        //     await generateDocx({
+        //         data: convertJsxElementToXml(divBlock, width),
+        //         format: format,
+        //         orientation: orientation,
+        //         fileName: fileName
+        //     })
+        //
+        //     status = false
+        // } catch (err) {
+        //     status = false
+        // }
 
         await jsxToHtml(jsxElement).then(async (element) => {
             if (element !== null) {
@@ -61,7 +87,7 @@ export const fExportHtmlOrJsxToWord = async ({
                 })
                 status = true
             } else {
-                status = true
+                status = false
             }
         });
 

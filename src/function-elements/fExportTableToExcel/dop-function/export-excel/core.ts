@@ -127,7 +127,7 @@ export class XLSXUni{
 					d.querySelector('tbody').querySelectorAll('tr').forEach(tr => {
 						if(typeof tb[row] === 'undefined') tb[row] = [];
 						if(typeof table.style[row] === 'undefined') table.style[row] = [];
-						tr.querySelectorAll('td').forEach((td) => {
+						tr.querySelectorAll('td, th').forEach((td) => {
 							let col = getStartCol(tb[row]);
 							tb[row][col] = fixCell(td.innerText);
 							if(td.colSpan == 1){
@@ -237,7 +237,6 @@ export class XLSXUni{
 				});
 			}
 		});
-		console.log(exp);
 		return exp;
 	}
 	
@@ -925,7 +924,7 @@ class RenderXLXS {
 			Object.keys(cells).forEach((j0) => {
 				let j = Number.parseInt(j0);
 				let cell = cells[j];
-				if(cell.isNumber()){
+				if(typeof cell.getData() === 'number'){
 					file += '<c r="'+numberToABC(j)+i+'" s="'+this.styleHash.indexOf(styleList[cell.getStyleNum()].getHash())+'"><v>'+cell.getData()+'</v></c>';
 				}else if(cell.isNull()){
 					file += '<c r="'+numberToABC(j)+i+'" s="'+this.styleHash.indexOf(styleList[cell.getStyleNum()].getHash())+'" />';
@@ -947,7 +946,7 @@ class RenderXLXS {
 			file += '</mergeCells>';
 		}
 		file += '<headerFooter /></worksheet>';
-		
+
 		return file;
 	}
 	
