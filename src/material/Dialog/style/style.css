@@ -65,6 +65,7 @@
 
 /* Заголовок с кнопкой закрытия */
 .dialog-footer {
+    width: 100%;
     padding: 16px 8px 8px 8px;
 }
 

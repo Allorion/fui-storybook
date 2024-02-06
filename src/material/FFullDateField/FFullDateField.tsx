@@ -22,7 +22,9 @@ export interface IFFullDateField {
     errText?: string[],
     helpText?: string,
     onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
-    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined
+    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
+    width?: string | number,
+    height?: string | number,
 }
 
 const FFullDateField: FC<IFFullDateField> = (
@@ -43,15 +45,32 @@ const FFullDateField: FC<IFFullDateField> = (
         helpText,
         onBlur,
         onFocus,
-        required
+        required,
+        height = 'auto',
+        width,
     }
 ) => {
 
-    let style = {
+    let style: {
+        whiteSpace: string,
+        overflow: string,
+        textOverflow: string,
+        width: string | number,
+        height: string | number,
+    } = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        width: fullWidth ? '100%' : 'fit-content'
+        width: fullWidth ? '100%' : 'fit-content',
+        height: 'auto',
+    }
+
+    if (width !== undefined) {
+        style['width'] = width
+    }
+
+    if (height !== undefined) {
+        style['height'] = height
     }
 
     st = Object.assign({}, st, style);

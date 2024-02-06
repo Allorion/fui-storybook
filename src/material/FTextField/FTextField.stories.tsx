@@ -14,7 +14,7 @@ export default {
 } satisfies Meta<typeof FTextField>;
 
 const Template: StoryFn<IFTextField> = (args) => (
-  <div style={{ width: 'auto' }}>
+  <div>
     <FTextField {...args} />
   </div>
 );
@@ -22,8 +22,9 @@ const Template: StoryFn<IFTextField> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  id: 'stack-id',
-  className: 'stack-className',
+  id: 'FTextField-id',
+  className: 'FTextField-className',
+  width: 'fit-content',
 };
 
 export const Label = Template.bind({});

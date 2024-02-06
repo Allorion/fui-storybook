@@ -25,6 +25,8 @@ export interface IFTextField {
     min?: number,
     max?: number,
     placeholder?: string | undefined,
+    width?: string | number,
+    height?: string | number,
 }
 
 const FTextField: FC<IFTextField> = (
@@ -50,6 +52,8 @@ const FTextField: FC<IFTextField> = (
         max,
         placeholder,
         required,
+        height = 'auto',
+        width,
     }
 ) => {
 
@@ -61,22 +65,32 @@ const FTextField: FC<IFTextField> = (
         } else {
             st.width = '100%'
         }
-    } else {
-        if (st === undefined) {
-            st = {
-                width: 'fit-content'
-            }
-        } else {
-            st.width = 'fit-content'
-        }
     }
 
-    let style = {
+    let style: {
+        whiteSpace: string,
+        overflow: string,
+        textOverflow: string,
+        width: string | number,
+        height: string | number,
+    } = {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
+        width: 'fit-content',
+        height: 'auto',
     }
-    st = Object.assign({}, st, style);
+
+
+    if (width !== undefined) {
+        style['width'] = width
+    }
+
+    if (height !== undefined) {
+        style['height'] = height
+    }
+
+    st = Object.assign({}, style, st);
 
     if (value === null) {
         value = ''
@@ -95,16 +109,18 @@ const FTextField: FC<IFTextField> = (
                     <label className="control-label with-offset" style={{
                         whiteSpace: 'nowrap',
                         overflow: 'hidden',
-                        textOverflow: 'ellipsis'
+                        textOverflow: 'ellipsis',
                     }}>
                         {label}
                     </label>
                 }
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <input
+                        height={height}
                         placeholder={placeholder}
                         style={{
-                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
+                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4',
+                            height: height
                         }}
                         min={min}
                         max={max}

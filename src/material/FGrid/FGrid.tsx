@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import "./css/bootstrap.css"
 
 export interface IFGrid {
     children?: React.ReactChild | React.ReactNode,
