@@ -20,6 +20,8 @@ export interface IFSelect {
     required?: boolean,
     errText?: string[],
     helpText?: string,
+    width?: string | number,
+    height?: string | number,
 }
 
 const FSelect: FC<IFSelect> = ({
@@ -38,7 +40,9 @@ const FSelect: FC<IFSelect> = ({
                                    load = false,
                                    errText,
                                    helpText,
-                                   required
+                                   required,
+                                   height = 'auto',
+                                   width = 'fit-content',
                                }) => {
 
     return (
@@ -46,11 +50,11 @@ const FSelect: FC<IFSelect> = ({
             <div
                 className={`form-group ${className !== undefined ? className : ''}`}
                 style={{
-                    width: fullWidth ? '100%' : 'fit-content',
+                    width: fullWidth ? '100%' : width,
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
-                    textOverflow: 'ellipsis'
-
+                    textOverflow: 'ellipsis',
+                    height: "auto",
                 }}
                 id={id}
             >
@@ -68,7 +72,10 @@ const FSelect: FC<IFSelect> = ({
                     <select
                         required={required}
                         disabled={disabled || load}
-                        style={Object.assign({}, st, {borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'})}
+                        style={Object.assign({}, st, {
+                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4',
+                            height: height
+                        })}
                         className="form-control"
                         onChange={onChange}
                         value={load ? undefined : value}

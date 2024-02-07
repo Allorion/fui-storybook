@@ -1,9 +1,9 @@
 import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-import fAlert, {IfAlert} from "../../../../fui/src/function-elements/fAlert/fAlert";
-import FStack from "../../../../fui/src/material/FStack/FStack";
-import FButton from "../../../../fui/src/material/FButton/FButton";
+import {FButton, FStack} from '../../material';
+import {fAlert} from "../index";
+import {IfAlert} from "./fAlert";
 
 export default {
     title: 'Function Elements/fAlert',

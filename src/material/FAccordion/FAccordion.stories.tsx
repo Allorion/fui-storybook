@@ -2,9 +2,10 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import {Meta, StoryFn} from '@storybook/react';
-import FAccordion, {IFAccordion} from "../../../../fui/src/material/FAccordion/FAccordion";
-import FStack from "../../../../fui/src/material/FStack/FStack";
+import { Meta, StoryFn } from '@storybook/react';
+
+import FAccordion, { IFAccordion } from './FAccordion';
+import { FStack } from '../index';
 
 export default {
   title: 'Components/SURFACES/FAccordion',

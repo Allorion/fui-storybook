@@ -1,9 +1,11 @@
 import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
+
+import {IFTrashIcon} from './FTrashIcon';
+import FTrashIcon from './FTrashIcon';
 import 'bootstrap/dist/css/bootstrap.css';
-import FTrashIcon, {IFTrashIcon} from "../../../../fui/src/icons/FTrashIcon/FTrashIcon";
-import FStack from "../../../../fui/src/material/FStack/FStack";
+import {FStack} from '../../material';
 
 export default {
     title: 'Icons/FTrashIcon',

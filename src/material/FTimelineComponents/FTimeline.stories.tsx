@@ -1,10 +1,11 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
+
+import FTimeline, { IFTimeline } from './FTimeline/FTimeline';
+import FTimelineCard from './FTimelineCard/FTimelineCard';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FTimeline, {IFTimeline} from "../../../../fui/src/material/FTimelineComponents/FTimeline/FTimeline";
-import FTimelineCard from "../../../../fui/src/material/FTimelineComponents/FTimelineCard/FTimelineCard";
 
 export default {
   title: 'Components/LAB/FTimeline',

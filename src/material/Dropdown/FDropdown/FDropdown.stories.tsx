@@ -2,9 +2,10 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import {Meta, StoryFn} from '@storybook/react';
-import FDropdown, {IFDropdown} from "../../../../../fui/src/material/Dropdown/FDropdown/FDropdown";
-import FDropdownItem from "../../../../../fui/src/material/Dropdown/FDropdownItem/FDropdownItem";
+import { Meta, StoryFn } from '@storybook/react';
+
+import FDropdown, { IFDropdown } from './FDropdown';
+import FDropdownItem from '../FDropdownItem';
 
 export default {
   title: 'Components/INPUTS/FDropdown',

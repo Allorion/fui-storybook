@@ -1,10 +1,13 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
+import { IFContainer } from './FContainer';
+
+// import "./FContainer-story.css"
+import FContainer from './FContainer';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FContainer, {IFContainer} from "../../../../fui/src/material/FContainer/FContainer";
 
 export default {
   title: 'Components/LAYOUT/FContainer',

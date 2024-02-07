@@ -1,9 +1,9 @@
 import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
-import FStack from "../../../../fui/src/material/FStack/FStack";
-import FButton from "../../../../fui/src/material/FButton/FButton";
-import fAlert from "../../../../fui/src/function-elements/fAlert/fAlert";
-import fConfirm, {IfConfirm} from "../../../../fui/src/function-elements/fConfirm/fConfirm";
+import 'bootstrap/dist/css/bootstrap.css';
+import {FButton, FStack} from '../../material';
+import {fAlert, fConfirm} from "../index";
+import {IfConfirm} from "./fConfirm";
 
 export default {
     title: 'Function Elements/fConfirm',

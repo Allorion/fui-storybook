@@ -13,7 +13,6 @@ storybook-static
 # production
 /build
 package-lock.json
-.storybook
 .idea
 # misc
 .DS_Store

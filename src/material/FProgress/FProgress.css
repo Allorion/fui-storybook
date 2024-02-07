@@ -1,0 +1,52 @@
+.authorization-spinner {
+    z-index: 1000;
+    display: flex;
+    width: max-content;
+}
+
+.authorization-spinner .spinner-item {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    top: -16px;
+    animation: loader 1s ease alternate infinite;
+    animation-delay: 0.4s;
+}
+
+.authorization-spinner .spinner-item::before {
+    left: -24px;
+    animation-delay: 0.2s;
+}
+
+.authorization-spinner .spinner-item::after, .authorization-spinner .spinner-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    animation: loader 1s ease alternate infinite;
+}
+
+.authorization-spinner .spinner-item::after {
+    right: -24px;
+    animation-delay: 0.6000000000000001s;
+}
+
+.authorization-spinner .spinner-item::after, .authorization-spinner .spinner-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    animation: loader 1s ease alternate infinite;
+}
+
+@keyframes loader {
+    0% {
+        box-shadow: 0 16px 0 -16px;
+    }
+    100% {
+        box-shadow: 0 16px 0;
+    }
+}

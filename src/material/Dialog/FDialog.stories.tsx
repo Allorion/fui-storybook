@@ -3,12 +3,12 @@ import React, {useState} from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FDialog, {IFDialog} from "../../../../fui/src/material/Dialog/FDialog/FDialog";
-import FButton from "../../../../fui/src/material/FButton/FButton";
-import FDialogHeader from "../../../../fui/src/material/Dialog/FDialogHeader/FDialogHeader";
-import FDialogBody from "../../../../fui/src/material/Dialog/FDialogBody/FDialogBody";
-import FDialogFooter from "../../../../fui/src/material/Dialog/FDialogFooter/FDialogFooter";
-import FStack from "../../../../fui/src/material/FStack/FStack";
+import FDialog from './FDialog';
+import {IFDialog} from './FDialog/FDialog';
+import FDialogHeader from './FDialogHeader';
+import FDialogBody from './FDialogBody';
+import FDialogFooter from './FDialogFooter';
+import {FButton, FStack} from '../index';
 
 export default {
     title: 'Components/FEEDBACK/FDialog',

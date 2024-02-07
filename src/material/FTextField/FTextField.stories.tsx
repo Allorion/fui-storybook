@@ -1,95 +1,98 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
+
+import { FTextField } from '../index';
+import { IFTextField } from './FTextField';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FTextField, {IFTextField} from "../../../../fui/src/material/FTextField/FTextField";
 
 export default {
-    title: 'Components/INPUTS/FTextField',
-    tags: ['autodocs'],
-    component: FTextField,
+  title: 'Components/INPUTS/FTextField',
+  tags: ['autodocs'],
+  component: FTextField,
 } satisfies Meta<typeof FTextField>;
 
 const Template: StoryFn<IFTextField> = (args) => (
-    <div style={{width: 'auto'}}>
-        <FTextField {...args} />
-    </div>
+  <div>
+    <FTextField {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});
 
 Default.args = {
-    id: 'stack-id',
-    className: 'stack-className',
+  id: 'FTextField-id',
+  className: 'FTextField-className',
+  width: 'fit-content',
 };
 
 export const Label = Template.bind({});
 
 Label.args = {
-    label: 'Имя пользователя',
+  label: 'Имя пользователя',
 };
 
 export const Value = Template.bind({});
 
 Value.args = {
-    value: 'Что-то изменилось',
+  value: 'Что-то изменилось',
 };
 
 export const DefaultValue = Template.bind({});
 
 DefaultValue.args = {
-    defaultValue: 'Что-то изменилось 2.0',
+  defaultValue: 'Что-то изменилось 2.0',
 };
 
 export const Load = Template.bind({});
 
 Load.args = {
-    load: true,
+  load: true,
 };
 
 export const Interactive = Template.bind({});
 Interactive.argTypes = {
-    type: {
-        options: ['text', 'number', 'email', 'tel'],
-        control: {type: 'select'},
-    },
-    disabled: {
-        options: [true, false],
-        control: {type: 'select'},
-    },
-    readOnly: {
-        options: [true, false],
-        control: {type: 'select'},
-    },
+  type: {
+    options: ['text', 'number', 'email', 'tel'],
+    control: { type: 'select' },
+  },
+  disabled: {
+    options: [true, false],
+    control: { type: 'select' },
+  },
+  readOnly: {
+    options: [true, false],
+    control: { type: 'select' },
+  },
 };
 Interactive.args = {
-    type: 'text',
-    disabled: false,
+  type: 'text',
+  disabled: false,
 };
 
 export const FullWidth: StoryFn<IFTextField> = () => (
-    <FTextField fullWidth={true} label={'fullWidth'}/>
+  <FTextField fullWidth={true} label={'fullWidth'} />
 );
 
 export const ErrText: StoryFn<IFTextField> = () => (
-    <FTextField errText={['Первая ошибка', 'Вторая ошибка']} label={'Error Text'}/>
+  <FTextField errText={['Первая ошибка', 'Вторая ошибка']} label={'Error Text'} />
 );
 
 export const OnChange: StoryFn<IFTextField> = () => (
-    <FTextField onChange={(event) => event.target.value}/>
+  <FTextField onChange={(event) => event.target.value} />
 );
 
 export const OnBlur: StoryFn<IFTextField> = () => (
-    <FTextField onBlur={(event) => console.log(event.target.value)}/>
+  <FTextField onBlur={(event) => console.log(event.target.value)} />
 );
 
 export const OnFocus: StoryFn<IFTextField> = () => (
-    <FTextField onFocus={(event) => console.log(event.target.value)}/>
+  <FTextField onFocus={(event) => console.log(event.target.value)} />
 );
 
 export const OnInput: StoryFn<IFTextField> = () => (
-    <FTextField onInput={(event) => console.log('onInput')}/>
+  <FTextField onInput={(event) => console.log('onInput')} />
 );
 
-export const HelpText: StoryFn<IFTextField> = () => <FTextField helpText={'Текст помощи'}/>;
+export const HelpText: StoryFn<IFTextField> = () => <FTextField helpText={'Текст помощи'} />;

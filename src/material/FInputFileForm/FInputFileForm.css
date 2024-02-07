@@ -1,0 +1,95 @@
+.custom-file {
+    position: relative;
+}
+
+.custom-file .custom-file-input:not([disabled]) {
+    cursor: pointer;
+}
+
+.custom-file .custom-file-input {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+}
+
+input[type="file"] {
+    display: block;
+}
+
+.custom-file.custom-file-dropzone .custom-file-label {
+    position: relative;
+    display: block;
+    background: rgba(47, 128, 237, 0.1);
+    border: 1px dashed #2F80ED;
+    border-radius: 8px;
+    padding: 20px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: "SF UI Display", sans-serif;
+    font-size: 14px;
+    color: #7AAEF3;
+}
+
+.custom-file .custom-file-label {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.custom-file.custom-file-dropzone .custom-file-label b, .custom-file.custom-file-dropzone .custom-file-label .svg-icon {
+    color: #2F80ED;
+}
+
+.custom-file .svg-icon {
+    color: #2F80ED;
+}
+
+.custom-file .svg-icon .icon-md, .svg-icon.lexicon-icon-md {
+    width: 32px;
+    height: 32px;
+}
+
+.custom-file svg:not(:root) {
+    overflow: hidden;
+}
+
+.custom-file .svg-icon {
+    display: inline-block;
+    fill: currentColor;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+.custom-file.custom-file-dropzone .custom-file-label b, .custom-file.custom-file-dropzone .custom-file-label .svg-icon {
+    color: #2F80ED;
+}
+
+.custom-file b, strong {
+    font-weight: bold;
+}
+
+.custom-file.custom-file-dropzone .custom-file-label small {
+    font-size: 13px;
+}
+
+.custom-file small, .small {
+    font-size: 92%;
+}
+
+.custom-file small {
+    font-size: 80%;
+}
+
+.form-group .custom-files-preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 34px;
+}
+
+.custom-file .hidden {
+    display: none !important;
+}

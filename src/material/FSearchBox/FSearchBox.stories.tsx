@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FSearchBox, {IFSearchBox} from "../../../../fui/src/material/FSearchBox/FSearchBox";
+import FSearchBox, { IFSearchBox } from './FSearchBox';
 
 export default {
   title: 'Components/INPUTS/FSearchBox',

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
-import 'bootstrap/dist/css/bootstrap.css';
-import FPlusIcon, {IFPlusIcon} from "../../../../fui/src/icons/FPlusIcon/FPlusIcon";
-import FStack from "../../../../fui/src/material/FStack/FStack";
+import { Meta, StoryFn } from '@storybook/react';
 
+import { IFPlusIcon } from './FPlusIcon';
+import FPlusIcon from './FPlusIcon';
+import 'bootstrap/dist/css/bootstrap.css';
+import { FStack } from '../../material';
 
 export default {
   title: 'Icons/FPlusIcon',

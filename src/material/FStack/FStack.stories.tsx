@@ -1,9 +1,12 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
+
+import FStack, { IFStack } from './FStack';
+
+// import "./FStack-story.css"
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FStack, {IFStack} from "../../../../fui/src/material/FStack/FStack";
 
 export default {
   title: 'Components/LAYOUT/FStack',

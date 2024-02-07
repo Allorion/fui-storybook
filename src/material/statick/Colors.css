@@ -1,0 +1,87 @@
+.primary {
+    fill: #2F80ED !important;
+}
+.secondary {
+    fill: #6c757d !important;
+}
+.success {
+    fill: #198754 !important;
+}
+.danger {
+    fill: #dc3545 !important;
+}
+.warning {
+    fill: #ffc107 !important;
+}
+.info {
+    fill: #0dcaf0 !important;
+}
+.light {
+    fill: #f8f9fa !important;
+}
+.dark {
+    fill: #212529 !important;
+}
+.link {
+    fill: #0a58ca !important;
+}
+
+.btn-primary {
+    background-color: #2F80ED !important;
+}
+.btn-secondary {
+    background-color: #6c757d !important;
+}
+.btn-success {
+    color: #EFF5F0 !important;
+    background-color: #2E7D32 !important;
+    border-color: #2E7D32 !important;
+}
+.btn-danger {
+    background-color: #dc3545 !important;
+}
+.btn-warning {
+    background-color: #ffc107 !important;
+}
+.btn-info {
+    background-color: #0dcaf0 !important;
+}
+.btn-light {
+    background-color: #f8f9fa !important;
+}
+.btn-dark {
+    background-color: #212529 !important;
+}
+.btn-link {
+    background-color: #0a58ca !important;
+    color: #fff !important;
+}
+
+.btn-default-primary {
+    background-color: #2F80ED !important;
+}
+.btn-default-secondary {
+    background-color: #6c757d !important;
+}
+.btn-default-success {
+    background-color: #198754 !important;
+}
+.btn-default-danger {
+    background-color: #dc3545 !important;
+}
+.btn-default-warning {
+    background-color: #ffc107 !important;
+}
+.btn-default-info {
+    background-color: #0dcaf0 !important;
+}
+.btn-default-light {
+    background-color: #f8f9fa !important;
+}
+.btn-default-dark {
+    background-color: #212529 !important;
+}
+.btn-default-link {
+    background-color: #0a58ca !important;
+    color: #fff !important;
+}

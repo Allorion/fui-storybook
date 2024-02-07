@@ -2,7 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {Meta, StoryFn} from '@storybook/react';
-import FButton, {IFButton} from "../../../../fui/src/material/FButton/FButton";
+
+import FButton, {IFButton} from './FButton';
 
 export default {
     title: 'Components/INPUTS/FButton',

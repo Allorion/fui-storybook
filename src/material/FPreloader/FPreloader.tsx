@@ -2,7 +2,7 @@
 // Родительский компонет прелоадера
 // *********************************************************************************************************************
 
-import React, {FC} from "react";
+import React, {FC, useEffect} from "react";
 import "./FPreloader.css"
 
 export interface IFPreloader {
@@ -19,15 +19,16 @@ const FPreloader: FC<IFPreloader> = ({
                                          open
                                      }) => {
 
-    if (open) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
+    useEffect(() => {
+        if (document.querySelectorAll(".active-preloader").length > 0) {
+            document.body.classList.add('open-preloader')
+        } else {
+            document.body.classList.remove('open-preloader')
+        }
+    }, [open])
 
     let style: React.CSSProperties = {
         backgroundColor: backgroundColor,
-        display: open ? 'block' : 'none'
     }
 
     if (st !== undefined) {
@@ -36,7 +37,7 @@ const FPreloader: FC<IFPreloader> = ({
 
     return (
         <React.Fragment>
-            <div className="f-preloader" style={style}>
+            <div className={`f-preloader ${open ? 'active-preloader' : ''}`} style={style}>
                 <div className="f-preloader-row">
                     {children}
                 </div>

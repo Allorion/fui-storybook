@@ -1,7 +1,8 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
-import FFullDateField, {IFFullDateField} from "../../../../fui/src/material/FFullDateField/FFullDateField";
+import { Meta, StoryFn } from '@storybook/react';
+
+import FFullDateField, { IFFullDateField } from './FFullDateField';
 
 export default {
   title: 'Components/INPUTS/FFullDateField',

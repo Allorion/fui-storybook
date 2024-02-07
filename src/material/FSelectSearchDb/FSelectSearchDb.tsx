@@ -69,7 +69,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                             setArrObject(r)
                             setLoad(false)
                         })
-                    }, 1000);
+                    }, 5000);
                 } else {
                     // @ts-ignore
                     timerDebounceRef.current = setTimeout(() => {
@@ -78,7 +78,7 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                             setArrObject(r)
                             setLoad(false)
                         })
-                    }, 1000);
+                    }, 5000);
                 }
 
             } else {
@@ -103,25 +103,28 @@ const FSelectSearchDb: FC<IFSelectSearchDb> = ({
                 // @ts-ignore
                 timerDebounceRef.current = setTimeout(() => {
                     setLoad(true)
-                    fetchingFunc(e.target.value).then(r => {
+                    fetchingFunc(text).then(r => {
                         setArrObject(r)
                         setLoad(false)
                     })
-                }, 1000);
+                }, 5000);
             } else {
                 // @ts-ignore
                 timerDebounceRef.current = setTimeout(() => {
                     setLoad(true)
-                    fetchingFunc(e.target.value).then(r => {
+                    fetchingFunc(text).then(r => {
                         setArrObject(r)
                         setLoad(false)
                     })
-                }, 1000);
+                }, 5000);
             }
 
         } else {
-            setArrObject([])
-            setLoad(false)
+            setLoad(true)
+            fetchingFunc(text).then(r => {
+                setArrObject([])
+                setLoad(false)
+            })
         }
 
     }

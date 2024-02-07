@@ -1,8 +1,11 @@
 import React from 'react';
-import {Meta, StoryFn} from '@storybook/react';
+
+import { Meta, StoryFn } from '@storybook/react';
+
+import { IFDownloadIcon } from './FDownloadIcon';
+import FDownloadIcon from './FDownloadIcon';
 import 'bootstrap/dist/css/bootstrap.css';
-import FDownloadIcon, {IFDownloadIcon} from "../../../../fui/src/icons/FDownloadIcon/FDownloadIcon";
-import FStack from "../../../../fui/src/material/FStack/FStack";
+import { FStack } from '../../material';
 
 export default {
   title: 'Icons/FDownloadIcon',

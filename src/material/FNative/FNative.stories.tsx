@@ -1,8 +1,12 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
+
+import { IFNative } from './FNative';
+
+import FNative from './FNative';
+
 import 'bootstrap/dist/css/bootstrap.css';
-import FNative, {IFNative} from "../../../../fui/src/material/FNative/FNative";
 
 export default {
   title: 'Components/INPUTS/FNative',

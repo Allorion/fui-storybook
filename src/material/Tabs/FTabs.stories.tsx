@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FTabs from "../../../../fui/src/material/Tabs/FTabs";
-import FTab, {IFTabs} from "../../../../fui/src/material/Tabs/FTab/FTab";
+import FTabs, { IFTabs } from './FTabs/FTabs';
+import FTab from './FTab/FTab';
 
 export default {
   title: 'Components/NAVIGATION/FTabs',

@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
+
+import { IFAlert } from './FAlert';
+
+import FAlert from './FAlert';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FAlert, {IFAlert} from "../../../../fui/src/material/FAlert/FAlert";
-import FButton from "../../../../fui/src/material/FButton/FButton";
+
+import {FButton} from "../index";
 
 export default {
   title: 'Components/FEEDBACK/FAlert',

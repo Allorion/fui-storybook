@@ -1,7 +1,10 @@
 import React from 'react';
 
-import {Meta, StoryFn} from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
+import { IFOpenImgFull } from './FOpenImgFull';
+
+import FOpenImgFull from './FOpenImgFull';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -9,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import img3 from './statick/3.png';
 // @ts-ignore
 import img2 from './statick/1.png';
-import FOpenImgFull, {IFOpenImgFull} from "../../../../fui/src/material/FOpenImgFull/FOpenImgFull";
 
 export default {
   title: 'Components/LAB/FOpenImgFull',

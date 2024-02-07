@@ -22,6 +22,8 @@ export interface IFTextArea {
     helpText?: string,
     load?: boolean,
     required?: boolean,
+    width?: string | number,
+    height?: string | number
 }
 
 const FTextArea: FC<IFTextArea> = (
@@ -44,7 +46,9 @@ const FTextArea: FC<IFTextArea> = (
         errText,
         helpText,
         load,
-        required
+        required,
+        width='fit-content',
+        height='auto',
     }
 ) => {
 
@@ -52,7 +56,8 @@ const FTextArea: FC<IFTextArea> = (
         <React.Fragment>
             <div
                 style={{
-                    width: fullWidth ? '100%' : 'fit-content'
+                    width: fullWidth ? '100%' : width,
+                    height: "auto"
                 }}
                 className={`control-group ${className !== undefined ? className : ''}`}
                 id={id}
@@ -69,7 +74,8 @@ const FTextArea: FC<IFTextArea> = (
                         cols={cols}
                         rows={rows}
                         style={{
-                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
+                            borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4',
+                            height: height
                         }}
                         disabled={disabled || load}
                         readOnly={readOnly}
