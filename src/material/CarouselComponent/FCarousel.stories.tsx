@@ -34,12 +34,14 @@ export const Default = Template.bind({});
 Default.args = {
     className: 'f-carousel-class',
     id: 'f-carousel-id',
+    width: '1300px',
+    height: '250px',
     childrenElements: (current) => {
         return (
             <>
                 {cards.map((opt, index) => {
                     return (
-                        <FCarouselItem index={index} quantityItems={cards.length} current={current}><img
+                        <FCarouselItem widthCard={'390px'} heightCard={'250px'} index={index} quantityItems={cards.length} current={current}><img
                             src={opt} alt={`Постер ${index}`}/></FCarouselItem>
                     )
                 })}
@@ -61,7 +63,7 @@ AutoSwitching.args = {
             <>
                 {cards.map((opt, index) => {
                     return (
-                        <FCarouselItem index={index} quantityItems={cards.length} current={current}><img
+                        <FCarouselItem widthCard={'390px'} heightCard={'250px'}  index={index} quantityItems={cards.length} current={current}><img
                             src={opt} alt={`Постер ${index}`}/></FCarouselItem>
                     )
                 })}
@@ -76,7 +78,6 @@ const TemplateFCarouselItem: StoryFn<IFCarousel> = (args) => {
     return (
         <>
             <FCarousel {...args}/>
-
             <span>
                 Для того чтобы добавить карточки в карусель необходимо в родительское свойство <b>childrenElements</b>
                 Передать функцию как пример ниже. Хочу заметить что <b>childrenElements возвращает current, который необходимо передать в FCarouselItem</b>
@@ -85,7 +86,7 @@ const TemplateFCarouselItem: StoryFn<IFCarousel> = (args) => {
                 <p>{'<>'}</p>
                 <p>{'{cards.map((opt, index) => {'}</p>
                 <p>{'return ('}</p>
-                <p>{'<FCarouselItem index={index} quantityItems={cards.length} current={current}>'}</p>
+                <p>{'<FCarouselItem widthCard={390px} heightCard={250px}  index={index} quantityItems={cards.length} current={current}>'}</p>
                 <p>{'<img src={opt} alt={Постер}/>'}</p>
                 <p>{'</FCarouselItem>'}</p>
                 <p>{')'}</p>
@@ -106,7 +107,7 @@ FCarouselItemUsing.args = {
             <>
                 {cards.map((opt, index) => {
                     return (
-                        <FCarouselItem index={index} quantityItems={cards.length} current={current}><img
+                        <FCarouselItem widthCard={'390px'} heightCard={'250px'} index={index} quantityItems={cards.length} current={current}><img
                             src={opt} alt={`Постер ${index}`}/></FCarouselItem>
                     )
                 })}

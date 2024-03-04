@@ -18,7 +18,7 @@ const FAccordion: FC<IFAccordion> = ({
                                          id,
                                          className,
                                          st,
-                                         defaultOpen
+                                         defaultOpen=false
                                      }) => {
     return (
         <React.Fragment>

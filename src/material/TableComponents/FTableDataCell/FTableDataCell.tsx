@@ -9,24 +9,31 @@ export interface IFTableDataCell {
     id?: string
     onBlur?: React.FocusEventHandler<HTMLTableDataCellElement> | undefined,
     onFocus?: React.FocusEventHandler<HTMLTableDataCellElement> | undefined
-    className?: string
+    className?: string,
+    textAlignment?: 'left' | 'right' | 'center' | 'justify',
+    height?: number | string
 }
 
 const FTableDataCell: FC<IFTableDataCell> = ({
-                                        st,
-                                        row,
-                                        col,
-                                        children,
-                                        onClick,
-                                        id,
-                                        onBlur,
-                                        onFocus,
-                                        className
-                                    }) => {
+                                                 st,
+                                                 row,
+                                                 col,
+                                                 children,
+                                                 onClick,
+                                                 id,
+                                                 onBlur,
+                                                 onFocus,
+                                                 className,
+                                                 textAlignment,
+                                                 height = 'auto'
+                                             }) => {
+
+    const style = Object.assign({}, {textAlign: textAlignment, height}, st)
+
     return (
         <React.Fragment>
             <td
-                style={st}
+                style={style}
                 rowSpan={row}
                 colSpan={col}
                 onClick={onClick}

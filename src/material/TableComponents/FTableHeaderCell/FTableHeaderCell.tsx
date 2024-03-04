@@ -7,22 +7,29 @@ export interface IFTableHeaderCell {
     children?: React.ReactChild | React.ReactNode
     onClick?: React.MouseEventHandler<HTMLTableHeaderCellElement> | undefined
     id?: string
-    className?: string
+    className?: string,
+    textAlignment?: 'left' | 'right' | 'center' | 'justify',
+    width?: number | string
 }
 
 const FTableHeaderCell: FC<IFTableHeaderCell> = ({
-                                          st,
-                                          row,
-                                          col,
-                                          children,
-                                          onClick,
-                                          id,
-                                          className
-                                      }) => {
+                                                     st,
+                                                     row,
+                                                     col,
+                                                     children,
+                                                     onClick,
+                                                     id,
+                                                     className,
+                                                     textAlignment,
+                                                     width='auto'
+                                                 }) => {
+
+    const style = Object.assign({}, {textAlign: textAlignment, width}, st)
+
     return (
         <React.Fragment>
             <th
-                style={st}
+                style={style}
                 rowSpan={row}
                 colSpan={col}
                 onClick={onClick}

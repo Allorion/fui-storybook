@@ -11,6 +11,8 @@ export interface IFCarousel {
     childrenElements: (current: number) => React.ReactChild | React.ReactNode,
     quantityItems: number,
     st?: React.CSSProperties,
+    width?: string | number,
+    height?: string | number,
 }
 
 const FCarousel: FC<IFCarousel> = (
@@ -21,6 +23,8 @@ const FCarousel: FC<IFCarousel> = (
         id,
         quantityItems,
         st,
+        width='auto',
+        height='auto',
     }
 ) => {
 
@@ -41,8 +45,8 @@ const FCarousel: FC<IFCarousel> = (
         setCurrent(current === quantityItems - 1 ? 0 : current + 1);
     };
 
-    if (autoSwitching?.flag) {
-        useEffect(() => {
+    useEffect(() => {
+        if (autoSwitching?.flag) {
             // Создаем таймер
             const timer = setInterval(() => {
                 // Вызываем функцию nextSlide
@@ -50,12 +54,14 @@ const FCarousel: FC<IFCarousel> = (
             }, autoSwitching.timeSecond); // 3000 миллисекунд = 3 секунды
             // Возвращаем функцию для очистки таймера при размонтировании компонента
             return () => clearInterval(timer);
-        }, [current]); // Передаем в зависимости текущий индекс слайда
-    }
+        }
+    }, [current]); // Передаем в зависимости текущий индекс слайда
+
+    const style = Object.assign({}, {width: width, height: height}, st)
 
     return (
         <React.Fragment>
-            <div className={`f-carousel ${className !== undefined ? className : ''}`} id={id} style={st}>
+            <div className={`f-carousel ${className !== undefined ? className : ''}`} id={id} style={style}>
                 <div className={'arrow-left'} onClick={prevSlide}/>
                 <div className={'block-cards'}>
                     {childrenElements(current)}
