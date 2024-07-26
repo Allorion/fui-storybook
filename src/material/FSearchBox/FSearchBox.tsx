@@ -1,66 +1,45 @@
-import React, {FC} from "react";
+import React, {forwardRef} from "react";
 import {FButton, FStack} from "../index";
 import './FSearchBox.css'
 import '../FTextField/FTextField.css'
 import FLoadIcon from "../../icons/FLoadIcon";
 import '../statick/index.css'
 
-export interface IFSearchBox {
+export interface IFSearchBox extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string,
     st?: React.CSSProperties,
-    value?: string | number | readonly string[] | undefined,
-    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password',
-    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
-    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
     fullWidth?: boolean,
     disabled?: boolean,
     readOnly?: boolean | undefined,
-    defaultValue?: string | number | readonly string[] | undefined,
     errText?: string[],
     helpText?: string,
-    onInput?: React.FormEventHandler<HTMLInputElement> | undefined,
-    id?: string,
     className?: string,
     load?: boolean,
-    min?: number,
-    max?: number,
-    placeholder?: string | undefined,
-
 
     children?: React.ReactChild | React.ReactNode,
     variant?: 'contained' | 'default'
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
-    onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+    onClickButton?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-const FSearchBox: FC<IFSearchBox> = ({
-                                         label,
-                                         value,
-                                         onChange,
-                                         type,
-                                         onBlur,
-                                         onFocus,
-                                         fullWidth,
-                                         disabled,
-                                         readOnly,
-                                         defaultValue,
-                                         errText,
-                                         helpText,
-                                         onInput,
-                                         st,
-                                         id,
-                                         className,
-                                         load = false,
-                                         min,
-                                         max,
-                                         placeholder,
+const FSearchBox = forwardRef<HTMLInputElement, IFSearchBox>(({
+                                                                  label,
+                                                                  type,
+                                                                  fullWidth,
+                                                                  disabled,
+                                                                  readOnly,
+                                                                  errText,
+                                                                  helpText,
+                                                                  st,
+                                                                  className,
+                                                                  load = false,
 
-                                         children,
-                                         onClick,
-                                         color,
-                                         variant
-                                     }) => {
+                                                                  children,
+                                                                  onClickButton,
+                                                                  color,
+                                                                  variant,
+                                                                  ...props
+                                                              }, ref) => {
 
     let style = {
         whiteSpace: 'nowrap',
@@ -104,25 +83,14 @@ const FSearchBox: FC<IFSearchBox> = ({
                 <div className={'f-search-box-box'}>
                     <div className={`${load ? 'ui left icon input loading' : ''}`} style={{width: '100%'}}>
                         <input
-                            id={id}
-                            placeholder={placeholder}
+                            ref={ref}
                             style={{
                                 borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
                             }}
-                            min={min}
-                            max={max}
                             disabled={disabled}
-                            defaultValue={defaultValue}
-                            required
-                            onInput={onInput}
                             readOnly={readOnly || load}
-                            value={value}
-                            //@ts-ignore
-                            onChange={onChange}
-                            type={type === undefined ? 'text' : type}
                             className={`form-control f-search-box-inp ${className !== undefined ? className : ''}`}
-                            onBlur={onBlur}
-                            onFocus={onFocus}
+                            {...props}
                         />
                         {helpText !== undefined &&
                             <span
@@ -169,7 +137,7 @@ const FSearchBox: FC<IFSearchBox> = ({
                             textAlign: 'center',
                         }}
                         disabled={disabled}
-                        onClick={onClick}
+                        onClick={onClickButton}
                         color={color}
                         variant={variant}
                     >
@@ -179,6 +147,6 @@ const FSearchBox: FC<IFSearchBox> = ({
             </div>
         </React.Fragment>
     )
-}
+})
 
 export default FSearchBox

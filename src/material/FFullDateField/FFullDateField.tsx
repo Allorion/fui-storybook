@@ -1,54 +1,38 @@
-import React, {FC} from "react";
+import React, {forwardRef} from "react";
 import {FStack} from "../index";
 import '../statick/index.css'
 import FLoadIcon from "../../icons/FLoadIcon";
 
-export interface IFFullDateField {
+export interface IFFullDateField extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string
     st?: React.CSSProperties,
-    value?: string | number | undefined | null
-    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined
+    value?: string | number | undefined
     fullWidth?: boolean
-    defaultValue?: string | number | readonly string[] | undefined
     disabled?: boolean
-    readOnly?: boolean,
     id?: string,
     className?: string
-    onkeydown?: React.KeyboardEventHandler<HTMLInputElement> | undefined,
-    min?: string | undefined,
-    max?: string | undefined,
     load?: boolean,
-    required?: boolean,
     errText?: string[],
     helpText?: string,
-    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
-    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
     width?: string | number,
     height?: string | number,
 }
 
-const FFullDateField: FC<IFFullDateField> = (
+const FFullDateField = forwardRef<HTMLInputElement, IFFullDateField>((
     {
         label,
         st,
         value,
-        onChange,
         fullWidth,
-        defaultValue,
         disabled,
-        readOnly,
-        onkeydown,
-        min,
-        max,
         load = false,
         errText,
         helpText,
-        onBlur,
-        onFocus,
-        required,
         height = 'auto',
         width,
-    }
+        ...props
+    },
+    ref
 ) => {
 
     let style: {
@@ -97,23 +81,15 @@ const FFullDateField: FC<IFFullDateField> = (
                     </label>
                 }
                 <input
-                    min={min}
-                    max={max}
-                    onKeyDown={onkeydown}
-                    readOnly={readOnly}
-                    onBlur={onBlur}
-                    onFocus={onFocus}
+                    ref={ref}
                     disabled={disabled || load}
-                    required={required}
                     style={{
                         borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4'
                     }}
-                    defaultValue={defaultValue}
-                    value={load ? '' : value}
-                    //@ts-ignore
-                    onChange={onChange}
+                    // value={load ? '' : value}
                     type='date'
                     className="form-control"
+                    {...props}
                 />
                 {helpText !== undefined &&
                     <span
@@ -153,6 +129,6 @@ const FFullDateField: FC<IFFullDateField> = (
             </div>
         </React.Fragment>
     )
-}
+})
 
 export default FFullDateField;

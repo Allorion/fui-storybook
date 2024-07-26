@@ -96,8 +96,8 @@ export const OnInput: StoryFn<IFSearchBox> = () => (
   <FSearchBox onInput={(event) => console.log('onInput')}>....</FSearchBox>
 );
 
-export const OnClick: StoryFn<IFSearchBox> = () => (
-  <FSearchBox onClick={(event) => console.log('onClick')}>....</FSearchBox>
+export const OnClickButton: StoryFn<IFSearchBox> = () => (
+  <FSearchBox onClickButton={(event) => console.log('onClickButton')}>....</FSearchBox>
 );
 
 export const Variant: StoryFn<IFSearchBox> = () => (

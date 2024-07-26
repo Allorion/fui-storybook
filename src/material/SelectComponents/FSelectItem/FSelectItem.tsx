@@ -18,13 +18,14 @@ const FSelectItem: FC<IFSelectItem> = ({
                                            onClick,
                                            disabled,
                                            className,
-                                           id
+                                           id,
+                                           selected
                                        }) => {
 
     return (
         <React.Fragment>
             <option
-                selected={true}
+                selected={selected}
                 disabled={disabled}
                 onClick={onClick}
                 style={st}

@@ -1,55 +1,39 @@
-import React, {FC} from "react";
+import React, {forwardRef} from "react";
 import {FStack} from "../index";
 import FLoadIcon from "../../icons/FLoadIcon";
 
-export interface IFTextArea {
+export interface IFTextArea extends React.InputHTMLAttributes<HTMLTextAreaElement> {
     label?: string
     st?: React.CSSProperties,
     value?: string | undefined
-    cols?: number
-    rows?: number
-    placeholder?: string
-    readOnly?: boolean
     disabled?: boolean
-    autoComplete?: boolean,
     className?: string,
     id?: string,
     fullWidth?: boolean,
-    onChange?: React.ChangeEventHandler<HTMLTextAreaElement> | undefined,
-    onClick?:  React.MouseEventHandler<HTMLTextAreaElement> | undefined
-    onFocus?: React.FocusEventHandler<HTMLTextAreaElement> | undefined,
     errText?: string[],
     helpText?: string,
     load?: boolean,
-    required?: boolean,
     width?: string | number,
     height?: string | number
 }
 
-const FTextArea: FC<IFTextArea> = (
+const FTextArea = forwardRef<HTMLTextAreaElement, IFTextArea>((
     {
         label,
         st,
         value,
-        cols,
-        rows,
-        placeholder,
-        readOnly,
         disabled,
-        autoComplete,
         className,
         id,
         fullWidth,
-        onChange,
-        onClick,
-        onFocus,
         errText,
         helpText,
         load,
-        required,
-        width='fit-content',
-        height='auto',
-    }
+        width = 'fit-content',
+        height = 'auto',
+        ...props
+    },
+    ref
 ) => {
 
     return (
@@ -69,23 +53,15 @@ const FTextArea: FC<IFTextArea> = (
                         </label>
                     }
                     <textarea
-                        onClick={onClick}
-                        onFocus={onFocus}
-                        cols={cols}
-                        rows={rows}
+                        ref={ref}
                         style={{
                             borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4',
                             height: height
                         }}
                         disabled={disabled || load}
-                        readOnly={readOnly}
-                        //@ts-ignore
-                        autoComplete={autoComplete}
-                        required={required}
                         value={load ? undefined : value}
-                        placeholder={placeholder}
                         className="form-control"
-                        onChange={onChange}
+                        {...props}
                     />
                     {helpText !== undefined &&
                         <span
@@ -124,9 +100,8 @@ const FTextArea: FC<IFTextArea> = (
                     }
                 </div>
             </div>
-
         </React.Fragment>
     )
-}
+})
 
 export default FTextArea;

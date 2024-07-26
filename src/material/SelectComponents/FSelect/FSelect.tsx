@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {forwardRef} from "react";
 import "./FSelect.css"
 import {FStack} from "../../index";
 import FLoadIcon from "../../../icons/FLoadIcon";
@@ -6,45 +6,35 @@ import FLoadIcon from "../../../icons/FLoadIcon";
 export interface IFSelect extends React.InputHTMLAttributes<HTMLSelectElement> {
     label?: string
     st?: React.CSSProperties
-    onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
     children?: React.ReactChild | React.ReactNode
     value?: string | number | readonly string[] | undefined
-    multiple?: boolean | undefined
-    size?: number | undefined
     fullWidth?: boolean
     disabled?: boolean
-    defaultValue?: string | number | readonly string[] | undefined,
     id?: string,
     className?: string,
     load?: boolean,
-    required?: boolean,
     errText?: string[],
     helpText?: string,
     width?: string | number,
     height?: string | number,
 }
 
-const FSelect: FC<IFSelect> = ({
-                                   label,
-                                   st,
-                                   onChange,
-                                   children,
-                                   value,
-                                   multiple,
-                                   size,
-                                   fullWidth,
-                                   disabled,
-                                   defaultValue,
-                                   id,
-                                   className,
-                                   load = false,
-                                   errText,
-                                   helpText,
-                                   required,
-                                   height = 'auto',
-                                   width = 'fit-content',
-                                   ...props
-                               }) => {
+const FSelect = forwardRef<HTMLSelectElement, IFSelect>(({
+                                                             label,
+                                                             st,
+                                                             children,
+                                                             value,
+                                                             fullWidth,
+                                                             disabled,
+                                                             id,
+                                                             className,
+                                                             load = false,
+                                                             errText,
+                                                             helpText,
+                                                             height = 'auto',
+                                                             width = 'fit-content',
+                                                             ...props
+                                                         }, ref) => {
 
     return (
         <React.Fragment>
@@ -71,19 +61,15 @@ const FSelect: FC<IFSelect> = ({
                 </label>
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <select
-                        {...props}
-                        required={required}
+                        ref={ref}
                         disabled={disabled || load}
                         style={Object.assign({}, st, {
                             borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4',
                             height: height
                         })}
                         className="form-control"
-                        onChange={onChange}
                         value={load ? undefined : value}
-                        multiple={multiple}
-                        size={size}
-                        defaultValue={defaultValue}
+                        {...props}
                     >
                         {!load &&
                             children
@@ -128,6 +114,6 @@ const FSelect: FC<IFSelect> = ({
             </div>
         </React.Fragment>
     )
-}
+});
 
 export default FSelect
