@@ -1,8 +1,8 @@
 import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { FStack } from '../../material';
-import FArrowIcon, { IFArrowIcon } from './FArrowIcon';
+import {FStack} from '../../material';
+import FArrowIcon, {IFArrowIcon} from './FArrowIcon';
 
 export default {
   title: 'Icons/FArrowIcon',

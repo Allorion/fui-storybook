@@ -86,7 +86,7 @@ const FFullDateField: FC<IFFullDateField> = (
             <div className={`form - group ${load ? 'ui left icon input loading' : ''}`} style={st}>
                 {label &&
                     <label
-                        className="control-label"
+                        className="control-label with-offset"
                         style={{
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',

@@ -1,9 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import FCheckbox, { IFCheckbox } from './FCheckbox';
+import FCheckbox, {IFCheckbox} from './FCheckbox';
 
 export default {
   title: 'Components/INPUTS/FCheckbox',

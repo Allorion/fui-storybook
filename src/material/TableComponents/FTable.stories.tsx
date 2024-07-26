@@ -4,15 +4,7 @@ import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './FTable/FTable.css';
-import {
-    FTable,
-    FTableBody,
-    FTableDataCell,
-    FTableFooter,
-    FTableHead,
-    FTableHeaderCell,
-    FTableRow,
-} from '../index';
+import {FTable, FTableBody, FTableDataCell, FTableFooter, FTableHead, FTableHeaderCell, FTableRow,} from '../index';
 import {IFTable} from './FTable/FTable';
 import {IFTableHead} from './FTableHead/FTableHead';
 import {IFTableHeaderCell} from './FTableHeaderCell/FTableHeaderCell';

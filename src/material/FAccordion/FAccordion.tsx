@@ -8,7 +8,9 @@ export interface IFAccordion {
     id?: string,
     className?: string,
     st?: React.CSSProperties,
-    defaultOpen?: boolean
+    defaultOpen?: boolean,
+    onClick?: React.MouseEventHandler<HTMLDetailsElement> | undefined,
+    open?: boolean
 }
 
 const FAccordion: FC<IFAccordion> = ({
@@ -18,13 +20,14 @@ const FAccordion: FC<IFAccordion> = ({
                                          id,
                                          className,
                                          st,
-                                         defaultOpen=false
+                                         defaultOpen = false,
+                                         onClick,
+                                         open
                                      }) => {
     return (
         <React.Fragment>
             <div className={`card ${className !== undefined ? className : ''}`} id={id}>
-
-                <details className={`${variant}`} open={defaultOpen} style={st}>
+                <details className={`${variant}`} open={open !== undefined ? open : defaultOpen} onClick={onClick} style={st}>
                     <summary className={'fv-accord-title'}>{title}</summary>
                     {children}
                 </details>

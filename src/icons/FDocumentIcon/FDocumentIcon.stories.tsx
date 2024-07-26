@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFDocumentIcon } from './FDocumentIcon';
-import FDocumentIcon from './FDocumentIcon';
+import FDocumentIcon, {IFDocumentIcon} from './FDocumentIcon';
 import 'bootstrap/dist/css/bootstrap.css';
-import { FStack } from '../../material';
+import {FStack} from '../../material';
 
 export default {
   title: 'Icons/FDocumentIcon',

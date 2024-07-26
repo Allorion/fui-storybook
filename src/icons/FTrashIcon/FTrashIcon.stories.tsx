@@ -2,8 +2,7 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 
-import {IFTrashIcon} from './FTrashIcon';
-import FTrashIcon from './FTrashIcon';
+import FTrashIcon, {IFTrashIcon} from './FTrashIcon';
 import 'bootstrap/dist/css/bootstrap.css';
 import {FStack} from '../../material';
 

@@ -1,61 +1,36 @@
-import React, {FC} from "react";
+import React, {FC, forwardRef} from "react";
 import {FStack} from "../index";
 import "./FTextField.css"
 import FLoadIcon from "../../icons/FLoadIcon";
 
-export interface IFTextField {
-    label?: string,
-    st?: React.CSSProperties,
-    value?: string | number | readonly string[] | undefined | null,
-    onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined,
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password',
-    onBlur?: React.FocusEventHandler<HTMLInputElement> | undefined,
-    onFocus?: React.FocusEventHandler<HTMLInputElement> | undefined,
-    fullWidth?: boolean,
-    disabled?: boolean,
-    readOnly?: boolean | undefined,
-    defaultValue?: string | number | readonly string[] | undefined,
-    errText?: string[],
-    helpText?: string,
-    onInput?: React.FormEventHandler<HTMLInputElement> | undefined,
-    id?: string,
-    className?: string,
-    load?: boolean,
-    required?: boolean,
-    min?: number,
-    max?: number,
-    placeholder?: string | undefined,
-    width?: string | number,
-    height?: string | number,
+export interface IFTextField extends React.InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
+    st?: React.CSSProperties;
+    fullWidth?: boolean;
+    readOnly?: boolean | undefined;
+    errText?: string[];
+    helpText?: string;
+    load?: boolean;
+    width?: string | number;
+    height?: string | number;
 }
 
-const FTextField: FC<IFTextField> = (
-    {
-        label,
-        value,
-        onChange,
-        type = 'text',
-        onBlur,
-        onFocus,
-        fullWidth,
-        disabled,
-        readOnly,
-        defaultValue,
-        errText,
-        helpText,
-        onInput,
-        st,
-        id,
-        className,
-        load = false,
-        min,
-        max,
-        placeholder,
-        required,
-        height = 'auto',
-        width,
-    }
-) => {
+
+const FTextField = forwardRef<HTMLInputElement, IFTextField>(({
+                                                                  label,
+                                                                  type = 'text',
+                                                                  fullWidth,
+                                                                  readOnly,
+                                                                  errText,
+                                                                  helpText,
+                                                                  st,
+                                                                  id,
+                                                                  className,
+                                                                  load = false,
+                                                                  height = 'auto',
+                                                                  width,
+                                                                  ...props
+                                                              }, ref) => {
 
     if (fullWidth) {
         if (st === undefined) {
@@ -92,12 +67,12 @@ const FTextField: FC<IFTextField> = (
 
     st = Object.assign({}, style, st);
 
-    if (value === null) {
-        value = ''
+    if (props.value === null) {
+        props.value = ''
     }
 
-    if (type === 'number' && (value === undefined)) {
-        value = ''
+    if (type === 'number' && (props.value === undefined)) {
+        props.value = ''
     }
 
     return (
@@ -116,26 +91,16 @@ const FTextField: FC<IFTextField> = (
                 }
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <input
+                        ref={ref}
                         height={height}
-                        placeholder={placeholder}
                         style={{
                             borderColor: errText !== undefined && errText.length > 0 ? 'red' : '#C4C4C4',
                             height: height
                         }}
-                        min={min}
-                        max={max}
-                        disabled={disabled}
-                        defaultValue={defaultValue}
-                        required={required}
-                        onInput={onInput}
                         readOnly={readOnly || load}
-                        value={value}
-                        //@ts-ignore
-                        onChange={onChange}
                         type={type}
                         className="form-control"
-                        onBlur={onBlur}
-                        onFocus={onFocus}
+                        {...props}
                     />
                     {helpText !== undefined &&
                         <span
@@ -176,6 +141,6 @@ const FTextField: FC<IFTextField> = (
             </div>
         </React.Fragment>
     )
-}
+});
 
 export default FTextField;

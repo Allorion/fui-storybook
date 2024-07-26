@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import FPreloader, { IFPreloader } from './FPreloader';
-import { FProgress } from '../index';
+import FPreloader, {IFPreloader} from './FPreloader';
+import {FProgress} from '../index';
 
 export default {
   title: 'Components/FEEDBACK/FPreloader',

@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFAlert } from './FAlert';
-
-import FAlert from './FAlert';
+import FAlert, {IFAlert} from './FAlert';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

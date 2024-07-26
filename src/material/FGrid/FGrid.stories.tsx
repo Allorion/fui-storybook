@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
-
-import { IFGrid } from './FGrid';
+import {Meta, StoryFn} from '@storybook/react';
 
 // import "./FGrid-story.css"
-import FGrid from './FGrid';
+import FGrid, {IFGrid} from './FGrid';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

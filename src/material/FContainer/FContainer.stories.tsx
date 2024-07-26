@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
-
-import { IFContainer } from './FContainer';
+import {Meta, StoryFn} from '@storybook/react';
 
 // import "./FContainer-story.css"
-import FContainer from './FContainer';
+import FContainer, {IFContainer} from './FContainer';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

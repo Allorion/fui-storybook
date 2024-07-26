@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import FStack, { IFStack } from './FStack';
+import FStack, {IFStack} from './FStack';
 
 // import "./FStack-story.css"
-
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default {

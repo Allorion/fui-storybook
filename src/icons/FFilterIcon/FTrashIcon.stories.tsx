@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFFilterIcon } from './FFilterIcon';
-import FFilterIcon from './FFilterIcon';
+import FFilterIcon, {IFFilterIcon} from './FFilterIcon';
 import 'bootstrap/dist/css/bootstrap.css';
-import { FStack } from '../../material';
+import {FStack} from '../../material';
 
 
 export default {

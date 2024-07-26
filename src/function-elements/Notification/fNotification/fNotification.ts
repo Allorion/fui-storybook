@@ -2,11 +2,12 @@ import './fNotification.css'
 import {generateUniqueId} from "../../../dop-function/generateUniqueId";
 
 export interface IfNotification {
-    title?: string,
-    body: string,
-    variant: 'info' | 'error' | 'success' | 'warning',
-    timeSecClose?: number,
-    buttonClose?: boolean,
+    title?: string;
+    body: string;
+    variant: 'info' | 'error' | 'success' | 'warning';
+    timeSecClose?: number;
+    buttonClose?: boolean;
+    id?: string
 }
 
 const fNotification = (
@@ -16,6 +17,7 @@ const fNotification = (
         variant = 'info',
         timeSecClose,
         buttonClose = false,
+        id,
     }: IfNotification
 ): Promise<string> => {
     return new Promise((resolve) => {
@@ -47,7 +49,7 @@ const fNotification = (
         const idFuncBlockNot = 'f-function-block-notification-' + randId
 
         const not = `
-            <div class='f-function-block-notification' id="${idFuncBlockNot}">
+            <div class='f-function-block-notification' id="${id === undefined ? idFuncBlockNot : id}">
                 <div class='f-function-notification'>
                     <div class='f-function-notification-ico ${variant}-notification'>
                         <svg width="28" height="28" viewBox="0 0 16 16">

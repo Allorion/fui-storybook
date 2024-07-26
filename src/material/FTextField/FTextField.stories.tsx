@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { FTextField } from '../index';
-import { IFTextField } from './FTextField';
+import {FTextField} from '../index';
+import {IFTextField} from './FTextField';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

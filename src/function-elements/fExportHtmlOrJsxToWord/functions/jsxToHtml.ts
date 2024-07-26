@@ -1,5 +1,3 @@
-import ReactDOM from "react-dom/client";
-
 export function jsxToHtml(element: string): Promise<HTMLDivElement | null> {
     return new Promise((resolve) => {
 

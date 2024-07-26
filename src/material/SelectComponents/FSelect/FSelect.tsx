@@ -3,7 +3,7 @@ import "./FSelect.css"
 import {FStack} from "../../index";
 import FLoadIcon from "../../../icons/FLoadIcon";
 
-export interface IFSelect {
+export interface IFSelect extends React.InputHTMLAttributes<HTMLSelectElement> {
     label?: string
     st?: React.CSSProperties
     onChange?: React.ChangeEventHandler<HTMLSelectElement> | undefined
@@ -43,6 +43,7 @@ const FSelect: FC<IFSelect> = ({
                                    required,
                                    height = 'auto',
                                    width = 'fit-content',
+                                   ...props
                                }) => {
 
     return (
@@ -70,6 +71,7 @@ const FSelect: FC<IFSelect> = ({
                 </label>
                 <div className={`${load ? 'ui left icon input loading' : ''}`}>
                     <select
+                        {...props}
                         required={required}
                         disabled={disabled || load}
                         style={Object.assign({}, st, {

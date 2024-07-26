@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFOpenImgFull } from './FOpenImgFull';
-
-import FOpenImgFull from './FOpenImgFull';
+import FOpenImgFull, {IFOpenImgFull} from './FOpenImgFull';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

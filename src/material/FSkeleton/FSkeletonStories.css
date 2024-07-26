@@ -1,0 +1,9 @@
+.test-block-fskeleton {
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    margin-top: 16px;
+}

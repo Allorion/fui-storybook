@@ -1,7 +1,7 @@
 import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
-import FCloseIcon, { IFCloseIcon } from './FCloseIcon';
+import FCloseIcon, {IFCloseIcon} from './FCloseIcon';
 
 export default {
   title: 'Icons/FCloseIcon',

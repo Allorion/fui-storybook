@@ -41,7 +41,7 @@ Default.argTypes = {
 };
 
 const TemplateClose: StoryFn<IfNotification> = (args) => {
-    console.log(args)
+
     const [arrId, setArrId] = useState<string>('')
 
     return (

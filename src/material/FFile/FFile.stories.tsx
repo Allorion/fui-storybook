@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFFile } from './FFile';
-
-import FFile from './FFile';
+import FFile, {IFFile} from './FFile';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

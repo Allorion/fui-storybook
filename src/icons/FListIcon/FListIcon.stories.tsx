@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFListIcon } from './FListIcon';
-import FListIcon from './FListIcon';
+import FListIcon, {IFListIcon} from './FListIcon';
 import 'bootstrap/dist/css/bootstrap.css';
-import { FStack } from '../../material';
+import {FStack} from '../../material';
 
 export default {
   title: 'Icons/FListIcon',

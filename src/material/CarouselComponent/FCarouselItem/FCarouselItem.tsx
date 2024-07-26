@@ -5,12 +5,11 @@ export interface FCarouselItem {
     children?: React.ReactChild | React.ReactNode,
     className?: string,
     id?: string,
-    current: number,
     index: number,
-    quantityItems: number,
     st?: React.CSSProperties,
     widthCard?: number | string,
     heightCard?: number | string,
+    onClick?: React.MouseEventHandler<HTMLLIElement> | undefined,
 }
 
 const FCarouselItem: FC<FCarouselItem> = (
@@ -19,11 +18,10 @@ const FCarouselItem: FC<FCarouselItem> = (
         children,
         className,
         id,
-        current,
-        quantityItems,
         st,
         widthCard = '390px',
         heightCard = '250px',
+        onClick
     }
 ) => {
 
@@ -31,14 +29,19 @@ const FCarouselItem: FC<FCarouselItem> = (
 
     return (
         <React.Fragment>
-            <div
+            <li
                 key={index}
                 id={id}
                 style={style}
-                className={`card ${index === current ? 'active' : ''} ${index === quantityItems - 1 && current === 0 ? 'left' : ''} ${index === current - 1 ? 'left' : ''} ${index === current + 1 ? 'right' : ''} ${index === 0 && current === quantityItems - 1 ? 'right' : ''} ${className !== undefined ? className : ''}`}
+                className={className}
+                onClick={onClick}
             >
-                {children}
-            </div>
+                <figure>
+                    <picture>
+                        {children}
+                    </picture>
+                </figure>
+            </li>
         </React.Fragment>
     );
 };

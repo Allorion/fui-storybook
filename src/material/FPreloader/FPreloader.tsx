@@ -4,6 +4,7 @@
 
 import React, {FC, useEffect} from "react";
 import "./FPreloader.css"
+import ReactDOM from "react-dom";
 
 export interface IFPreloader {
     st?: React.CSSProperties,
@@ -14,7 +15,7 @@ export interface IFPreloader {
 
 const FPreloader: FC<IFPreloader> = ({
                                          st,
-                                         backgroundColor = '#e0e0e0',
+                                         backgroundColor = '#00357d',
                                          children,
                                          open
                                      }) => {
@@ -35,14 +36,14 @@ const FPreloader: FC<IFPreloader> = ({
         style = Object.assign(style, st)
     }
 
-    return (
-        <React.Fragment>
-            <div className={`f-preloader ${open ? 'active-preloader' : ''}`} style={style}>
-                <div className="f-preloader-row">
-                    {children}
-                </div>
+    if (!open) return null
+    else return ReactDOM.createPortal(
+        <div className={`f-preloader ${open ? 'active-preloader' : ''}`} style={style}>
+            <div className="f-preloader-row">
+                {children}
             </div>
-        </React.Fragment>
+        </div>,
+        document.body
     )
 }
 

@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFInputFileForm } from './FInputFileForm';
-
-import FInputFileForm from './FInputFileForm';
+import FInputFileForm, {IFInputFileForm} from './FInputFileForm';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

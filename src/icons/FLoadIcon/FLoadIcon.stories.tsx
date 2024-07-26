@@ -2,8 +2,7 @@ import React from 'react';
 
 import {Meta, StoryFn} from '@storybook/react';
 
-import {IFLoadIcon} from './FLoadIcon';
-import FLoadIcon from './FLoadIcon';
+import FLoadIcon, {IFLoadIcon} from './FLoadIcon';
 import 'bootstrap/dist/css/bootstrap.css';
 import {FStack} from '../../material';
 

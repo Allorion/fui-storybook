@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FStack, FDialog} from "../index";
+import {FDialog, FStack} from "../index";
 import './FOpenImgFull.css'
 import {FArrowIcon, FCloseIcon} from "../../icons";
 

@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFCheckIcon } from './FCheckIcon';
-import FCheckIcon from './FCheckIcon';
+import FCheckIcon, {IFCheckIcon} from './FCheckIcon';
 import 'bootstrap/dist/css/bootstrap.css';
-import { FStack } from '../../material';
+import {FStack} from '../../material';
 
 export default {
   title: 'Icons/FCheckIcon',

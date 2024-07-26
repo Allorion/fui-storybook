@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import FPaper, { IFPaper } from './FPaper';
+import FPaper, {IFPaper} from './FPaper';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

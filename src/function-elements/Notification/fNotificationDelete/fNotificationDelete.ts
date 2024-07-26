@@ -1,4 +1,5 @@
 import "../fNotification/fNotification.css"
+
 const fNotificationDelete = (id: string): void => {
     const el = window.document.querySelector(id);
     if (el !== null) {

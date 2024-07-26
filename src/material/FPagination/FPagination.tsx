@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {usePagination, DOTS} from './hooks/usePagination';
+import {DOTS, usePagination} from './hooks/usePagination';
 import "./FPagination.css"
 
 export interface IFPagination {

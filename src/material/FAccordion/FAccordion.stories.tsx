@@ -2,10 +2,10 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import FAccordion, { IFAccordion } from './FAccordion';
-import { FStack } from '../index';
+import FAccordion, {IFAccordion} from './FAccordion';
+import {FStack} from '../index';
 
 export default {
   title: 'Components/SURFACES/FAccordion',
@@ -47,4 +47,11 @@ Default.args = {
   id: 'accordion-id',
   className: 'accordion-className',
   st: { marginTop: '20px' },
+};
+
+export const Open = Template.bind({});
+
+Open.args = {
+        onClick: () => console.log('На меня нажали'),
+        open: true
 };

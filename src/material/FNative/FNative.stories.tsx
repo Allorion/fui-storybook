@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { Meta, StoryFn } from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
-import { IFNative } from './FNative';
-
-import FNative from './FNative';
+import FNative, {IFNative} from './FNative';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
