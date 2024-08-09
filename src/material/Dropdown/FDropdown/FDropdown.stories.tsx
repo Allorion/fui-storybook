@@ -3,8 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {Meta, StoryFn} from '@storybook/react';
-
-import FDropdown, {IFDropdown} from './FDropdown';
+import FDropdown, { IFDropdown } from './FDropdown';
 import FDropdownItem from '../FDropdownItem';
 
 export default {
@@ -31,9 +30,6 @@ Default.args = {
   color: 'primary',
   size: 'btn-lg',
   disabled: false,
-  st: {
-    padding: '6px',
-  },
   className: 'class-f-dropdown',
   id: 'id-f-dropdown',
 };
