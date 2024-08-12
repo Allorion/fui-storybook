@@ -28,10 +28,18 @@
     list-style-type: none;
 }
 
-.f-dropdown:hover .f-dropdown-content {
+.f-dropdown .f-dropdown-content {
     display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10%);
+    transition: opacity .7s, visibility .7s, transform .7s;
+}
+
+.f-dropdown:hover .f-dropdown-content {
     opacity: 1;
-    animation: fadeInFromNone 0.3s ease;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .f-dropdown-link:last-child {
@@ -47,21 +55,12 @@
     height: 2rem;
 }
 
-
 @keyframes fadeInFromNone {
     0% {
-        display: none;
-        opacity: 0;
-    }
-
-    1% {
-        display: flex;
         opacity: 0;
         transform: translateY(-10%);
     }
-
     100% {
-        display: flex;
         opacity: 1;
         transform: translateY(0);
     }
