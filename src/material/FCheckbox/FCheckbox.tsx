@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import "./Checkbox.css"
 
-export interface IFCheckbox {
+export interface IFCheckbox extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: React.ReactChild | React.ReactNode,
     className?: string
     id?: string
