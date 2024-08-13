@@ -29,6 +29,7 @@ const FTab: FC<IFTabs> = ({
                 onClick={onClick}
                 id={id}
                 style={st}
+                type={"button"}
             >
                 {children}
             </button>

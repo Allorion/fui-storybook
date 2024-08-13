@@ -67,14 +67,6 @@ const FTextField = forwardRef<HTMLInputElement, IFTextField>(({
 
     st = Object.assign({}, style, st);
 
-    if (props.value === null) {
-        props.value = ''
-    }
-
-    if (type === 'number' && (props.value === undefined)) {
-        props.value = ''
-    }
-
     return (
         <React.Fragment>
             <div
