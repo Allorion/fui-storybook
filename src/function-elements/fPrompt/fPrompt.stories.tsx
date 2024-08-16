@@ -2,8 +2,8 @@ import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {FButton, FStack} from '../../material';
-import {fAlert, fPrompt} from "../index";
-import {IfPrompt} from "./fPrompt";
+import fPrompt, {IfPrompt} from "./fPrompt";
+import fAlert from '../fAlert';
 
 export default {
     title: 'Function Elements/fPrompt',

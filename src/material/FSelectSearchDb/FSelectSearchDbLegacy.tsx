@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useRef, useState} from "react";
 import './FSelectSearchDb.css'
-import {FStack} from "../index";
 import {FArrowIcon} from "../../icons";
+import FStack from "../FStack";
 
 interface IFSelectSearchDb {
     label?: string

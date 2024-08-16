@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import '../styles/FTabs.css'
-
-export interface IFTabs {
+    
+export interface IFTab {
     children?: React.ReactChild | React.ReactNode
     id?: string,
     className?: string
@@ -11,7 +11,7 @@ export interface IFTabs {
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
-const FTab: FC<IFTabs> = ({
+const FTab: FC<IFTab> = ({
                               children,
                               id,
                               className,
