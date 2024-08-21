@@ -1,0 +1,9 @@
+import{j as s}from"./jsx-runtime-CkxqCPlQ.js";import{F as m}from"./FStack-DvJS5si1.js";import"./index-DJO9vBfz.js";const g={title:"Components/LAYOUT/FStack",tags:["autodocs"],component:m,argTypes:{spacing:{defaultValue:2}}},l=p=>s.jsxs(m,{...p,children:[s.jsx("div",{className:"item",children:"item 1"}),s.jsx("div",{className:"item",children:"Item 2"}),s.jsx("div",{className:"item",children:"Item 3"})]}),t=l.bind({});t.args={id:"stack-id",className:"stack-className",st:{marginTop:"20px"}};const e=l.bind({});e.argTypes={direction:{options:["row","row-reverse","column","column-reverse"],control:{type:"select"}},alignItems:{options:["flex-start","center","flex-end","stretch","baseline"],control:{type:"select"}},justifyContent:{options:["flex-start","center","flex-end","space-between","space-around","space-evenly"],control:{type:"select"}},spacing:{options:[0,.5,1,2,3,4,8,12],control:{type:"radio"}},wrap:{options:["nowrap","wrap","wrap-reverse"],control:{type:"select"}}};e.args={direction:"row",alignItems:"center",justifyContent:"center",spacing:2};var a,r,c;t.parameters={...t.parameters,docs:{...(a=t.parameters)==null?void 0:a.docs,source:{originalSource:`args => <FStack {...args}>\r
+    <div className={'item'}>item 1</div>\r
+    <div className={'item'}>Item 2</div>\r
+    <div className={'item'}>Item 3</div>\r
+  </FStack>`,...(c=(r=t.parameters)==null?void 0:r.docs)==null?void 0:c.source}}};var o,i,n;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`args => <FStack {...args}>\r
+    <div className={'item'}>item 1</div>\r
+    <div className={'item'}>Item 2</div>\r
+    <div className={'item'}>Item 3</div>\r
+  </FStack>`,...(n=(i=e.parameters)==null?void 0:i.docs)==null?void 0:n.source}}};const x=["Default","Interactive"];export{t as Default,e as Interactive,x as __namedExportsOrder,g as default};
