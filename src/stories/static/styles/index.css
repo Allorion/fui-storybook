@@ -1,0 +1,12 @@
+body {
+    color: #000000 !important;
+    font-family: "SF UI Display", sans-serif !important;
+}
+
+.input-load {
+    position: absolute;
+    cursor: pointer;
+    top: 60%;
+    transform: translateY(-50%);
+    left: 1em;
+}

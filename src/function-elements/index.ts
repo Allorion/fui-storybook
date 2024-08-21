@@ -1,6 +1,0 @@
-export {default as fAlert} from "./fAlert"
-export {default as fConfirm} from "./fConfirm"
-export {default as fPrompt} from "./fPrompt"
-export {default as fExportTableToExcel} from "./fExportTableToExcel"
-export {default as fNotification} from "./Notification/fNotification"
-export {default as fNotificationDelete} from "./Notification/fNotificationDelete"
