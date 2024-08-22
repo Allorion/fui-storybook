@@ -14,19 +14,25 @@ interface ApiErrorResponse {
     message: string;
 }
 
-const useFApi = <T>(): IUseFApi<T> => {
-    const [data, setData] = useState<T | null>(null);
+type IProps<T> = {
+    doNotUseState?: boolean;
+    defaultState?: T | null;
+}
+
+const useFApi = <T>({ doNotUseState = false, defaultState = null }: IProps<T> = {}): IUseFApi<T> => {
+    const [data, setData] = useState<T | null>(defaultState === undefined ? null : defaultState);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
     const execute = async (config: AxiosRequestConfig): Promise<T | null> => {
-
         setLoading(true);
         setError(null);
 
         try {
             const response: AxiosResponse<T> = await axios(config);
-            setData(response.data);
+            if (!doNotUseState) {
+                setData(response.data);
+            }
             return response.data;
         } catch (error) {
             const err = error as AxiosError<ApiErrorResponse>;
@@ -45,7 +51,9 @@ const useFApi = <T>(): IUseFApi<T> => {
     };
 
     const reset = (newData: T | null) => {
-        setData(newData);
+        if (!doNotUseState) {
+            setData(newData);
+        }
     };
 
     return { data, loading, error, execute, reset };
