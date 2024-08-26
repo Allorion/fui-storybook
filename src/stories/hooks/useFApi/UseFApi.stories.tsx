@@ -91,7 +91,9 @@ export const Default = () => (
             <h2>Примечания</h2>
             <ul>
                 <li>При возникновении ошибки отображается уведомление с помощью <code>fNotification</code>.</li>
-                <li>В хуке присутствуют необязательные параметры: <code>doNotUseState</code> применяется для отключения внутреннего состояния и <code>defaultState</code> применяется для указания дефолтных значений при первом рендеринге. Пример использования <code>{'const { loading, execute } = useFApi<{ data: [] }>({ defaultState: [], doNotUseState: true })'}</code></li>
+                <li>Необязательный параметр: <code>doNotUseState</code> применяется для отключения внутреннего состояния.</li>
+                <li>Необязательный параметр: <code>defaultState</code> применяется для указания дефолтных значений при первом рендеринге. Пример использования <code>{'const { loading, execute } = useFApi<{ data: [] }>({ defaultState: [], doNotUseState: true })'}</code></li>
+                <li>Необязательный параметр: <code>getValueByPath</code> применяется для выбора определенного свойства получаемого объекта из запроса. Пример использования <code>{'const { loading, execute } = useFApi<{ { name: string; age: number }[] }>({ getValueByPath: "dataUser.allInfo" })'}</code></li>
             </ul>
         </div>
     </Fragment>
