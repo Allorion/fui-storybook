@@ -1,7 +1,7 @@
 import "@style/Colors.css"
 import './FButton.css'
 
-export interface IFButton {
+export interface IFButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactElement | React.ReactNode,
     variant?: 'contained' | 'default'
     color?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'
@@ -21,17 +21,14 @@ const FButton = (
         variant = 'contained',
         color = 'primary',
         size = 'btn-sm',
-        disabled,
-        onClick,
         st,
         className,
         fullWidth,
-        id,
-        type = 'button'
+        ...props
     }: IFButton
 ) => {
-    
-    let style = st !== undefined ? {...st} : undefined
+
+    let style = st !== undefined ? { ...st } : undefined
 
     if (fullWidth) {
         if (style === undefined) {
@@ -53,12 +50,9 @@ const FButton = (
 
     return (
         <button
-            disabled={disabled}
-            type={type}
             className={`btn ${variant === 'contained' ? 'btn' : 'btn-default'}-${color} ${size} ${className !== undefined ? className : ''}`}
-            onClick={onClick}
-            style={style}
-            id={id}
+            style={st}
+            {...props}
         >
             {children}
         </button>
