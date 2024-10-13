@@ -1,0 +1,3 @@
+import{j as c}from"./jsx-runtime-DEdD30eg.js";import{F as t}from"./FCloseIcon-Dh2aLPHG.js";import"./index-RYns6xqu.js";/* empty css               */const d={title:"Icons/FCloseIcon",tags:["autodocs"],component:t},n=a=>c.jsx(t,{...a}),s=n.bind({});s.args={id:"close-icon-id",className:"close-icon-className",st:{padding:"20px"},handleClose:()=>{alert("Клик")}};var o,e,r;s.parameters={...s.parameters,docs:{...(o=s.parameters)==null?void 0:o.docs,source:{originalSource:`args => {
+  return <FCloseIcon {...args} />;
+}`,...(r=(e=s.parameters)==null?void 0:e.docs)==null?void 0:r.source}}};const u=["Default"];export{s as Default,u as __namedExportsOrder,d as default};

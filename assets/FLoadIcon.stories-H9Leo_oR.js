@@ -1,0 +1,13 @@
+import{j as o}from"./jsx-runtime-DEdD30eg.js";import"./FButton-BMyxDZM2.js";import"./FButtonFile-A8ZoCR_A.js";import"./FTextField-c_bEAKdc.js";import{F as d}from"./FStack-DUahO965.js";import"./FGrid-Cf0t3TO0.js";import"./FContainer-CXdPSwYt.js";import"./FPaper-iPHHMhvA.js";import"./FAlert-DS38ZrBT.js";import"./index-RYns6xqu.js";import"./index-DAfSkmQi.js";import"./FOpenImgFull-BkT-3Av1.js";import"./FProgress-D9nQnxt0.js";import"./FCheckbox-CxRlIa0S.js";import"./FRadioButton-DU8OSBsH.js";import"./FPagination-HBLTjFx2.js";import"./FTimelineCard-PPBHv0K9.js";import"./FInputFileForm-D_0H5T3f.js";import"./FFile-Bcn0aMAy.js";import"./FSelectItem-BZmd-Lca.js";import"./FFullDateField-CWzNzzif.js";import"./FSelectSearchDb-Clr1GNKo.js";import"./FTextArea-DW0uzDSc.js";import"./FNative-F3FG8R_5.js";import"./FTab-BIi-RzkL.js";import"./FDropdownItem-Cj8HQD5i.js";import"./FSearchBox--q_Kwtu0.js";import"./FCarouselItem-C39m6uj5.js";import"./FSkeleton-D8rY3jBa.js";import{F as r}from"./FLoadIcon-DK9LdIdw.js";/* empty css               *//* empty css                   */import"./FCloseIcon-Dh2aLPHG.js";import"./FArrowIcon-q9p_-0kR.js";const U={title:"Icons/FLoadIcon",tags:["autodocs"],component:r},l=p=>o.jsx(r,{...p}),t=l.bind({});t.args={id:"trash-icon-id",className:"trash-icon-className",st:{padding:"20px"},size:64,handleClick:()=>{alert("Клик")}};const a=()=>o.jsxs(d,{spacing:2,direction:"row",children:[o.jsx(r,{color:"primary"}),o.jsx(r,{color:"secondary"}),o.jsx(r,{color:"success"}),o.jsx(r,{color:"danger"}),o.jsx(r,{color:"warning"}),o.jsx(r,{color:"info"}),o.jsx(r,{color:"light"}),o.jsx(r,{color:"dark"}),o.jsx(r,{color:"link"})]});a.__docgenInfo={description:"",methods:[],displayName:"ColorContained"};var c,i,s;t.parameters={...t.parameters,docs:{...(c=t.parameters)==null?void 0:c.docs,source:{originalSource:`args => {
+  return <FLoadIcon {...args} />;
+}`,...(s=(i=t.parameters)==null?void 0:i.docs)==null?void 0:s.source}}};var n,e,m;a.parameters={...a.parameters,docs:{...(n=a.parameters)==null?void 0:n.docs,source:{originalSource:`() => <FStack spacing={2} direction={'row'}>
+        <FLoadIcon color={'primary'} />
+        <FLoadIcon color={'secondary'} />
+        <FLoadIcon color={'success'} />
+        <FLoadIcon color={'danger'} />
+        <FLoadIcon color={'warning'} />
+        <FLoadIcon color={'info'} />
+        <FLoadIcon color={'light'} />
+        <FLoadIcon color={'dark'} />
+        <FLoadIcon color={'link'} />
+    </FStack>`,...(m=(e=a.parameters)==null?void 0:e.docs)==null?void 0:m.source}}};const V=["Default","ColorContained"];export{a as ColorContained,t as Default,V as __namedExportsOrder,U as default};
