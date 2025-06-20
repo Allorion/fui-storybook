@@ -1,8 +1,0 @@
-import{j as t}from"./jsx-runtime-Cf8x2fCZ.js";import{F as a}from"./FOpenImgFull-DrOhw3hj.js";import{r}from"./index-DY-snNUy.js";import{F as u}from"./FButton-C6QFu6NS.js";import"./index-yBjzXJbu.js";import"./FCloseIcon-6J1vWEif.js";import"./FArrowIcon-Bx2-MjZ4.js";import"./FDialog-DLm4K6IN.js";import"./index-xMzmejw-.js";import"./index-fNjTmf9T.js";const C={title:"Material/FOpenImgFull",component:a,parameters:{layout:"centered"}},e=()=>{const[l,d]=r.useState(0),[p,s]=r.useState(!0);return t.jsxs(t.Fragment,{children:[t.jsx(u,{onClick:()=>s(!0),children:"Открыть"}),t.jsx(a,{imagesUrl:["https://lipsum.app/random/320x240","https://lipsum.app/random/1600x900","https://lipsum.app/random/2400x1366","https://lipsum.app/random/600x480","https://lipsum.app/random/128x128"],openAndClose:p,handleClose:()=>s(!p),selectedImg:l,setSelectedImg:d})]})};e.__docgenInfo={description:"",methods:[],displayName:"Default"};var o,n,m;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`() => {
-  const [selectedImg, setSelectedImg] = useState(0);
-  const [open, setOpen] = useState(true);
-  return <>\r
-            <FButton onClick={() => setOpen(true)}>Открыть</FButton>\r
-            <FOpenImgFull imagesUrl={['https://lipsum.app/random/320x240', 'https://lipsum.app/random/1600x900', 'https://lipsum.app/random/2400x1366', 'https://lipsum.app/random/600x480', 'https://lipsum.app/random/128x128']} openAndClose={open} handleClose={() => setOpen(!open)} selectedImg={selectedImg} setSelectedImg={setSelectedImg} />\r
-        </>;
-}`,...(m=(n=e.parameters)==null?void 0:n.docs)==null?void 0:m.source}}};const j=["Default"];export{e as Default,j as __namedExportsOrder,C as default};
