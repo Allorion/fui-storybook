@@ -1,0 +1,27 @@
+import{j as i}from"./jsx-runtime-D_zvdyIk.js";import{e as I}from"./index-DEgj3Fem.js";import{within as V,userEvent as D}from"./index-CH2Su9EI.js";const s=I.forwardRef(({color:n="primary",size:c=30,st:o,id:C,className:v,handleClick:l,["data-testid"]:k,...h},A)=>i.jsx("svg",{ref:A,width:c,style:o,className:`f-icon ${l?" clicking-icon":""} ${n} ${v||""}`,viewBox:"0 0 16 16",onClick:l,id:C,"data-testid":k,...h,children:i.jsx("path",{"fill-rule":"evenodd",d:"M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"})}));s.displayName="FArrowDownCircleIcon";s.__docgenInfo={description:`Компонент FArrowDownCircleIcon представляет собой SVG иконку стрелки влево в круге с возможностью настройки цвета, размера и обработки кликов.\r
+\r
+@function FArrowDownCircleIcon\r
+@param {IFArrowDownCircleIcon} props - Пропсы компонента.\r
+@param {('primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link')} [color='primary'] - Цвет иконки. По умолчанию 'primary'.\r
+@param {number} [size=30] - Размер иконки в пикселях. По умолчанию 30.\r
+@param {React.CSSProperties} [st] - Дополнительные стили для SVG элемента.\r
+@param {string} [id] - Уникальный идентификатор для SVG элемента.\r
+@param {string} [className] - Дополнительные CSS классы для SVG элемента.\r
+@param {() => void} [handleClick] - Обработчик события клика по иконке.\r
+@param {React.Ref<SVGSVGElement>} ref - Ref для SVG элемента.\r
+@returns {JSX.Element} - Возвращает SVG элемент с заданными параметрами.\r
+\r
+@example\r
+<FArrowDownCircleIcon\r
+  color="danger"\r
+  size={32}\r
+  handleClick={() => console.log('Closed!')}\r
+/>`,methods:[],displayName:"FArrowDownCircleIcon",props:{color:{required:!1,tsType:{name:"union",raw:"'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link'",elements:[{name:"literal",value:"'primary'"},{name:"literal",value:"'secondary'"},{name:"literal",value:"'success'"},{name:"literal",value:"'danger'"},{name:"literal",value:"'warning'"},{name:"literal",value:"'info'"},{name:"literal",value:"'light'"},{name:"literal",value:"'dark'"},{name:"literal",value:"'link'"}]},description:`Цвет иконки. Определяет цветовую схему иконки.\r
+@type {('primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link')}\r
+@default 'primary'`,defaultValue:{value:"'primary'",computed:!1}},size:{required:!1,tsType:{name:"number"},description:`Размер иконки.\r
+@type {number}\r
+@default 30`,defaultValue:{value:"30",computed:!1}},st:{required:!1,tsType:{name:"ReactCSSProperties",raw:"React.CSSProperties"},description:`Дополнительные стили для SVG элемента.\r
+@type {React.CSSProperties}`},id:{required:!1,tsType:{name:"string"},description:`Уникальный идентификатор для SVG элемента.\r
+@type {string | undefined}`},className:{required:!1,tsType:{name:"string"},description:`Дополнительные CSS классы для SVG элемента.\r
+@type {string | undefined}`},handleClick:{required:!1,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:`Обработчик события клика по иконке.\r
+@type {(() => void) | undefined}`},"data-testid":{required:!1,tsType:{name:"string"},description:"Data-testid для тестирования (опционально)"}}};const b={title:"Icons/FArrowDownCircleIcon",tags:["autodocs"],component:s,argTypes:{color:{control:"select",options:["primary","secondary","success","danger","warning","info","light","dark","link"],description:"Цвет иконки. Определяет цветовую схему иконки"},size:{control:"number",description:"Размер иконки"},st:{control:"object",description:"Дополнительные стили для SVG элемента"},id:{control:"text",description:"Уникальный идентификатор для SVG элемента"},className:{control:"text",description:"Дополнительные CSS классы для SVG элемента"},handleClick:{action:"clicked",description:"Обработчик события клика по иконке"}},parameters:{docs:{description:{component:"Иконка стрелки вниз в круге. Используйте для кнопок перехода на другую страницу и т.д.."}}}},t=n=>i.jsx(s,{...n}),r=t.bind({});r.args={handleClick:void 0};r.parameters={docs:{description:{story:"Базовая иконка без дополнительных свойств."}}};const e=t.bind({});e.args={handleClick:()=>alert("Иконка нажата!"),"data-testid":"icon-svg"};e.parameters={docs:{description:{story:"Иконка с обработчиком клика."}}};e.play=async({canvasElement:n})=>{const o=await V(n).findByTestId("icon-svg");await D.click(o)};const a=t.bind({});a.args={color:"danger",size:32,handleClick:void 0};a.parameters={docs:{description:{story:"Иконка с кастомным цветом и размером."}}};var d,p,m;r.parameters={...r.parameters,docs:{...(d=r.parameters)==null?void 0:d.docs,source:{originalSource:"args => <FArrowDownCircleIcon {...args} />",...(m=(p=r.parameters)==null?void 0:p.docs)==null?void 0:m.source}}};var u,g,y;e.parameters={...e.parameters,docs:{...(u=e.parameters)==null?void 0:u.docs,source:{originalSource:"args => <FArrowDownCircleIcon {...args} />",...(y=(g=e.parameters)==null?void 0:g.docs)==null?void 0:y.source}}};var f,w,S;a.parameters={...a.parameters,docs:{...(f=a.parameters)==null?void 0:f.docs,source:{originalSource:"args => <FArrowDownCircleIcon {...args} />",...(S=(w=a.parameters)==null?void 0:w.docs)==null?void 0:S.source}}};const T=["Default","Clickable","CustomColorAndSize"];export{e as Clickable,a as CustomColorAndSize,r as Default,T as __namedExportsOrder,b as default};
