@@ -1,0 +1,1 @@
+import{d as r}from"./fNotification-B39e5n7E.js";const i=t=>{if(!t)return;const o=t.startsWith("#")?t:`#${t}`;let e=window.document.querySelector(o);if(!e)try{e=window.document.querySelector(t)}catch{}e&&r(e)};export{i as f};
